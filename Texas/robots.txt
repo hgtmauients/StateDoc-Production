@@ -1,0 +1,70 @@
+# TexasDoc - Robots.txt
+# Medical Documentation Platform
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://TexasDoc.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block AI training crawlers (optional - respect user privacy)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Block common spam/malicious bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Healthcare-specific: Allow medical research bots
+User-agent: MedicalBot
+Allow: /
+
+User-agent: HealthBot
+Allow: /
+
+# Performance: Suggest optimal crawling times (off-peak hours)
+# This is a comment for webmasters - not a directive
+# Optimal crawling: 2 AM - 6 AM EST (low traffic hours)

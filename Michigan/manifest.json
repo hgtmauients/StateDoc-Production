@@ -1,0 +1,22 @@
+{
+  "name": "MichiganDoc - Michigan's Premier Telehealth Platform",
+  "short_name": "MichiganDoc",
+  "description": "Discreet online healthcare for Michiganders. Weight loss, ED treatment, and wellness from licensed physicians.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFCD00",
+  "theme_color": "#002855",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["health", "medical", "telehealth"],
+  "icons": [
+    {
+      "src": "/assets/ohanaDoc-logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

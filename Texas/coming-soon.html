@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - TexasDoc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --state-primary: #002F6C;
+            --state-secondary: #FFB81C;
+            --state-gradient: linear-gradient(135deg, #912B3E 0%, #AD3F52 50%, #FFC627 100%);
+            --state-glow: 0 0 30px rgba(255, 198, 39, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0f1c 0%, #0b1220 50%, #0d1628 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 198, 39, 0.05) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        
+        .container {
+            max-width: 700px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            background: rgba(10, 15, 28, 0.9);
+            padding: 4rem 3rem;
+            border-radius: 30px;
+            border: 2px solid var(--state-secondary);
+            box-shadow: var(--state-glow), 0 20px 60px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .logo img {
+            width: 60px;
+            height: 60px;
+            filter: drop-shadow(0 0 20px rgba(255, 198, 39, 0.5));
+        }
+        
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--state-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: var(--state-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
+        .message {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+        
+        .coupon-box {
+            background: var(--state-gradient);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            box-shadow: var(--state-glow);
+        }
+        
+        .coupon-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--state-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .coupon-code {
+            font-family: 'Courier New', monospace;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--state-primary);
+            background: white;
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            display: inline-block;
+            margin: 1rem 0;
+            letter-spacing: 0.1em;
+            border: 3px dashed var(--state-primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .coupon-description {
+            font-size: 1rem;
+            color: var(--state-primary);
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        
+        .early-supporter {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 2rem;
+            font-style: italic;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--state-secondary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 2px solid var(--state-secondary);
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+        
+        .back-button:hover {
+            background: var(--state-secondary);
+            color: var(--state-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 198, 39, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 3rem 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .logo-text {
+                font-size: 1.8rem;
+            }
+            
+            .coupon-code {
+                font-size: 2rem;
+                padding: 0.8rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="/assets/ohanaDoc-logo.png" alt="OhanaDoc">
+            <div class="logo-text">TexasDoc</div>
+        </div>
+        
+        <h1>We're Almost Ready!</h1>
+        
+        <p class="subtitle">Finalizing Our Platform</p>
+        
+        <p class="message">
+            We're putting the finishing touches on TexasDoc to ensure you receive the absolute best telehealth experience. Our platform is being optimized to serve Texas with licensed physicians, cutting-edge treatments, and seamless care.
+        </p>
+        
+        <p class="message">
+            <strong>Thank you for your interest!</strong> Please check back soon.
+        </p>
+        
+        <div class="coupon-box">
+            <div class="coupon-title">?? Early Supporter Exclusive!</div>
+            <div class="coupon-code">Texas25</div>
+            <div class="coupon-description">
+                25% OFF Your First Service
+            </div>
+            <div class="coupon-description" style="font-size: 0.9rem; margin-top: 1.5rem;">
+                Use this code when we launch to receive 25% off any service as a thank you for being an early supporter of TexasDoc!
+            </div>
+        </div>
+        
+        <p class="early-supporter">
+            We appreciate your support as we build Texas's premier telehealth platform.
+        </p>
+        
+        <a href="/" class="back-button">? Back to Home</a>
+    </div>
+</body>
+</html>
+
