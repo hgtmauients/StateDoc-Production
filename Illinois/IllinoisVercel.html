@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <meta name="description" content="IllinoisDoc - Illinois's premier telehealth platform for men's and women's health. Discreet online consultations for ED, hair loss, skincare, and wellness treatments. Proudly serving the Prairie State.">
-    <meta name="keywords" content="telehealth Illinois, online doctor Illinois, telemedicine Illinois, ED treatment Illinois, erectile dysfunction treatment, hair loss treatment Illinois, skincare Illinois, men's health Illinois, women's health Illinois, semaglutide Illinois, ozempic Illinois, wegovy Illinois, tirzepatide Illinois, mounjaro Illinois, GLP-1 injections Illinois, weight loss doctors Illinois, online prescription Illinois, birth control online Illinois, mental health telehealth Illinois, hormone therapy Illinois, primary care virtual Illinois, telehealth Chicago, telehealth Aurora, telehealth Naperville, telehealth Chicago, telehealth Rockford, telehealth Joliet, telehealth Springfield, virtual doctor Illinois, remote healthcare Illinois">
+    <meta name="description" content="IllinoisDoc - Illinois's premier telehealth platform for men's and women's health. Discreet online consultations for ED, hair loss, skincare, and wellness treatments. Proudly serving the Last Frontier.">
+    <meta name="keywords" content="telehealth Illinois, online doctor Illinois, telemedicine Illinois, ED treatment Illinois, erectile dysfunction treatment, hair loss treatment Illinois, skincare Illinois, men's health Illinois, women's health Illinois, semaglutide Illinois, ozempic Illinois, wegovy Illinois, tirzepatide Illinois, mounjaro Illinois, GLP-1 injections Illinois, weight loss doctors Illinois, online prescription Illinois, birth control online Illinois, mental health telehealth Illinois, hormone therapy Illinois, primary care virtual Illinois, telehealth Anchorage, telehealth Fairbanks, telehealth Juneau, telehealth Anchorage, telehealth Sitka, telehealth Ketchikan, telehealth Wasilla, virtual doctor Illinois, remote healthcare Illinois">
     <meta name="author" content="IllinoisDoc">
     <meta name="robots" content="index, follow">
     
@@ -20,14 +20,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://IllinoisDoc.com/">
     <meta property="og:title" content="IllinoisDoc - Illinois's Premier Telehealth Platform">
-    <meta property="og:description" content="Discreet online healthcare for Illinoisans. ED treatment, hair loss solutions, skincare, and wellness - all from the comfort of your home.">
+    <meta property="og:description" content="Discreet online healthcare for Illinoisns. ED treatment, hair loss solutions, skincare, and wellness - all from the comfort of your home.">
     <meta property="og:image" content="https://IllinoisDoc.com/og-image.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://IllinoisDoc.com/">
     <meta property="twitter:title" content="IllinoisDoc - Illinois's Premier Telehealth Platform">
-    <meta property="twitter:description" content="Discreet online healthcare for Illinoisans. ED treatment, hair loss solutions, skincare, and wellness.">
+    <meta property="twitter:description" content="Discreet online healthcare for Illinoisns. ED treatment, hair loss solutions, skincare, and wellness.">
     <meta property="twitter:image" content="https://IllinoisDoc.com/og-image.jpg">
     
     <!-- Favicon -->
@@ -43,6 +43,58 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+        <!-- Banner Navigation Function - Must be defined early for onclick handlers -->
+    <script>
+        // Initialize banner slide tracking
+        window.currentSlide = 0;
+
+        // Navigate banner function - defined early so onclick handlers can access it
+        window.navigateBanner = function(direction) {
+            const bannerContainer = document.getElementById('bannerContainer');
+            const indicators = document.querySelectorAll('.banner-dot');
+
+            if (!bannerContainer || !indicators.length) return;
+
+            const totalSlides = indicators.length;
+            let newSlide = window.currentSlide;
+
+            if (direction === 'prev') {
+                newSlide = window.currentSlide === 0 ? totalSlides - 1 : window.currentSlide - 1;
+            } else if (direction === 'next') {
+                newSlide = (window.currentSlide + 1) % totalSlides;
+            }
+
+            // Update slide
+            window.currentSlide = newSlide;
+            const translateX = -newSlide * 100;
+
+            // Ensure transition is smooth
+            bannerContainer.style.transition = 'transform 0.5s ease-in-out';
+            bannerContainer.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            indicators.forEach((dot, index) => {
+                dot.classList.toggle('active', index === newSlide);
+            });
+
+            // Update service-specific banner background
+            const serviceBanner = document.getElementById('serviceBanner');
+            const activeSlide = bannerContainer.querySelector(`.banner-slide:nth-child(${newSlide + 1})`);
+            if (serviceBanner && activeSlide) {
+                const serviceType = activeSlide.getAttribute('data-service');
+                serviceBanner.setAttribute('data-active-service', serviceType);
+            }
+
+            // Track analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'banner_navigation', {
+                    'navigation_type': 'chevron',
+                    'direction': direction,
+                    'slide_index': newSlide
+                });
+            }
+        };
+    </script>
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
@@ -55,7 +107,7 @@
         "founder": "Dr. Nathan Harrington-Foster",
         "address": {
             "@type": "PostalAddress",
-            "addressRegion": "IL",
+            "addressRegion": "RI",
             "addressCountry": "US"
         },
         "sameAs": [
@@ -578,7 +630,7 @@
             background: var(--accent-gradient);
             color: #fff;
             border: none;
-            box-shadow: var(--shadow-glow);
+            box-shadow: 0 0 20px rgba(79, 195, 247, 0.4);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             position: relative;
             overflow: hidden;
@@ -773,7 +825,7 @@
 
         @keyframes glow {
             0%, 100% { box-shadow: var(--shadow-lg); }
-            50% { box-shadow: var(--shadow-glow); }
+            50% { box-shadow: 0 0 20px rgba(79, 195, 247, 0.4); }
         }
 
         /* Header with Advanced Dropdown */
@@ -865,7 +917,7 @@
         }
         
         .logo:hover .brand-name {
-            background: #013759; /* Solid dark blue background */
+            background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%);
             -webkit-background-clip: text; background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -927,6 +979,7 @@
             display: flex;
             list-style: none;
             gap: 2rem;
+            -webkit-overflow-scrolling: touch;
             align-items: center;
         }
 
@@ -1235,7 +1288,7 @@
 
         .mega-dropdown-item.featured:hover,
         .mega-dropdown-item.featured:focus {
-            background: #013759; /* Solid dark blue background */
+            background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%);
             transform: translateX(6px);
             box-shadow: none;
             border-left-color: var(--state-tertiary);
@@ -1275,8 +1328,8 @@
         .price-tag {
             font-size: 0.8rem;
             font-weight: 600;
-            color: var(--cta-text);
-            background: var(--cta-bg);
+            color: white;
+            background: #25D366;
             padding: 0.25rem 0.5rem;
             border-radius: 12px;
             display: inline-block;
@@ -1309,8 +1362,8 @@
         }
 
         .mega-cta-btn {
-            background: var(--cta-bg);
-            color: var(--cta-text);
+            background: #4FC3F7;
+            color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 50px;
             text-decoration: none;
@@ -1319,7 +1372,7 @@
             align-items: center;
             gap: 0.5rem;
             transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 8px 32px rgba(79, 195, 247, 0.1);
         }
 
         .mega-cta-btn:hover {
@@ -1335,7 +1388,7 @@
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 8px 32px rgba(79, 195, 247, 0.1);
         }
 
         .nav-cta:hover {
@@ -1369,6 +1422,7 @@
             right: 0;
             bottom: 0;
             background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(79, 195, 247, 0.3);
             backdrop-filter: blur(2px);
             -webkit-backdrop-filter: blur(2px);
             pointer-events: none;
@@ -1651,7 +1705,7 @@
         
         /* State-based gradient for service names - clean and readable */
         .banner-slide .highlight {
-            background: #013759; /* Solid dark blue background */
+            background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%);
             -webkit-background-clip: text; background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -1724,7 +1778,7 @@
             gap: 0.5rem;
             text-decoration: none;
             margin-top: 0.5rem;
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 8px 32px rgba(79, 195, 247, 0.1);
         }
 
         .banner-cta:hover {
@@ -1847,7 +1901,7 @@
             }
         }
 
-        /* Always show on touch devices */
+
         @media (min-width: 768px) and (hover: none) {
             .banner-nav {
                 opacity: 1 !important;
@@ -1950,7 +2004,6 @@
 
         /* Hero cta removed */
 
-
         @media (max-width: 480px) {
             .hero {
                 padding-top: 7rem; /* Adjusted for smaller header */
@@ -2038,9 +2091,20 @@
         }
 
         @media (max-width: 768px) {
-            /* Prevent horizontal scroll */
-            section, .container, .hero-container, .service-banner {
+            /* Prevent horizontal scroll (but allow carousel scrolling) */
+            .container, .hero-container, .service-banner {
                 max-width: 100vw;
+                overflow-x: hidden;
+            }
+            
+            /* Allow sections to contain horizontal carousels */
+            section {
+                max-width: 100vw;
+                overflow-x: visible; /* Changed from hidden to allow carousel scroll */
+            }
+            
+            /* But prevent scroll on sections without carousels */
+            section:not(:has(.treatments-grid)) {
                 overflow-x: hidden;
             }
             
@@ -2073,7 +2137,7 @@
             /* Optimize scroll performance on mobile */
             .treatments-grid {
                 scroll-behavior: smooth !important; /* Smooth scrolling for better card control */
-                scroll-padding-left: 1rem; /* Padding for snap alignment */
+
             }
             
             .treatment-grid {
@@ -2107,6 +2171,7 @@
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            -webkit-overflow-scrolling: touch;
                 text-align: center;
             }
             
@@ -2195,8 +2260,7 @@
         }
 
         /* Touch-friendly improvements */
-        @media (hover: none) and (pointer: coarse) {
-            /* Remove hover effects on touch devices */
+
             .treatment-card:hover,
             .btn:hover,
             .nav-item:hover {
@@ -2292,7 +2356,6 @@
             transform: translateX(4px);
         }
 
-
         /* Trust Indicators with Glass Effect */
         .trust-bar {
             background: #25D366 !important; /* OhanaDoc green */
@@ -2311,6 +2374,7 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 2rem;
+            -webkit-overflow-scrolling: touch;
         }
 
         .trust-item {
@@ -2383,19 +2447,20 @@
             position: relative;
             margin: 0 -2rem;
             padding: 0 2rem;
+            
         }
         
         .treatments-grid {
             display: flex;
             overflow-x: auto;
-            scroll-snap-type: x mandatory; /* Snap to each card */
+            scroll-snap-type: x proximity; /* Snap to each card */
             gap: 2rem;
+            -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
             -ms-overflow-style: none;
             padding: 1rem 0;
-            scroll-behavior: smooth; /* Smooth scrolling for better control */
-            scroll-padding-left: 1rem; /* Padding for snap alignment */
-            align-items: flex-start;
+            scroll-behavior: smooth;
+            align-items: stretch; /* Make all cards the same height */
         }
         
         /* Chevron navigation buttons */
@@ -2536,9 +2601,9 @@
             flex-direction: column;
             touch-action: manipulation;
             flex: 0 0 320px;
-            min-height: 280px; /* Uniform minimum height for all cards */
+            height: 100%; /* Make cards fill available height for uniformity */
+            min-height: 320px; /* Increased minimum height to accommodate multi-line titles */
             scroll-snap-align: start;
-            align-self: flex-start;
         }
         /* Service-specific gradients with 100/80/60/30 opacity */
         #non-glp1-weight-loss {
@@ -2684,7 +2749,7 @@
         .treatment-card:hover {
             transform: translateY(-12px) scale(1.02);
             box-shadow: var(--state-glow-strong);
-            background: #013759; /* Solid dark blue background */
+            background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-color: var(--state-secondary);
@@ -2718,6 +2783,9 @@
             line-height: 1.2;
             background: linear-gradient(135deg, var(--state-secondary) 0%, var(--state-tertiary) 50%, #ffffff 100%);
             -webkit-background-clip: text; background-clip: text;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
             -webkit-text-fill-color: transparent;
             background-clip: text;
                        
@@ -2761,7 +2829,7 @@
         }
 
         .treatment-cta {
-            background: #013759; /* Solid dark blue background */
+            background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%);
             color: white;
             padding: 0.875rem 1.75rem;
             border-radius: 50px;
@@ -2772,7 +2840,7 @@
             justify-content: center;
             gap: 0.5rem;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 8px 32px rgba(79, 195, 247, 0.1);
             border: none;
             cursor: pointer;
             font-size: 1rem;
@@ -2843,7 +2911,7 @@
         .featured-treatment:hover {
             transform: translateY(-14px) scale(1.03);
             box-shadow: var(--state-glow-strong);
-            background: #013759; /* Solid dark blue background */
+            background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%);
         }
 
         .featured-badge {
@@ -2890,10 +2958,11 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
             gap: 2rem;
+            -webkit-overflow-scrolling: touch;
             margin-top: 4rem;
         }
 
-        .testimonial-card { background: var(--surface-2); border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-glow); border: 1px solid var(--border); transition: all 0.3s ease; position: relative; }
+        .testimonial-card { background: var(--surface-2); border-radius: 20px; padding: 2rem; box-shadow: 0 0 20px rgba(79, 195, 247, 0.4); border: 1px solid var(--border); transition: all 0.3s ease; position: relative; }
 
         .testimonial-card:hover {
             transform: translateY(-8px);
@@ -2922,7 +2991,6 @@
             color: var(--text-light);
             font-size: 0.9rem;
         }
-
 
         /* Popup Styles */
         .popup-overlay {
@@ -3009,7 +3077,7 @@
         .about-section h3,
         .privacy-section h3,
         .terms-section h3 {
-            background: #013759; /* Solid dark blue background */
+            background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%);
             -webkit-background-clip: text; background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -3096,7 +3164,7 @@
 
         .popup-cta { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-        .popup-btn { background: var(--cta-bg); color: var(--cta-text); padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; box-shadow: var(--shadow-glow); border: none; cursor: pointer; font-size: 1rem; font-family: inherit; }
+        .popup-btn { background: #4FC3F7; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(79, 195, 247, 0.4); border: none; cursor: pointer; font-size: 1rem; font-family: inherit; }
 
         .popup-btn.secondary { background: transparent; color: var(--text-primary); border: 2px solid var(--border); }
 
@@ -3149,36 +3217,90 @@
             text-align: center;
             position: relative;
             padding: 2rem;
-            background: var(--card-gradient);
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(0, 157, 221, 0.3);
             border-radius: 20px;
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 8px 32px rgba(0, 157, 221, 0.1);
             transition: all 0.3s ease;
         }
 
         .step:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
+        }
+        
+        /* OhanaDoc Color-Specific Border Hover Effects */
+        .step:hover[style*="border-left: 4px solid #009DDD"],
+        .step:hover:has(.step-number[style*="#009DDD"]) {
+            border-color: #009DDD;
+            box-shadow: 0 12px 40px rgba(0, 157, 221, 0.2);
+        }
+        
+        .step:hover[style*="border-left: 4px solid #F98A33"],
+        .step:hover:has(.step-number[style*="#F98A33"]) {
+            border-color: #F98A33;
+            box-shadow: 0 12px 40px rgba(249, 138, 51, 0.2);
+        }
+        
+        .step:hover[style*="border-left: 4px solid #25D366"],
+        .step:hover:has(.step-number[style*="#25D366"]) {
+            border-color: #25D366;
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.2);
+        }
+
+        /* Footer treatment links with green accent */
+        .footer-treatment-link {
+            color: #4FC3F7 !important;
+            transition: all 0.3s ease;
+        }
+
+        .footer-treatment-link:hover {
+            color: #3BA9D8 !important;
+            text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+        }
+
+        /* FAQ step cards with OhanaDoc blue accents */
+        .faq-grid .step {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(0, 157, 221, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 157, 221, 0.15);
+        }
+
+        .faq-grid .step:hover {
+            border-color: #009DDD;
+            box-shadow: 0 12px 40px rgba(0, 157, 221, 0.25);
         }
 
         .step-number {
             width: 64px;
             height: 64px;
             border-radius: 50%;
-            background: var(--cta-bg);
-            color: var(--cta-text);
+            background: #009DDD;
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
             font-weight: 800;
             margin: 0 auto 1.5rem;
-            box-shadow: var(--shadow-glow);
+            box-shadow: 0 0 20px rgba(0, 157, 221, 0.4);
             transition: all 0.3s ease;
         }
 
         .step:hover .step-number {
             transform: scale(1.1);
-            box-shadow: var(--shadow-lg);
+        }
+        
+        /* OhanaDoc Color-Specific Hover Effects */
+        .step:hover .step-number[style*="#009DDD"] {
+            box-shadow: 0 0 30px rgba(0, 157, 221, 0.6) !important;
+        }
+        
+        .step:hover .step-number[style*="#F98A33"] {
+            box-shadow: 0 0 30px rgba(249, 138, 51, 0.6) !important;
+        }
+        
+        .step:hover .step-number[style*="#25D366"] {
+            box-shadow: 0 0 30px rgba(37, 211, 102, 0.6) !important;
         }
 
         .step h3 {
@@ -3240,6 +3362,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
+            -webkit-overflow-scrolling: touch;
             margin-top: 4rem;
         }
 
@@ -3303,6 +3426,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            -webkit-overflow-scrolling: touch;
             margin-bottom: 2rem;
         }
 
@@ -3357,9 +3481,9 @@
                 overflow-x: auto;
                 padding: 1rem 1rem 1rem 0;
                 cursor: default;
-                scroll-snap-type: x mandatory; /* Snap to each card */
+                scroll-snap-type: x proximity; /* Snap to each card */
                 scroll-behavior: smooth; /* Smooth scrolling for better control */
-                scroll-padding-left: 1rem; /* Padding for snap alignment */
+
             }
             
             .carousel-wrapper {
@@ -3905,7 +4029,7 @@
         }
 
         body.light-mode .treatment-card.expanded h3 {
-            background: #013759; /* Solid dark blue background */
+            background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%);
             -webkit-background-clip: text; background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -3913,7 +4037,7 @@
         }
 
         body.light-mode .treatment-card.expanded .btn-details {
-            background: #013759; /* Solid dark blue background */
+            background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%);
             color: white;
             border: none;
         }
@@ -3926,7 +4050,6 @@
         body.light-mode .treatment-card.expanded .treatment-price {
             color: #013759; /* Navy blue for better readability on expanded cards */
         }
-
 
         body.light-mode .treatment-price {
             color: var(--state-primary) !important;
@@ -4001,7 +4124,7 @@
 
         body.light-mode .step {
             background: white;
-            color: #4FC3F7;
+            color: #009DDD;
             box-shadow: var(--shadow-md);
             border: 1px solid rgba(0, 0, 0, 0.08);
         }
@@ -4011,13 +4134,36 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 0 0 15px var(--state-secondary);
         }
 
+        /* Footer treatment links with green accent */
+        .footer-treatment-link {
+            color: #4FC3F7 !important;
+            transition: all 0.3s ease;
+        }
+
+        .footer-treatment-link:hover {
+            color: #3BA9D8 !important;
+            text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+        }
+
+        /* FAQ step cards with OhanaDoc blue accents */
+        .faq-grid .step {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(0, 157, 221, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 157, 221, 0.15);
+        }
+
+        .faq-grid .step:hover {
+            border-color: #009DDD;
+            box-shadow: 0 12px 40px rgba(0, 157, 221, 0.25);
+        }
+
         body.light-mode .step h3,
         body.light-mode .step p {
-            color: #4FC3F7;
+            color: #009DDD;
         }
 
         body.light-mode .step-number {
-            background: #013759; /* Solid dark blue background */
+            background: #009DDD;
             color: white;
         }
 
@@ -4157,21 +4303,21 @@
 
         body.light-mode .faq-item {
             background: white;
-            color: #4FC3F7;
+            color: #009DDD;
             border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         body.light-mode .faq-item:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 0 15px var(--state-secondary);
-            border-color: var(--state-secondary);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 0 15px #009DDD;
+            border-color: #009DDD;
         }
 
         body.light-mode .faq-item h3 {
-            color: #4FC3F7;
+            color: #009DDD;
         }
 
         body.light-mode .faq-item p {
-            color: #4FC3F7;
+            color: #009DDD;
         }
 
         body.light-mode .benefit-card {
@@ -4275,13 +4421,36 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 0 0 15px var(--state-secondary);
         }
 
+        /* Footer treatment links with green accent */
+        .footer-treatment-link {
+            color: #4FC3F7 !important;
+            transition: all 0.3s ease;
+        }
+
+        .footer-treatment-link:hover {
+            color: #3BA9D8 !important;
+            text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+        }
+
+        /* FAQ step cards with OhanaDoc blue accents */
+        .faq-grid .step {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(0, 157, 221, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 157, 221, 0.15);
+        }
+
+        .faq-grid .step:hover {
+            border-color: #009DDD;
+            box-shadow: 0 12px 40px rgba(0, 157, 221, 0.25);
+        }
+
         body.light-mode .step h3,
         body.light-mode .step p {
-            color: #4FC3F7;
+            color: #009DDD;
         }
 
         body.light-mode .step-number {
-            background: #013759; /* Solid dark blue background */
+            background: #009DDD;
             color: white;
         }
 
@@ -4964,10 +5133,10 @@
         .btn-primary,
         .btn-premium,
         .banner-cta {
-            background: var(--cta-bg);
+            background: #25D366;
             color: var(--cta-text) !important;
             border: none;
-            box-shadow: var(--shadow-glow);
+            box-shadow: 0 0 20px rgba(79, 195, 247, 0.4);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .btn-primary:hover,
@@ -5016,6 +5185,91 @@
             background: none !important;
             border: none !important;
         }
+
+        /* === TREATMENT CARDS - Solid Navy Blue (no gradients) === */
+        .treatment-card {
+            background: #013759 !important;
+        }
+        
+        .treatment-card:hover {
+            background: #013759 !important;
+            border-color: #009DDD !important;
+            box-shadow: 0 12px 40px rgba(0, 157, 221, 0.3), 0 0 20px rgba(0, 157, 221, 0.2) !important;
+        }
+        
+        .treatment-card.expanded {
+            background: #013759 !important;
+            border-color: #25D366 !important;
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.3), 0 0 20px rgba(37, 211, 102, 0.2) !important;
+        }
+        
+        .treatment-card::after {
+            display: none !important;
+        }
+        
+        .treatment-card:hover::after,
+        .treatment-card.expanded::after {
+            display: none !important;
+        }
+        
+        /* Keep text readable on navy */
+        .treatment-card h3 {
+            color: #4FC3F7 !important;
+            background: none !important;
+            -webkit-text-fill-color: #4FC3F7 !important;
+        }
+        
+        .treatment-card.expanded h3 {
+            color: #25D366 !important;
+            -webkit-text-fill-color: #25D366 !important;
+        }
+        
+        .treatment-card .treatment-price {
+            color: #F98A33 !important;
+        }
+        
+        .treatment-card.expanded .treatment-price {
+            color: #F98A33 !important;
+        }
+        
+        .treatment-card.expanded .btn-details {
+            background: #25D366 !important;
+            color: #013759 !important;
+        }
+        
+        /* Light mode - same navy theme */
+        body.light-mode .treatment-card,
+        body.light-mode .treatment-card:hover,
+        body.light-mode .treatment-card.expanded {
+            background: #013759 !important;
+        }
+        
+        body.light-mode .treatment-card h3 {
+            color: #4FC3F7 !important;
+            background: none !important;
+            -webkit-text-fill-color: #4FC3F7 !important;
+        }
+        
+        body.light-mode .treatment-card.expanded h3 {
+            color: #25D366 !important;
+            -webkit-text-fill-color: #25D366 !important;
+        }
+        
+        body.light-mode .treatment-card .treatment-price,
+        body.light-mode .treatment-card.expanded .treatment-price {
+            color: #F98A33 !important;
+        }
+        
+        /* === SERVICE SECTION TITLES - Powered by OhanaDoc gradient === */
+        #treatments h2,
+        .treatments-grid + div h2,
+        div[style*="margin: 3rem"] h2,
+        div[style*="margin: 4rem"] h2 {
+            background: linear-gradient(90deg, #F98A33 0%, #25D366 50%, #009DDD 100%) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+        }
     </style>
 </head>
 <body>
@@ -5025,8 +5279,8 @@
             <a href="#home" class="logo">
                 <img src="/assets/ohanaDoc-logo.png" alt="OhanaDoc" class="logo-symbol">
                 <div class="logo-text">
-                    <span class="brand-name">IllinoisDoc</span>
-                    <span class="powered-by">Powered by <strong>OhanaDoc</strong></span>
+                    <span class="brand-name"><span style="color: #25D366;">Illinois</span><span style="color: #009DDD;">Doc</span></span>
+                    <span class="powered-by" style="background: linear-gradient(90deg, #F98A33 0%, #25D366 50%, #009DDD 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600;">Powered by OhanaDoc</span>
                 </div>
             </a>
             <ul class="nav-links">
@@ -5275,7 +5529,7 @@
                 <li class="nav-item"><a href="#" onclick="openPopup('coming-soon-popup'); return false;">Patient Login</a></li>
                 <li class="nav-item"><a href="#" class="nav-cta" onclick="openPopup('coming-soon-popup'); return false;">Sign Up</a></li>                <li class="nav-item">
                     <button id="branding-toggle" class="branding-toggle" aria-label="Toggle between OhanaDoc and State branding">
-                        <img src="assets/ohanaDoc-logo.png" alt="OhanaDoc" class="brand-logo">
+                        <img src="/assets/ohanaDoc-logo.png" alt="OhanaDoc" class="brand-logo">
                     </button>
                 </li>
                 <li class="nav-item">
@@ -5437,7 +5691,7 @@
                         <p>General health consultations, wellness checkups, chronic care management from Illinois doctors.</p>
                         <div class="banner-features">
                             <div class="banner-feature"> Same-Day Visits</div>
-                            <div class="banner-feature"> Licensed IL Doctors</div>
+                            <div class="banner-feature"> Licensed AK Doctors</div>
                             <div class="banner-feature"> Ongoing Care</div>
                             <div class="banner-feature"> From $65/visit</div>
                         </div>
@@ -5676,13 +5930,13 @@
             
             <!-- CATEGORY 1: WEIGHT LOSS SERVICES (Hero Priority) -->
             <div style="margin: 3rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Weight Loss Services</h2>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Weight Loss Services</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">GLP-1 medications, compounded options, and comprehensive weight management from Illinois physicians</p>
             </div>
             
             <div class="treatments-grid" aria-label="Weight Loss Services Carousel">
                 <div class="treatment-card animate-on-scroll featured-treatment" id="semaglutide">
-                    <h3>Semaglutide <span style="display: inline-block; white-space: nowrap;">(Ozempic/Wegovy)</span></h3>
+                    <h3>Semaglutide <span style="display: inline;">(Ozempic/&#8203;Wegovy)</span></h3>
                     <p class="treatment-summary">Gold standard for weight loss. Weekly GLP-1 injection, FDA-approved.</p>
                     <div class="treatment-details">
                         <p>The gold standard for weight loss. Weekly injections that reduce appetite and slow digestion, leading to significant sustainable weight loss. Clinical trials demonstrate 15% average weight loss with improved blood sugar control.</p>
@@ -5705,7 +5959,7 @@
                 </div>
                 
                 <div class="treatment-card animate-on-scroll featured-treatment" id="tirzepatide">
-                    <h3>Tirzepatide <span style="display: inline-block; white-space: nowrap;">(Mounjaro/Zepbound)</span></h3>
+                    <h3>Tirzepatide <span style="display: inline;">(Mounjaro/&#8203;Zepbound)</span></h3>
                     <p class="treatment-summary">Next-gen dual-action GLP-1. Up to 20% weight loss, FDA-approved.</p>
                     <div class="treatment-details">
                         <p>Next-generation dual-action GLP-1 medication combining GLP-1 and GIP receptor agonists. Superior weight loss results with up to 20% body weight reduction in clinical studies, along with improved metabolic health markers.</p>
@@ -5777,7 +6031,7 @@
             
             <!-- CATEGORY 2: CORE SERVICES -->
             <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Core Telehealth Services</h2>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Core Telehealth Services</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Primary care, mental health, sexual wellness, and prescription refills from Illinois physicians</p>
             </div>
             
@@ -5878,7 +6132,7 @@
             
             <!-- CATEGORY 3: MEN'S HEALTH -->
             <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Men's Health</h2>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Men's Health</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">ED treatment, testosterone therapy, fertility support, and vitality optimization from Illinois physicians</p>
             </div>
             
@@ -5980,7 +6234,7 @@
             
             <!-- CATEGORY 4: WOMEN'S HEALTH -->
             <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Women's Health</h2>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Women's Health</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Birth control, UTI treatment, and hormone therapy from Illinois women's health specialists</p>
             </div>
             
@@ -6082,7 +6336,7 @@
             
             <!-- CATEGORY 5: SPECIALTY CARE -->
             <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Specialty Care</h2>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Specialty Care</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Hair loss, sleep health, skincare, supplements, and chronic condition management from Illinois specialists</p>
             </div>
             
@@ -6229,7 +6483,7 @@
             
             <!-- CATEGORY 6: LABS & TESTING -->
             <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Labs & Testing</h2>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Labs & Testing</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Comprehensive lab testing with at-home kits and in-person draws throughout Illinois</p>
             </div>
             
@@ -6352,7 +6606,7 @@
             
             <!-- CATEGORY 7: INTEGRATIVE/WELLNESS -->
             <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Integrative & Wellness</h2>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Integrative & Wellness</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Advanced peptide therapy, longevity protocols, and wellness optimization from Illinois physicians</p>
             </div>
             
@@ -6433,92 +6687,68 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
+    <section class="how-it-works" id="how-it-works" style="background: #013759;">
         <div class="container">
             <div class="section-title animate-on-scroll">
                 <h2 class="text-gradient">How IllinoisDoc Works</h2>
-                <p>Two convenient care models designed to fit your needs</p>
+                <p style="color: #ffffff;">Two convenient care models designed to fit your needs</p>
             </div>
             
             <div class="steps-grid">
                 <div class="step animate-on-scroll">
-                    <div class="step-number">1</div>
-                    <h3>Answer the Service Prequestions</h3>
-                    <p>Answer a few questions about your health and symptoms. Takes less than 5 minutes and completely confidential.</p>
+                    <div class="step-number" style="background: #009DDD; box-shadow: 0 0 20px rgba(0, 157, 221, 0.4);">1</div>
+                    <h3 style="color: #009DDD;">Answer the Service Prequestions</h3>
+                    <p style="color: #ffffff;">Answer a few questions about your health and symptoms. Takes less than 5 minutes and completely confidential.</p>
                 </div>
                 
                 <div class="step animate-on-scroll">
-                    <div class="step-number">2</div>
-                    <h3>Choose Your Care Model</h3>
-                    <p><strong>Synchronous Care:</strong> Schedule a phone or video visit with the provider of your choice based on availability. Best for conditions requiring real-time consultation.</p>
-                    <p style="margin-top: 1rem;"><strong>Asynchronous Care:</strong> Quick care visits where the next available Illinois provider reviews your case and manages your service. Secure platform messaging only if needed for clinical decisions. Best for straightforward conditions with typical standard of care.</p>
+                    <div class="step-number" style="background: #F98A33; box-shadow: 0 0 20px rgba(249, 138, 51, 0.4);">2</div>
+                    <h3 style="color: #F98A33;">Choose Your Care Model</h3>
+                    <p style="color: #ffffff;"><strong>Synchronous Care:</strong> Schedule a phone or video visit with the provider of your choice based on availability. Best for conditions requiring real-time consultation.</p>
+                    <p style="margin-top: 1rem; color: #ffffff;"><strong>Asynchronous Care:</strong> Quick care visits where the next available Illinois provider reviews your case and manages your service. Secure platform messaging only if needed for clinical decisions. Best for straightforward conditions with typical standard of care.</p>
                 </div>
                 
                 <div class="step animate-on-scroll">
-                    <div class="step-number">3</div>
-                    <h3>Rx Sent</h3>
-                    <p>Prescription sent to any Illinois located pharmacy or any nationwide mail order delivery service (fees may apply). Follow-up care available anytime.</p>
+                    <div class="step-number" style="background: #25D366; box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);">3</div>
+                    <h3 style="color: #25D366;">Rx Sent</h3>
+                    <p style="color: #ffffff;">Prescription sent to any Illinois located pharmacy or any nationwide mail order delivery service (fees may apply). Follow-up care available anytime.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Illinois Pride Section -->
-    <section class="wv-pride">
-        <div class="container">
-            <div class="wv-content animate-on-scroll">
-                <h2>Illinois's Weight Loss Revolution</h2>
-                <p>Leading the Prairie State in GLP-1 weight loss treatments. from Chicago to Aurora, Naperville to Rockford - we're helping Illinoisans achieve their weight loss goals with proven medical treatments.</p>
-                
-                <div class="wv-stats">
-                    <div class="stat-item animate-on-scroll">
-                        <span class="stat-label">Licensed Medical Providers</span>
-                    </div>
-                    <div class="stat-item animate-on-scroll">
-                        <span class="stat-label">FDA Approved Medications</span>
-                    </div>
-                    <div class="stat-item animate-on-scroll">
-                        <span class="stat-label">Convenient Telehealth</span>
-                    </div>
-                    <div class="stat-item animate-on-scroll">
-                        <span class="stat-label">HIPAA Compliant & Secure</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- FAQ Section -->
-    <section class="how-it-works" id="faq" style="background: var(--surface-2);">
+    <!-- FAQ Section -->
+    <section class="how-it-works" id="faq" style="background: #013759;">
         <div class="container">
             <div class="section-title animate-on-scroll">
                 <h2 class="text-gradient">Frequently Asked Questions</h2>
-                <p>Everything you need to know about telehealth in Illinois</p>
+                <p style="color: #ffffff;">Everything you need to know about telehealth in Illinois</p>
             </div>
             
-            <div class="steps-grid" style="grid-template-columns: 1fr; gap: 2rem; max-width: 900px; margin: 3rem auto 0;">
-                                <div class="step animate-on-scroll" style="text-align: left;">
-                    <h3 style="color: var(--state-secondary); font-size: 1.3rem; margin-bottom: 0.75rem;">Do you accept insurance or HSA/FSA?</h3>
-                    <p>We are currently cash-pay only, but we're actively working to enroll with insurance companies and employer HSA/FSA programs. If you'd like to see IllinoisDoc covered by your insurance or employer, please ask them to partner with us - it helps our growth tremendously!</p>
+            <div class="steps-grid" style="grid-template-columns: 1fr; gap: 2rem;
+            -webkit-overflow-scrolling: touch; max-width: 900px; margin: 3rem auto 0;">
+                                <div class="step animate-on-scroll" style="text-align: left; border-left: 4px solid #009DDD;">
+                    <h3 style="color: #009DDD; font-size: 1.3rem; margin-bottom: 0.75rem;">Do you accept insurance or HSA/FSA?</h3>
+                    <p style="color: #ffffff;">We are currently cash-pay only, but we're actively working to enroll with insurance companies and employer HSA/FSA programs. If you'd like to see IllinoisDoc covered by your insurance or employer, please ask them to partner with us - it helps our growth tremendously!</p>
                 </div>
-                <div class="step animate-on-scroll" style="text-align: left;">
-                    <h3 style="color: var(--state-secondary); font-size: 1.3rem; margin-bottom: 0.75rem;">What's the difference between synchronous and asynchronous care?</h3>
-                    <p>Synchronous care involves scheduled real-time video or phone visits with a provider of your choice. Asynchronous care is faster - the next available provider reviews your case and manages treatment via secure messaging, only contacting you if needed for clinical decisions.</p>
-                </div>
-                
-                <div class="step animate-on-scroll" style="text-align: left;">
-                    <h3 style="color: var(--state-secondary); font-size: 1.3rem; margin-bottom: 0.75rem;">How quickly can I get my prescription?</h3>
-                    <p>Most prescriptions are reviewed and sent within 24 hours. You can pick up at your local Illinois pharmacy same-day or use mail order delivery (2-5 business days).</p>
+                <div class="step animate-on-scroll" style="text-align: left; border-left: 4px solid #F98A33;">
+                    <h3 style="color: #F98A33; font-size: 1.3rem; margin-bottom: 0.75rem;">What's the difference between synchronous and asynchronous care?</h3>
+                    <p style="color: #ffffff;">Synchronous care involves scheduled real-time video or phone visits with a provider of your choice. Asynchronous care is faster - the next available provider reviews your case and manages treatment via secure messaging, only contacting you if needed for clinical decisions.</p>
                 </div>
                 
-                <div class="step animate-on-scroll" style="text-align: left;">
-                    <h3 style="color: var(--state-secondary); font-size: 1.3rem; margin-bottom: 0.75rem;">Is my information private and HIPAA compliant?</h3>
-                    <p>Yes. All consultations and medical records are fully HIPAA compliant with 256-bit encryption. Your privacy is our priority and we never share your information without consent.</p>
+                <div class="step animate-on-scroll" style="text-align: left; border-left: 4px solid #25D366;">
+                    <h3 style="color: #25D366; font-size: 1.3rem; margin-bottom: 0.75rem;">How quickly can I get my prescription?</h3>
+                    <p style="color: #ffffff;">Most prescriptions are reviewed and sent within 24 hours. You can pick up at your local Illinois pharmacy same-day or use mail order delivery (2-5 business days).</p>
                 </div>
                 
-                <div class="step animate-on-scroll" style="text-align: left;">
-                    <h3 style="color: var(--state-secondary); font-size: 1.3rem; margin-bottom: 0.75rem;">Do you treat patients throughout Illinois?</h3>
-                    <p>Yes! We serve all Illinois statewide. Licensed Illinois physicians provide care statewide.</p>
+                <div class="step animate-on-scroll" style="text-align: left; border-left: 4px solid #009DDD;">
+                    <h3 style="color: #009DDD; font-size: 1.3rem; margin-bottom: 0.75rem;">Is my information private and HIPAA compliant?</h3>
+                    <p style="color: #ffffff;">Yes. All consultations and medical records are fully HIPAA compliant with 256-bit encryption. Your privacy is our priority and we never share your information without consent.</p>
+                </div>
+                
+                <div class="step animate-on-scroll" style="text-align: left; border-left: 4px solid #F98A33;">
+                    <h3 style="color: #F98A33; font-size: 1.3rem; margin-bottom: 0.75rem;">Do you treat patients throughout Illinois?</h3>
+                    <p style="color: #ffffff;">Yes! We serve all Illinois statewide. Licensed Illinois physicians provide care statewide.</p>
                 </div>
             </div>
         </div>
@@ -6575,34 +6805,12 @@
     </script>
 
     
-        <!-- Trust & Credibility Section -->
-        <section id="trust" style="padding:4rem 0;background:rgba(255,255,255,0.02)">
-            <div class="container">
-                <h2 style="text-align:center;margin-bottom:3rem;background:var(--state-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Trusted Healthcare Platform</h2>
-                
-                <!-- Trust Badges -->
-                <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:4rem">
-                    <div style="text-align:center;padding:1.5rem">
-                        <div style="font-size:3rem;margin-bottom:0.5rem"></div>
-                        <strong style="display:block;margin-bottom:0.5rem">FDA Approved and Patient Specific Compound Formulations</strong>
-                    </div>
-                </div>
-
-                
-                <!-- Medical Disclaimer -->
-                <div style="margin-top:3rem;padding:2rem;background:rgba(255,255,255,0.03);border-left:4px solid var(--state-secondary)">
-                    <strong style="display:block;margin-bottom:1rem">Important Medical Information</strong>
-                    <p style="font-size:0.95rem;line-height:1.7;color:rgba(255,255,255,0.85)">Patient must be physically located in the state at time of service. All consultations conducted by state-licensed medical providers. No controlled substances or automated prescriptions. Treatment recommendations made after reviewing medical history. Compounded medications are patient-specific formulas using medical-grade ingredients but are not FDA-approved and should not be considered equivalent in efficacy or safety to FDA-approved pharmaceutical versions. Results may vary. Not all patients approved. Call 911 for emergencies.</p>
-                </div>
-            </div>
-        </section>
-
-    <!-- Footer -->
+        <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>IllinoisDoc</h3>
-                <p>Illinois's premier telehealth platform providing discreet, professional healthcare for men and women across the Prairie State.</p>
+                <p>Illinois's premier telehealth platform providing discreet, professional healthcare for men and women across the Illinois.</p>
             </div>
             <div class="footer-section">
                 <h3>Popular Treatments</h3>
@@ -6656,7 +6864,7 @@
     <div class="popup-overlay" id="join-popup">
         <div class="popup-content" style="max-width: 650px;">
             <div class="popup-header">
-                <h2 id="join-popup-title" style="background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Partner With IllinoisDoc</h2>
+                <h2 id="join-popup-title" style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Partner With IllinoisDoc</h2>
                 <button class="popup-close" data-popup="join-popup">&times;</button>
             </div>
             <div class="popup-body">
@@ -6665,27 +6873,32 @@
                 <form action="https://formsubmit.co/contact@ohanadoc.com" method="POST" id="joinForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                         <label style="color: #FFFFFFA6 !important; /* 60% opacity white */ font-weight: 600;">Full Name *</label>
-                        <input type="text" id="joinName" required style="padding: 0.875rem; border-radius: 8px; border: 1px solid var(--state-border); background: rgba(255, 255, 255, 0.05); color: white; font-size: 1rem;">
+                        <input type="text" id="joinName" required style="padding: 0.875rem; border-radius: 8px; border: 1px solid var(--state-border); background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(79, 195, 247, 0.3); color: white; font-size: 1rem;">
                     </div>
                     
                     <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                         <label style="color: #FFFFFFA6 !important; /* 60% opacity white */ font-weight: 600;">Email Address *</label>
-                        <input type="email" id="joinEmail" required style="padding: 0.875rem; border-radius: 8px; border: 1px solid var(--state-border); background: rgba(255, 255, 255, 0.05); color: white; font-size: 1rem;">
+                        <input type="email" id="joinEmail" required style="padding: 0.875rem; border-radius: 8px; border: 1px solid var(--state-border); background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(79, 195, 247, 0.3); color: white; font-size: 1rem;">
                     </div>
                     
                     <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                         <label style="color: #FFFFFFA6 !important; /* 60% opacity white */ font-weight: 600;">Organization/Practice Name *</label>
-                        <input type="text" id="joinOrganization" required style="padding: 0.875rem; border-radius: 8px; border: 1px solid var(--state-border); background: rgba(255, 255, 255, 0.05); color: white; font-size: 1rem;">
+                        <input type="text" id="joinOrganization" required style="padding: 0.875rem; border-radius: 8px; border: 1px solid var(--state-border); background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(79, 195, 247, 0.3); color: white; font-size: 1rem;">
                     </div>
                     
                     <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                         <label style="color: #FFFFFFA6 !important; /* 60% opacity white */ font-weight: 600;">Phone Number *</label>
-                        <input type="tel" id="joinPhone" required style="padding: 0.875rem; border-radius: 8px; border: 1px solid var(--state-border); background: rgba(255, 255, 255, 0.05); color: white; font-size: 1rem;">
+                        <input type="tel" id="joinPhone" required style="padding: 0.875rem; border-radius: 8px; border: 1px solid var(--state-border); background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(79, 195, 247, 0.3); color: white; font-size: 1rem;">
                     </div>
                     
                     <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                         <label style="color: #FFFFFFA6 !important; /* 60% opacity white */ font-weight: 600;">Message</label>
-                        <textarea id="joinMessage" rows="4" style="padding: 0.875rem; border-radius: 8px; border: 1px solid var(--state-border); background: rgba(255, 255, 255, 0.05); color: white; font-size: 1rem; resize: vertical;"></textarea>
+                        <textarea id="joinMessage" rows="4" style="padding: 0.875rem; border-radius: 8px; border: 1px solid var(--state-border); background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(79, 195, 247, 0.3); color: white; font-size: 1rem; resize: vertical;"></textarea>
                     </div>
                     
                     <button type="submit" class="btn-premium hover-premium" style="padding: 1rem 2rem; font-size: 1.1rem; font-weight: 700; border: none; cursor: pointer;">
@@ -6700,7 +6913,7 @@
     <div class="popup-overlay" id="privacy-popup">
         <div class="popup-content large" style="max-width: 900px;">
             <div class="popup-header">
-                <h2 style="background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Privacy Policy</h2>
+                <h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Privacy Policy</h2>
                 <button class="popup-close" data-popup="privacy-popup">&times;</button>
             </div>
             <div class="popup-body" style="text-align: left;">
@@ -6751,7 +6964,7 @@
     <div class="popup-overlay" id="terms-popup">
         <div class="popup-content large" style="max-width: 900px;">
             <div class="popup-header">
-                <h2 style="background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Terms of Use</h2>
+                <h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Terms of Use</h2>
                 <button class="popup-close" data-popup="terms-popup">&times;</button>
             </div>
             <div class="popup-body" style="text-align: left;">
@@ -6800,7 +7013,7 @@
     <div class="popup-overlay" id="contact-form-popup">
         <div class="popup-content" style="max-width: 600px;">
             <div class="popup-header">
-                <h2 style="background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Contact Us</h2>
+                <h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Contact Us</h2>
                 <button class="popup-close" data-popup="contact-form-popup">&times;</button>
             </div>
             <div class="popup-body">
@@ -6808,17 +7021,20 @@
                 <form id="contactForm" onsubmit="handleContactSubmit(event)" style="display: flex; flex-direction: column; gap: 1.25rem;">
                     <div>
                         <label for="contact-name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: rgba(255, 255, 255, 0.95);">Name</label>
-                        <input type="text" id="contact-name" name="name" required style="width: 100%; padding: 0.875rem; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 12px; background: rgba(255, 255, 255, 0.05); color: white; font-size: 1rem; transition: all 0.3s ease;">
+                        <input type="text" id="contact-name" name="name" required style="width: 100%; padding: 0.875rem; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 12px; background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(79, 195, 247, 0.3); color: white; font-size: 1rem; transition: all 0.3s ease;">
                     </div>
                     <div>
                         <label for="contact-email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: rgba(255, 255, 255, 0.95);">Email</label>
-                        <input type="email" id="contact-email" name="email" required style="width: 100%; padding: 0.875rem; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 12px; background: rgba(255, 255, 255, 0.05); color: white; font-size: 1rem; transition: all 0.3s ease;">
+                        <input type="email" id="contact-email" name="email" required style="width: 100%; padding: 0.875rem; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 12px; background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(79, 195, 247, 0.3); color: white; font-size: 1rem; transition: all 0.3s ease;">
                     </div>
                     <div>
                         <label for="contact-message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: rgba(255, 255, 255, 0.95);">Message</label>
-                        <textarea id="contact-message" name="message" required rows="5" style="width: 100%; padding: 0.875rem; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 12px; background: rgba(255, 255, 255, 0.05); color: white; font-size: 1rem; resize: vertical; min-height: 120px; transition: all 0.3s ease;"></textarea>
+                        <textarea id="contact-message" name="message" required rows="5" style="width: 100%; padding: 0.875rem; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 12px; background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(79, 195, 247, 0.3); color: white; font-size: 1rem; resize: vertical; min-height: 120px; transition: all 0.3s ease;"></textarea>
                     </div>
-                    <button type="submit" class="btn-primary" style="background: #013759; /* Solid dark blue background */ color: white; padding: 1rem 2rem; border: none; border-radius: 12px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: var(--state-glow);">
+                    <button type="submit" class="btn-primary" style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); color: white; padding: 1rem 2rem; border: none; border-radius: 12px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: var(--state-glow);">
                         Send Message
                     </button>
                     <div id="contact-form-message" style="display: none; padding: 1rem; border-radius: 8px; text-align: center; font-weight: 600;"></div>
@@ -6837,12 +7053,12 @@
             <div class="popup-body">
                 <div class="about-section">
                     <h3>Illinois's Premier Telehealth Platform</h3>
-                    <p>IllinoisDoc is Illinois's leading telehealth platform, specializing in weight loss injections and comprehensive healthcare services. We're proud to serve all 102 counties across the Prairie State with licensed Illinois physicians and cutting-edge medical treatments.</p>
+                    <p>IllinoisDoc is Illinois's leading telehealth platform, specializing in weight loss injections and comprehensive healthcare services. We're proud to serve all 30 boroughs and census areas across the Last Frontier with licensed Illinois physicians and cutting-edge medical treatments.</p>
                 </div>
                 
                 <div class="about-section">
                     <h3>Our Mission</h3>
-                    <p>To provide accessible, affordable, and discreet healthcare to every Alaskaer. We believe that quality healthcare should be convenient, confidential, and tailored to your unique needs.</p>
+                    <p>To provide accessible, affordable, and discreet healthcare to every Illinoisn. We believe that quality healthcare should be convenient, confidential, and tailored to your unique needs.</p>
                 </div>
                 
                 <div class="about-section">
@@ -6852,7 +7068,7 @@
                         <li><strong>HIPAA Compliant:</strong> Your privacy and medical information are protected with bank-level security</li>
                         <li><strong>Enterprise EHR Platform:</strong> Powered by enterprise-grade electronic health records</li>
                         <li><strong>Comprehensive Services:</strong> From weight loss injections to primary care</li>
-                        <li><strong>Illinois Focus:</strong> We understand the unique healthcare needs of Illinoisans</li>
+                        <li><strong>Illinois Focus:</strong> We understand the unique healthcare needs of Illinoisns</li>
                         <li><strong>Affordable Care:</strong> Competitive pricing with transparent costs</li>
                     </ul>
                 </div>
@@ -6944,9 +7160,7 @@
                 
                 <div class="privacy-section">
                     <h3>Contact Our Privacy Officer</h3>
-                    <p><strong>Email:</strong> privacy@ohiodoc.com<br>
-                    <strong>Phone:</strong> 1-800-OHIODOC<br>
-                    <strong>Mail:</strong> IllinoisDoc Privacy Officer, 123 Healthcare Blvd, Columbus, OH 25301</p>
+                    <p><strong>Email:</strong> contact@OhanaDoc.com</p>
                 </div>
                 
             </div>
@@ -7024,7 +7238,7 @@
     <div class="popup-overlay" id="coming-soon-popup">
         <div class="popup-content coming-soon-popup-content" style="max-width: 650px;">
             <div class="popup-header">
-                <h2 style="background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: clamp(1.5rem, 5vw, 2.5rem);">We're Almost Ready!</h2>
+                <h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: clamp(1.5rem, 5vw, 2.5rem);">We're Almost Ready!</h2>
                 <button class="popup-close" data-popup="coming-soon-popup">&times;</button>
             </div>
             <div class="popup-body" style="text-align: center;">
@@ -7039,7 +7253,7 @@
                     </p>
                 </div>
                 
-                <div class="coupon-box-popup" style="background: #013759; /* Solid dark blue background */ padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 2rem); border-radius: 20px; margin: 2rem 0; box-shadow: var(--state-glow);">
+                <div class="coupon-box-popup" style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 2rem); border-radius: 20px; margin: 2rem 0; box-shadow: var(--state-glow);">
                     <div style="font-size: clamp(1.1rem, 4vw, 1.5rem); font-weight: 700; color: white; margin-bottom: 1rem; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);">Early Supporter Exclusive!</div>
                     <div style="position: relative; display: inline-block; width: 100%; max-width: 400px;">
                         <div id="coupon-code-wv" class="coupon-code-display" style="font-family: 'Courier New', monospace; font-size: clamp(1rem, 4.5vw, 2rem); font-weight: 900; color: var(--state-primary); background: white; padding: 0.75rem 3rem 0.75rem 0.875rem; border-radius: 12px; margin: 1rem 0; letter-spacing: 0.05em; border: 3px dashed var(--state-primary); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
@@ -7068,10 +7282,10 @@
     </div>
 
 <!-- Education Popups -->
-    <div class="popup-overlay" id="weight-loss-guide-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Weight Loss Guide</h2><button class="popup-close" data-popup="weight-loss-guide-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">Your Complete Guide to Sustainable Weight Loss</h3><p style="margin-bottom: 1rem;">Achieving and maintaining a healthy weight involves understanding the science behind weight loss and implementing proven strategies tailored to your lifestyle.</p><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Understanding GLP-1 Medications</h4><p style="margin-bottom: 1rem;">GLP-1 receptor agonists like Semaglutide and Tirzepatide have revolutionized weight loss treatment. These medications work by mimicking natural hormones that regulate appetite and blood sugar, helping you feel fuller longer and reducing cravings.</p><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Key Benefits:</h4><ul style="margin-left: 1.5rem; margin-bottom: 1rem;"><li>Significant weight reduction (15-20% body weight on average)</li><li>Improved metabolic health and blood sugar control</li><li>Reduced cardiovascular risk factors</li><li>Enhanced energy levels and quality of life</li></ul><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Lifestyle Integration:</h4><p style="margin-bottom: 1rem;">While medications provide powerful support, combining them with healthy eating habits, regular physical activity, and stress management creates the foundation for lasting success. Our providers work with you to create a personalized plan that fits your life.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Ready to start your journey?</strong> Schedule a consultation with one of our Illinois-licensed physicians to discuss which weight loss treatment is right for you.</p></div></div></div>
-    <div class="popup-overlay" id="semaglutide-tirzepatide-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Semaglutide vs Tirzepatide</h2><button class="popup-close" data-popup="semaglutide-tirzepatide-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">Comparing Two Leading Weight Loss Medications</h3><p style="margin-bottom: 1.5rem;">Both Semaglutide and Tirzepatide are highly effective GLP-1 receptor agonists, but they have unique characteristics that may make one more suitable for your needs.</p><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;"><div style="padding: 1rem; background: rgba(31, 111, 235, 0.05); border-radius: 12px; border: 2px solid var(--state-secondary);"><h4 style="color: var(--state-secondary); margin-bottom: 0.75rem;">Semaglutide</h4><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Brands:</strong> Ozempic, Wegovy</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Mechanism:</strong> GLP-1 receptor agonist</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Average Weight Loss:</strong> 15% of body weight</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Dosing:</strong> Once weekly injection</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Starting Price:</strong> From $299/month</p></div><div style="padding: 1rem; background: rgba(31, 111, 235, 0.05); border-radius: 12px; border: 2px solid var(--state-secondary);"><h4 style="color: var(--state-secondary); margin-bottom: 0.75rem;">Tirzepatide</h4><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Brand:</strong> Mounjaro, Zepbound</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Mechanism:</strong> Dual GLP-1/GIP agonist</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Average Weight Loss:</strong> 20% of body weight</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Dosing:</strong> Once weekly injection</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Starting Price:</strong> From $399/month</p></div></div><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Key Differences:</h4><p style="margin-bottom: 1rem;">Tirzepatide's dual-action mechanism targeting both GLP-1 and GIP receptors often results in slightly greater weight loss compared to Semaglutide. However, individual results vary, and factors like tolerance, side effects, and cost may influence which medication is best for you.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Not sure which is right for you?</strong> Our Illinois physicians will evaluate your medical history, goals, and preferences to recommend the most appropriate treatment during your consultation.</p></div></div></div>
-    <div class="popup-overlay" id="telehealth-benefits-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Benefits of Telehealth</h2><button class="popup-close" data-popup="telehealth-benefits-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">Modern Healthcare, Delivered to You</h3><p style="margin-bottom: 1.5rem;">Telehealth has transformed how people access quality healthcare, offering convenience and accessibility without compromising on care quality.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">?? Convenience & Accessibility</h4><p style="margin-bottom: 1rem;">Connect with Illinois-licensed physicians from anywhere in the state. No commute, no waiting rooms, no time off work. Your consultation happens on your schedule, whether you're in Manhattan, Buffalo, or anywhere across the Empire State.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">?? Privacy & Discretion</h4><p style="margin-bottom: 1rem;">Discuss sensitive health topics in the comfort and privacy of your own space. Our HIPAA-compliant platform ensures your medical information stays secure and confidential.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">? Fast Access to Care</h4><p style="margin-bottom: 1rem;">Skip the weeks-long wait for traditional appointments. Many patients can connect with a provider within 24-48 hours, receiving treatment recommendations and prescriptions quickly.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">?? Cost-Effective</h4><p style="margin-bottom: 1rem;">Transparent pricing with no hidden fees. Many telehealth services cost less than traditional office visits, and you save on transportation costs and time off work.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">?? Comprehensive Care</h4><p style="margin-bottom: 1rem;">From initial consultation to ongoing follow-ups, prescription management, and direct messaging with your care team, everything you need is accessible through one platform.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Experience telehealth done right.</strong> IllinoisDoc combines cutting-edge technology with compassionate care from Illinois-licensed physicians who understand your unique needs.</p></div></div></div>
-    <div class="popup-overlay" id="glp1-medications-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="background: #013759; /* Solid dark blue background */ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Understanding GLP-1 Medications</h2><button class="popup-close" data-popup="glp1-medications-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">The Science Behind GLP-1 Receptor Agonists</h3><p style="margin-bottom: 1.5rem;">GLP-1 (Glucagon-Like Peptide-1) medications represent a breakthrough in weight management and metabolic health, offering a scientifically-proven approach to sustainable weight loss.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">How GLP-1 Medications Work</h4><p style="margin-bottom: 1rem;">These medications mimic a natural hormone your body produces after eating. GLP-1 helps regulate:</p><ul style="margin-left: 1.5rem; margin-bottom: 1rem;"><li><strong>Appetite:</strong> Increases feelings of fullness and reduces hunger</li><li><strong>Blood Sugar:</strong> Stimulates insulin release when blood sugar is elevated</li><li><strong>Digestion:</strong> Slows gastric emptying, helping you feel satisfied longer</li><li><strong>Cravings:</strong> Reduces food-seeking behaviors and emotional eating</li></ul><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Available GLP-1 Medications</h4><div style="margin-bottom: 1rem;"><p style="margin-bottom: 0.5rem;"><strong>  Semaglutide (Ozempic, Wegovy):</strong> FDA-approved for weight management, showing 15% average body weight reduction</p><p style="margin-bottom: 0.5rem;"><strong>  Tirzepatide (Mounjaro, Zepbound):</strong> Dual GLP-1/GIP agonist with up to 20% weight loss results</p><p style="margin-bottom: 0.5rem;"><strong>  Compounded GLP-1:</strong> Custom-formulated alternatives offering similar benefits at more affordable prices</p></div><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Who Benefits Most?</h4><p style="margin-bottom: 1rem;">GLP-1 medications are particularly effective for individuals with:</p><ul style="margin-left: 1.5rem; margin-bottom: 1rem;"><li>BMI of 30 or higher (obesity)</li><li>BMI of 27+ with weight-related health conditions</li><li>Difficulty losing weight through diet and exercise alone</li><li>Type 2 diabetes or prediabetes</li></ul><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">What to Expect</h4><p style="margin-bottom: 1rem;">Most patients start noticing reduced appetite within the first week. Weight loss typically becomes noticeable within 4-6 weeks, with maximum effects seen after several months of treatment. Side effects are usually mild and temporary, most commonly including nausea, which typically improves as your body adjusts.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Ready to explore GLP-1 treatment?</strong> Schedule a consultation with our Illinois physicians to determine if GLP-1 medications are right for your weight loss journey.</p></div></div></div>
+    <div class="popup-overlay" id="weight-loss-guide-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Weight Loss Guide</h2><button class="popup-close" data-popup="weight-loss-guide-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">Your Complete Guide to Sustainable Weight Loss</h3><p style="margin-bottom: 1rem;">Achieving and maintaining a healthy weight involves understanding the science behind weight loss and implementing proven strategies tailored to your lifestyle.</p><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Understanding GLP-1 Medications</h4><p style="margin-bottom: 1rem;">GLP-1 receptor agonists like Semaglutide and Tirzepatide have revolutionized weight loss treatment. These medications work by mimicking natural hormones that regulate appetite and blood sugar, helping you feel fuller longer and reducing cravings.</p><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Key Benefits:</h4><ul style="margin-left: 1.5rem; margin-bottom: 1rem;"><li>Significant weight reduction (15-20% body weight on average)</li><li>Improved metabolic health and blood sugar control</li><li>Reduced cardiovascular risk factors</li><li>Enhanced energy levels and quality of life</li></ul><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Lifestyle Integration:</h4><p style="margin-bottom: 1rem;">While medications provide powerful support, combining them with healthy eating habits, regular physical activity, and stress management creates the foundation for lasting success. Our providers work with you to create a personalized plan that fits your life.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Ready to start your journey?</strong> Schedule a consultation with one of our Illinois-licensed physicians to discuss which weight loss treatment is right for you.</p></div></div></div>
+    <div class="popup-overlay" id="semaglutide-tirzepatide-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Semaglutide vs Tirzepatide</h2><button class="popup-close" data-popup="semaglutide-tirzepatide-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">Comparing Two Leading Weight Loss Medications</h3><p style="margin-bottom: 1.5rem;">Both Semaglutide and Tirzepatide are highly effective GLP-1 receptor agonists, but they have unique characteristics that may make one more suitable for your needs.</p><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;"><div style="padding: 1rem; background: rgba(31, 111, 235, 0.05); border-radius: 12px; border: 2px solid var(--state-secondary);"><h4 style="color: var(--state-secondary); margin-bottom: 0.75rem;">Semaglutide</h4><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Brands:</strong> Ozempic, Wegovy</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Mechanism:</strong> GLP-1 receptor agonist</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Average Weight Loss:</strong> 15% of body weight</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Dosing:</strong> Once weekly injection</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Starting Price:</strong> From $299/month</p></div><div style="padding: 1rem; background: rgba(31, 111, 235, 0.05); border-radius: 12px; border: 2px solid var(--state-secondary);"><h4 style="color: var(--state-secondary); margin-bottom: 0.75rem;">Tirzepatide</h4><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Brand:</strong> Mounjaro, Zepbound</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Mechanism:</strong> Dual GLP-1/GIP agonist</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Average Weight Loss:</strong> 20% of body weight</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Dosing:</strong> Once weekly injection</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Starting Price:</strong> From $399/month</p></div></div><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Key Differences:</h4><p style="margin-bottom: 1rem;">Tirzepatide's dual-action mechanism targeting both GLP-1 and GIP receptors often results in slightly greater weight loss compared to Semaglutide. However, individual results vary, and factors like tolerance, side effects, and cost may influence which medication is best for you.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Not sure which is right for you?</strong> Our Illinois physicians will evaluate your medical history, goals, and preferences to recommend the most appropriate treatment during your consultation.</p></div></div></div>
+    <div class="popup-overlay" id="telehealth-benefits-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Benefits of Telehealth</h2><button class="popup-close" data-popup="telehealth-benefits-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">Modern Healthcare, Delivered to You</h3><p style="margin-bottom: 1.5rem;">Telehealth has transformed how people access quality healthcare, offering convenience and accessibility without compromising on care quality.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Convenience & Accessibility</h4><p style="margin-bottom: 1rem;">Connect with Illinois-licensed physicians from anywhere in the state. No commute, no waiting rooms, no time off work. Your consultation happens on your schedule, whether you're in Anchorage, Fairbanks, Juneau, or anywhere across Illinois.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Privacy & Discretion</h4><p style="margin-bottom: 1rem;">Discuss sensitive health topics in the comfort and privacy of your own space. Our HIPAA-compliant platform ensures your medical information stays secure and confidential.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Fast Access to Care</h4><p style="margin-bottom: 1rem;">Skip the weeks-long wait for traditional appointments. Many patients can connect with a provider within 24-48 hours, receiving treatment recommendations and prescriptions quickly.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Cost-Effective</h4><p style="margin-bottom: 1rem;">Transparent pricing with no hidden fees. Many telehealth services cost less than traditional office visits, and you save on transportation costs and time off work.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Comprehensive Care</h4><p style="margin-bottom: 1rem;">From initial consultation to ongoing follow-ups, prescription management, and direct messaging with your care team, everything you need is accessible through one platform.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Experience telehealth done right.</strong> IllinoisDoc combines cutting-edge technology with compassionate care from Illinois-licensed physicians who understand your unique needs.</p></div></div></div>
+    <div class="popup-overlay" id="glp1-medications-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Understanding GLP-1 Medications</h2><button class="popup-close" data-popup="glp1-medications-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">The Science Behind GLP-1 Receptor Agonists</h3><p style="margin-bottom: 1.5rem;">GLP-1 (Glucagon-Like Peptide-1) medications represent a breakthrough in weight management and metabolic health, offering a scientifically-proven approach to sustainable weight loss.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">How GLP-1 Medications Work</h4><p style="margin-bottom: 1rem;">These medications mimic a natural hormone your body produces after eating. GLP-1 helps regulate:</p><ul style="margin-left: 1.5rem; margin-bottom: 1rem;"><li><strong>Appetite:</strong> Increases feelings of fullness and reduces hunger</li><li><strong>Blood Sugar:</strong> Stimulates insulin release when blood sugar is elevated</li><li><strong>Digestion:</strong> Slows gastric emptying, helping you feel satisfied longer</li><li><strong>Cravings:</strong> Reduces food-seeking behaviors and emotional eating</li></ul><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Available GLP-1 Medications</h4><div style="margin-bottom: 1rem;"><p style="margin-bottom: 0.5rem;"><strong>  Semaglutide (Ozempic, Wegovy):</strong> FDA-approved for weight management, showing 15% average body weight reduction</p><p style="margin-bottom: 0.5rem;"><strong>  Tirzepatide (Mounjaro, Zepbound):</strong> Dual GLP-1/GIP agonist with up to 20% weight loss results</p><p style="margin-bottom: 0.5rem;"><strong>  Compounded GLP-1:</strong> Custom-formulated alternatives offering similar benefits at more affordable prices</p></div><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Who Benefits Most?</h4><p style="margin-bottom: 1rem;">GLP-1 medications are particularly effective for individuals with:</p><ul style="margin-left: 1.5rem; margin-bottom: 1rem;"><li>BMI of 30 or higher (obesity)</li><li>BMI of 27+ with weight-related health conditions</li><li>Difficulty losing weight through diet and exercise alone</li><li>Type 2 diabetes or prediabetes</li></ul><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">What to Expect</h4><p style="margin-bottom: 1rem;">Most patients start noticing reduced appetite within the first week. Weight loss typically becomes noticeable within 4-6 weeks, with maximum effects seen after several months of treatment. Side effects are usually mild and temporary, most commonly including nausea, which typically improves as your body adjusts.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Ready to explore GLP-1 treatment?</strong> Schedule a consultation with our Illinois physicians to determine if GLP-1 medications are right for your weight loss journey.</p></div></div></div>
 
     <script>
         // Single-theme: no light/dark switching
@@ -7151,7 +7365,7 @@
             }
         }
 
-        // Function to switch branding (OhanaDoc â†” State)
+        // Function to switch branding (OhanaDoc ? State)
         function switchBranding(newBranding) {
             const body = document.body;
             const currentTheme = localStorage.getItem('theme-preference') || 'light';
@@ -7165,7 +7379,9 @@
 
             // Save preference
             localStorage.setItem('branding-preference', newBranding);
-        }        document.addEventListener('DOMContentLoaded', function() {
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
             const joinForm = document.getElementById('joinForm');
             if (joinForm) {
                 joinForm.addEventListener('submit', function(e) {
@@ -7210,56 +7426,12 @@ Date: ${new Date().toLocaleString()}
                     setTimeout(() => {
                         joinForm.reset();
                     }, 300);
+
                 });
             }
         });
         
-        // Chevron and mouse navigation for treatment carousels
-        
-        // Branding Toggle Functionality - Switches between OhanaDoc unified branding and State-specific branding
-        function initializeBrandingToggle() {
-            const brandingToggle = document.getElementById('branding-toggle');
-            const body = document.body;
-
-            function handleBrandingToggle() {
-                // Get current branding
-                const currentBranding = localStorage.getItem('branding-preference') || 'ohanadoc';
-                const currentTheme = localStorage.getItem('theme-preference') || 'light';
-
-                // Toggle between OhanaDoc and State
-                const newBranding = currentBranding === 'ohanadoc' ? 'state' : 'ohanadoc';
-
-                // Remove current branding classes
-                body.classList.remove('ohanadoc-light', 'ohanadoc-dark', 'state-light', 'state-dark');
-
-                // Apply new branding with current theme
-                const newThemeClass = `${newBranding}-${currentTheme}`;
-                body.classList.add(newThemeClass);
-
-                // Save preference
-                localStorage.setItem('branding-preference', newBranding);
-            }
-
-            if (brandingToggle) {
-                brandingToggle.addEventListener('click', handleBrandingToggle);
-            }
-        }
-
-        // Function to switch branding (OhanaDoc â†” State)
-        function switchBranding(newBranding) {
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme-preference') || 'light';
-
-            // Remove current branding classes
-            body.classList.remove('ohanadoc-light', 'ohanadoc-dark', 'state-light', 'state-dark');
-
-            // Apply new branding with current theme
-            const newThemeClass = `${newBranding}-${currentTheme}`;
-            body.classList.add(newThemeClass);
-
-            // Save preference
-            localStorage.setItem('branding-preference', newBranding);
-        }        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
             const carousels = document.querySelectorAll('.treatments-grid');
             
             carousels.forEach((carousel, index) => {
@@ -7617,7 +7789,7 @@ Date: ${new Date().toLocaleString()}
                 weight: 'https://buy.stripe.com/telehealth-visit-weight-loss' // Generic telehealth visit for weight loss
             },
             SCHEDULE: {
-                WV: 'https://your-scheduler.com/west-virginia' // Replace with your HIPAA-capable scheduler for West Virginia
+                AK: 'https://ohanadoc.com'
             }
         };
 
@@ -7692,6 +7864,7 @@ Date: ${new Date().toLocaleString()}
                 card.style.transform = 'translateY(0) scale(1)';
             });
         });
+
 
         // Enhanced dropdown menu interactions with click-to-toggle only
         document.querySelectorAll('.dropdown').forEach(dropdown => {
@@ -7826,52 +7999,7 @@ Date: ${new Date().toLocaleString()}
             });
         }
 
-        // Add click listeners to all dropdown items
-        
-        // Branding Toggle Functionality - Switches between OhanaDoc unified branding and State-specific branding
-        function initializeBrandingToggle() {
-            const brandingToggle = document.getElementById('branding-toggle');
-            const body = document.body;
-
-            function handleBrandingToggle() {
-                // Get current branding
-                const currentBranding = localStorage.getItem('branding-preference') || 'ohanadoc';
-                const currentTheme = localStorage.getItem('theme-preference') || 'light';
-
-                // Toggle between OhanaDoc and State
-                const newBranding = currentBranding === 'ohanadoc' ? 'state' : 'ohanadoc';
-
-                // Remove current branding classes
-                body.classList.remove('ohanadoc-light', 'ohanadoc-dark', 'state-light', 'state-dark');
-
-                // Apply new branding with current theme
-                const newThemeClass = `${newBranding}-${currentTheme}`;
-                body.classList.add(newThemeClass);
-
-                // Save preference
-                localStorage.setItem('branding-preference', newBranding);
-            }
-
-            if (brandingToggle) {
-                brandingToggle.addEventListener('click', handleBrandingToggle);
-            }
-        }
-
-        // Function to switch branding (OhanaDoc â†” State)
-        function switchBranding(newBranding) {
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme-preference') || 'light';
-
-            // Remove current branding classes
-            body.classList.remove('ohanadoc-light', 'ohanadoc-dark', 'state-light', 'state-dark');
-
-            // Apply new branding with current theme
-            const newThemeClass = `${newBranding}-${currentTheme}`;
-            body.classList.add(newThemeClass);
-
-            // Save preference
-            localStorage.setItem('branding-preference', newBranding);
-        }        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
             // Prevent Treatments button from scrolling
             document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
                 toggle.addEventListener('click', function(e) {
@@ -7880,6 +8008,7 @@ Date: ${new Date().toLocaleString()}
                     return false;
                 });
             });
+
             
             // Attach click handlers to mega dropdown items
             document.querySelectorAll('.mega-dropdown-item').forEach(item => {
@@ -7887,6 +8016,7 @@ Date: ${new Date().toLocaleString()}
                     closeDropdownAndNavigate(e);
                 });
             });
+
             
             // Service Banner Sliding Functionality
             let currentSlide = 0;
@@ -7958,10 +8088,11 @@ Date: ${new Date().toLocaleString()}
                         e.preventDefault();
                         closeDropdownAndNavigate(e);
                     }
-                });
+
             });
+        });
             
-            // Handle footer treatment links (same navigation behavior as dropdown)
+        // Handle footer treatment links (same navigation behavior as dropdown)
             const footerLinks = document.querySelectorAll('.footer-treatment-link');
             console.log('Footer treatment links found:', footerLinks.length);
             
@@ -8027,12 +8158,14 @@ Date: ${new Date().toLocaleString()}
             }
         });
 
+
         // Close dropdowns on Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeAllDropdowns();
             }
         });
+
 
         // Performance monitoring
         window.addEventListener('load', () => {
@@ -8042,10 +8175,12 @@ Date: ${new Date().toLocaleString()}
             }
         });
 
+
         // Error handling
         window.addEventListener('error', (e) => {
             console.error('JavaScript error:', e.error);
         });
+
 
         // Accessibility: Keyboard navigation
         document.addEventListener('keydown', (e) => {
@@ -8054,10 +8189,10 @@ Date: ${new Date().toLocaleString()}
             }
         });
 
+
         document.addEventListener('mousedown', () => {
             document.body.classList.remove('keyboard-navigation');
         });
-
 
         // Portal Integration - Track portal redirects
         function trackPortalRedirect(treatment) {
@@ -8185,52 +8320,7 @@ Date: ${new Date().toLocaleString()}
             }
         });
 
-        // Mobile menu functionality - Wait for DOM to be ready
-        
-        // Branding Toggle Functionality - Switches between OhanaDoc unified branding and State-specific branding
-        function initializeBrandingToggle() {
-            const brandingToggle = document.getElementById('branding-toggle');
-            const body = document.body;
-
-            function handleBrandingToggle() {
-                // Get current branding
-                const currentBranding = localStorage.getItem('branding-preference') || 'ohanadoc';
-                const currentTheme = localStorage.getItem('theme-preference') || 'light';
-
-                // Toggle between OhanaDoc and State
-                const newBranding = currentBranding === 'ohanadoc' ? 'state' : 'ohanadoc';
-
-                // Remove current branding classes
-                body.classList.remove('ohanadoc-light', 'ohanadoc-dark', 'state-light', 'state-dark');
-
-                // Apply new branding with current theme
-                const newThemeClass = `${newBranding}-${currentTheme}`;
-                body.classList.add(newThemeClass);
-
-                // Save preference
-                localStorage.setItem('branding-preference', newBranding);
-            }
-
-            if (brandingToggle) {
-                brandingToggle.addEventListener('click', handleBrandingToggle);
-            }
-        }
-
-        // Function to switch branding (OhanaDoc â†” State)
-        function switchBranding(newBranding) {
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme-preference') || 'light';
-
-            // Remove current branding classes
-            body.classList.remove('ohanadoc-light', 'ohanadoc-dark', 'state-light', 'state-dark');
-
-            // Apply new branding with current theme
-            const newThemeClass = `${newBranding}-${currentTheme}`;
-            body.classList.add(newThemeClass);
-
-            // Save preference
-            localStorage.setItem('branding-preference', newBranding);
-        }        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
             console.log('DOM loaded, initializing mobile menu...');
             
             const mobileToggle = document.getElementById('mobileToggle');
@@ -8366,51 +8456,7 @@ Date: ${new Date().toLocaleString()}
         }
 
         // Contact Form Functionality
-        
-        // Branding Toggle Functionality - Switches between OhanaDoc unified branding and State-specific branding
-        function initializeBrandingToggle() {
-            const brandingToggle = document.getElementById('branding-toggle');
-            const body = document.body;
-
-            function handleBrandingToggle() {
-                // Get current branding
-                const currentBranding = localStorage.getItem('branding-preference') || 'ohanadoc';
-                const currentTheme = localStorage.getItem('theme-preference') || 'light';
-
-                // Toggle between OhanaDoc and State
-                const newBranding = currentBranding === 'ohanadoc' ? 'state' : 'ohanadoc';
-
-                // Remove current branding classes
-                body.classList.remove('ohanadoc-light', 'ohanadoc-dark', 'state-light', 'state-dark');
-
-                // Apply new branding with current theme
-                const newThemeClass = `${newBranding}-${currentTheme}`;
-                body.classList.add(newThemeClass);
-
-                // Save preference
-                localStorage.setItem('branding-preference', newBranding);
-            }
-
-            if (brandingToggle) {
-                brandingToggle.addEventListener('click', handleBrandingToggle);
-            }
-        }
-
-        // Function to switch branding (OhanaDoc â†” State)
-        function switchBranding(newBranding) {
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme-preference') || 'light';
-
-            // Remove current branding classes
-            body.classList.remove('ohanadoc-light', 'ohanadoc-dark', 'state-light', 'state-dark');
-
-            // Apply new branding with current theme
-            const newThemeClass = `${newBranding}-${currentTheme}`;
-            body.classList.add(newThemeClass);
-
-            // Save preference
-            localStorage.setItem('branding-preference', newBranding);
-        }        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('intakeForm');
             const contactForm = document.getElementById('contactForm');
             const successForm = document.getElementById('formSuccess');
@@ -8557,7 +8603,7 @@ Date: ${new Date().toLocaleString()}
 
                 // Set schedule link (Illinois only for now)
                 if (scheduleLink) {
-                    scheduleLink.href = CONFIG.SCHEDULE.OH;
+                    scheduleLink.href = 'https://ohanadoc.com';
                 }
 
                 // Store data for email function
@@ -8565,7 +8611,7 @@ Date: ${new Date().toLocaleString()}
                 window.currentLinks = {
                     hipaa: new URL(CONFIG.HIPAA_FORM_BASE),
                     payment: paymentUrl,
-                    schedule: CONFIG.SCHEDULE.OH
+                    schedule: 'https://ohanadoc.com'
                 };
             }
         });
@@ -8610,7 +8656,7 @@ This email contains secure healthcare links. Do not forward or share.`);
             window.location.href = mailtoLink;
         }
 
-        // Navigate banner with chevrons
+        // Navigate banner with chevrons (using window.currentSlide for consistency)
         function navigateBanner(direction) {
             const bannerContainer = document.getElementById('bannerContainer');
             const indicators = document.querySelectorAll('.banner-dot');
@@ -8618,16 +8664,16 @@ This email contains secure healthcare links. Do not forward or share.`);
             if (!bannerContainer || !indicators.length) return;
             
             const totalSlides = indicators.length;
-            let newSlide = currentSlide;
+            let newSlide = window.currentSlide;
             
             if (direction === 'prev') {
-                newSlide = currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
+                newSlide = window.currentSlide === 0 ? totalSlides - 1 : window.currentSlide - 1;
             } else if (direction === 'next') {
-                newSlide = (currentSlide + 1) % totalSlides;
+                newSlide = (window.currentSlide + 1) % totalSlides;
             }
             
             // Update slide
-            currentSlide = newSlide;
+            window.currentSlide = newSlide;
             const translateX = -newSlide * 100;
             
             // Ensure transition is smooth
@@ -8658,7 +8704,8 @@ This email contains secure healthcare links. Do not forward or share.`);
         }
 
         // Banner Sliding System
-        let currentSlide = 0;
+        // Note: currentSlide is now managed via window.currentSlide (defined in head)
+        let currentSlide = window.currentSlide || 0;
         let slideInterval;
         let progressInterval;
         let bannerInitialized = false; // Prevent multiple initializations
@@ -8813,50 +8860,7 @@ This email contains secure healthcare links. Do not forward or share.`);
 
         // Initialize banner when DOM is ready
         
-        // Branding Toggle Functionality - Switches between OhanaDoc unified branding and State-specific branding
-        function initializeBrandingToggle() {
-            const brandingToggle = document.getElementById('branding-toggle');
-            const body = document.body;
-
-            function handleBrandingToggle() {
-                // Get current branding
-                const currentBranding = localStorage.getItem('branding-preference') || 'ohanadoc';
-                const currentTheme = localStorage.getItem('theme-preference') || 'light';
-
-                // Toggle between OhanaDoc and State
-                const newBranding = currentBranding === 'ohanadoc' ? 'state' : 'ohanadoc';
-
-                // Remove current branding classes
-                body.classList.remove('ohanadoc-light', 'ohanadoc-dark', 'state-light', 'state-dark');
-
-                // Apply new branding with current theme
-                const newThemeClass = `${newBranding}-${currentTheme}`;
-                body.classList.add(newThemeClass);
-
-                // Save preference
-                localStorage.setItem('branding-preference', newBranding);
-            }
-
-            if (brandingToggle) {
-                brandingToggle.addEventListener('click', handleBrandingToggle);
-            }
-        }
-
-        // Function to switch branding (OhanaDoc â†” State)
-        function switchBranding(newBranding) {
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme-preference') || 'light';
-
-            // Remove current branding classes
-            body.classList.remove('ohanadoc-light', 'ohanadoc-dark', 'state-light', 'state-dark');
-
-            // Apply new branding with current theme
-            const newThemeClass = `${newBranding}-${currentTheme}`;
-            body.classList.add(newThemeClass);
-
-            // Save preference
-            localStorage.setItem('branding-preference', newBranding);
-        }        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
             initializeBanner();
         });
 
@@ -8887,51 +8891,6 @@ This email contains secure healthcare links. Do not forward or share.`);
         }
 
         
-        // Branding Toggle Functionality - Switches between OhanaDoc unified branding and State-specific branding
-        function initializeBrandingToggle() {
-            const brandingToggle = document.getElementById('branding-toggle');
-            const body = document.body;
-
-            function handleBrandingToggle() {
-                // Get current branding
-                const currentBranding = localStorage.getItem('branding-preference') || 'ohanadoc';
-                const currentTheme = localStorage.getItem('theme-preference') || 'light';
-
-                // Toggle between OhanaDoc and State
-                const newBranding = currentBranding === 'ohanadoc' ? 'state' : 'ohanadoc';
-
-                // Remove current branding classes
-                body.classList.remove('ohanadoc-light', 'ohanadoc-dark', 'state-light', 'state-dark');
-
-                // Apply new branding with current theme
-                const newThemeClass = `${newBranding}-${currentTheme}`;
-                body.classList.add(newThemeClass);
-
-                // Save preference
-                localStorage.setItem('branding-preference', newBranding);
-            }
-
-            if (brandingToggle) {
-                brandingToggle.addEventListener('click', handleBrandingToggle);
-            }
-        }
-
-        // Function to switch branding (OhanaDoc â†” State)
-        function switchBranding(newBranding) {
-            const body = document.body;
-            const currentTheme = localStorage.getItem('theme-preference') || 'light';
-
-            // Remove current branding classes
-            body.classList.remove('ohanadoc-light', 'ohanadoc-dark', 'state-light', 'state-dark');
-
-            // Apply new branding with current theme
-            const newThemeClass = `${newBranding}-${currentTheme}`;
-            body.classList.add(newThemeClass);
-
-            // Save preference
-            localStorage.setItem('branding-preference', newBranding);
-        }
-
         // Service colors for banner background
         const navServiceColors = {
             'weight-loss': '#9F85DE',
@@ -8962,19 +8921,34 @@ This email contains secure healthcare links. Do not forward or share.`);
         }
 
         // Call on DOM load
-        document.addEventListener('DOMContentLoaded', function() {// Theme toggle disabled - using OhanaDoc branding only
+        // Theme toggle disabled - using OhanaDoc branding only
+        document.addEventListener('DOMContentLoaded', function() {
             // initializeBannerBackgrounds();
         });
     </script>
 
-
-    <!-- Tawk.to Live Chat -->
+    <!-- Tawk.to Live Chat (disabled until property ID is configured) -->
     <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/default';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();
+    (function() {
+        var TAWK_PROPERTY_ID = ''; // set your Tawk.to property ID to enable chat
+        if (!TAWK_PROPERTY_ID || TAWK_PROPERTY_ID === 'YOUR_PROPERTY_ID') {
+            console.warn('Tawk.to chat not loaded: missing property ID');
+            return;
+        }
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/' + TAWK_PROPERTY_ID + '/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
     </script>
 </body>
 </html>
+
+
+
 
 
 

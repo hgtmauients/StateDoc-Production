@@ -65,6 +65,18 @@ foreach ($state in $stateList) {
     try {
         Push-Location $stateFolder
 
+        # Sync index.html to StateVercel.html before deployment
+        $indexFile = Join-Path $stateFolder "index.html"
+        if ($folderName -eq "WestVirginia") {
+            $vercelFile = Join-Path $stateFolder "West VirginiaVercel.html"
+        } else {
+            $vercelFile = Join-Path $stateFolder "${folderName}Vercel.html"
+        }
+        
+        if (Test-Path $indexFile) {
+            Copy-Item $indexFile $vercelFile -Force -ErrorAction SilentlyContinue
+        }
+
         # Check if already linked to Vercel project
         $vercelConfig = Join-Path $stateFolder ".vercel"
         $isLinked = Test-Path $vercelConfig

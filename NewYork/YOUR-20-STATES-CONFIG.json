@@ -1,0 +1,24 @@
+{
+    "stateList": [
+        { "name": "Alaska", "folder": "Alaska", "domain": "alaskadoc.com", "code": "AK" },
+        { "name": "Arizona", "folder": "Arizona", "domain": "arizonadoc.com", "code": "AZ" },
+        { "name": "Dakota", "folder": "Dakota", "domain": "dakotadoc.com", "code": "ND" },
+        { "name": "Hawaii", "folder": "Hawaii", "domain": "hawaiidoc.com", "code": "HI" },
+        { "name": "Illinois", "folder": "Illinois", "domain": "illinoisdoc.com", "code": "IL" },
+        { "name": "Indiana", "folder": "Indiana", "domain": "indianadoc.com", "code": "IN" },
+        { "name": "Louisiana", "folder": "Louisiana", "domain": "louisianadoc.com", "code": "LA" },
+        { "name": "Michigan", "folder": "Michigan", "domain": "michigandoc.com", "code": "MI" },
+        { "name": "Minnesota", "folder": "Minnesota", "domain": "minnesotadoc.com", "code": "MN" },
+        { "name": "Mississippi", "folder": "Mississippi", "domain": "mississippidoc.com", "code": "MS" },
+        { "name": "Nevada", "folder": "Nevada", "domain": "nevadadoc.com", "code": "NV" },
+        { "name": "NewJersey", "folder": "NewJersey", "domain": "newjerseydoc.com", "code": "NJ" },
+        { "name": "NewYork", "folder": "NewYork", "domain": "newyorkdoc.com", "code": "NY" },
+        { "name": "Ohio", "folder": "Ohio", "domain": "ohiodoc.com", "code": "OH" },
+        { "name": "RhodeIsland", "folder": "RhodeIsland", "domain": "rhodeislanddoc.com", "code": "RI" },
+        { "name": "Tennessee", "folder": "Tennessee", "domain": "tennesseedoc.com", "code": "TN" },
+        { "name": "Texas", "folder": "Texas", "domain": "texasdoc.com", "code": "TX" },
+        { "name": "Virginia", "folder": "Virginia", "domain": "virginiadoc.com", "code": "VA" },
+        { "name": "WestVirginia", "folder": "WestVirginia", "domain": "westvirginiadoc.com", "code": "WV" },
+        { "name": "Wisconsin", "folder": "Wisconsin", "domain": "wisconsindoc.com", "code": "WI" }
+    ]
+}

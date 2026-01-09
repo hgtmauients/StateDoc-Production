@@ -20,7 +20,7 @@ $states = @(
     @{folder='Tennessee'; name='Tennessee'},
     @{folder='Texas'; name='Texas'},
     @{folder='Virginia'; name='Virginia'},
-    @{folder='West Virginia'; name='WestVirginia'},
+    @{folder='WestVirginia'; name='WestVirginia'},
     @{folder='Wisconsin'; name='Wisconsin'}
 )
 
@@ -47,6 +47,18 @@ foreach ($state in $states) {
     
     try {
         Push-Location $stateFolder
+        
+        # Sync index.html to StateVercel.html before deployment
+        $indexFile = Join-Path $stateFolder "index.html"
+        if ($state.folder -eq "WestVirginia") {
+            $vercelFile = Join-Path $stateFolder "West VirginiaVercel.html"
+        } else {
+            $vercelFile = Join-Path $stateFolder "$($state.folder)Vercel.html"
+        }
+        
+        if (Test-Path $indexFile) {
+            Copy-Item $indexFile $vercelFile -Force -ErrorAction SilentlyContinue
+        }
         
         # Deploy to Vercel
         $output = vercel --prod --yes 2>&1

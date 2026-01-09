@@ -31,7 +31,7 @@
     <meta property="twitter:image" content="https://NevadaDoc.com/og-image.jpg">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">    
+    <link rel="icon" type="image/png" href="/assets/ohanaDoc-logo.png">    
     <!-- Canonical URL -->
     <link rel="canonical" href="https://NevadaDoc.com/">
     
@@ -5185,6 +5185,91 @@
             background: none !important;
             border: none !important;
         }
+
+        /* === TREATMENT CARDS - Solid Navy Blue (no gradients) === */
+        .treatment-card {
+            background: #013759 !important;
+        }
+        
+        .treatment-card:hover {
+            background: #013759 !important;
+            border-color: #009DDD !important;
+            box-shadow: 0 12px 40px rgba(0, 157, 221, 0.3), 0 0 20px rgba(0, 157, 221, 0.2) !important;
+        }
+        
+        .treatment-card.expanded {
+            background: #013759 !important;
+            border-color: #25D366 !important;
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.3), 0 0 20px rgba(37, 211, 102, 0.2) !important;
+        }
+        
+        .treatment-card::after {
+            display: none !important;
+        }
+        
+        .treatment-card:hover::after,
+        .treatment-card.expanded::after {
+            display: none !important;
+        }
+        
+        /* Keep text readable on navy */
+        .treatment-card h3 {
+            color: #4FC3F7 !important;
+            background: none !important;
+            -webkit-text-fill-color: #4FC3F7 !important;
+        }
+        
+        .treatment-card.expanded h3 {
+            color: #25D366 !important;
+            -webkit-text-fill-color: #25D366 !important;
+        }
+        
+        .treatment-card .treatment-price {
+            color: #F98A33 !important;
+        }
+        
+        .treatment-card.expanded .treatment-price {
+            color: #F98A33 !important;
+        }
+        
+        .treatment-card.expanded .btn-details {
+            background: #25D366 !important;
+            color: #013759 !important;
+        }
+        
+        /* Light mode - same navy theme */
+        body.light-mode .treatment-card,
+        body.light-mode .treatment-card:hover,
+        body.light-mode .treatment-card.expanded {
+            background: #013759 !important;
+        }
+        
+        body.light-mode .treatment-card h3 {
+            color: #4FC3F7 !important;
+            background: none !important;
+            -webkit-text-fill-color: #4FC3F7 !important;
+        }
+        
+        body.light-mode .treatment-card.expanded h3 {
+            color: #25D366 !important;
+            -webkit-text-fill-color: #25D366 !important;
+        }
+        
+        body.light-mode .treatment-card .treatment-price,
+        body.light-mode .treatment-card.expanded .treatment-price {
+            color: #F98A33 !important;
+        }
+        
+        /* === SERVICE SECTION TITLES - Powered by OhanaDoc gradient === */
+        #treatments h2,
+        .treatments-grid + div h2,
+        div[style*="margin: 3rem"] h2,
+        div[style*="margin: 4rem"] h2 {
+            background: linear-gradient(90deg, #F98A33 0%, #25D366 50%, #009DDD 100%) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+        }
     </style>
 </head>
 <body>
@@ -5194,8 +5279,8 @@
             <a href="#home" class="logo">
                 <img src="/assets/ohanaDoc-logo.png" alt="OhanaDoc" class="logo-symbol">
                 <div class="logo-text">
-                    <span class="brand-name">NevadaDoc</span>
-                    <span class="powered-by">Powered by <strong>OhanaDoc</strong></span>
+                    <span class="brand-name"><span style="color: #25D366;">Nevada</span><span style="color: #009DDD;">Doc</span></span>
+                    <span class="powered-by" style="background: linear-gradient(90deg, #F98A33 0%, #25D366 50%, #009DDD 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600;">Powered by OhanaDoc</span>
                 </div>
             </a>
             <ul class="nav-links">
@@ -5444,7 +5529,7 @@
                 <li class="nav-item"><a href="#" onclick="openPopup('coming-soon-popup'); return false;">Patient Login</a></li>
                 <li class="nav-item"><a href="#" class="nav-cta" onclick="openPopup('coming-soon-popup'); return false;">Sign Up</a></li>                <li class="nav-item">
                     <button id="branding-toggle" class="branding-toggle" aria-label="Toggle between OhanaDoc and State branding">
-                        <img src="assets/ohanaDoc-logo.png" alt="OhanaDoc" class="brand-logo">
+                        <img src="/assets/ohanaDoc-logo.png" alt="OhanaDoc" class="brand-logo">
                     </button>
                 </li>
                 <li class="nav-item">
@@ -8861,6 +8946,7 @@ This email contains secure healthcare links. Do not forward or share.`);
     </script>
 </body>
 </html>
+
 
 
 
