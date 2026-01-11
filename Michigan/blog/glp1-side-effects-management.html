@@ -9,30 +9,58 @@
     <link rel="canonical" href="https://MichiganDoc.com/blog/glp1-side-effects-management/">
     
     <style>
-        :root{--state-primary:#013759;--state-secondary:#009DDD}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+        :root{--navy:#013759;--light-blue:#009DDD;--green:#25D366;--orange:#F98A33;--white:#FFFFFF}
         *{scrollbar-width:none;-ms-overflow-style:none}*::-webkit-scrollbar{display:none}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:0;background:linear-gradient(135deg,#013759,#009DDD);color:#fff;line-height:1.8}
-        .header{background:rgba(10,15,28,0.95);padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,0.1)}
-        .header a{color:#fff;text-shadow:0 0 20px var(--state-secondary);text-decoration:none;font-weight:600}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:0;background:var(--navy);color:var(--white);line-height:1.8}
+        .header{background:rgba(0,20,40,0.95);padding:1rem 2rem;position:sticky;top:0;z-index:1000;backdrop-filter:blur(8px)}
+        .nav{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto}
+        .logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none}
+        .logo-symbol{height:45px;width:45px;object-fit:contain}
+        .header a{color:var(--light-blue);text-decoration:none;font-weight:600}
+        .header a:hover{color:var(--green)}
         .container{max-width:800px;margin:0 auto;padding:3rem 1.5rem}
-        h1{background:linear-gradient(135deg,#013759,#009DDD);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:clamp(2rem,5vw,2.8rem);font-weight:800;margin-bottom:1.5rem}
-        h2{color:#fff;text-shadow:0 0 15px var(--state-secondary);font-size:1.8rem;margin:2.5rem 0 1rem}
-        h3{color:#fff;text-shadow:0 0 12px var(--state-secondary);font-size:1.4rem;margin:2rem 0 0.75rem}
+        h1{color:var(--white);font-size:clamp(2rem,5vw,2.8rem);font-weight:800;margin-bottom:1.5rem;border-bottom:3px solid var(--light-blue);padding-bottom:0.75rem}
+        h2{color:var(--light-blue);font-size:1.8rem;margin:2.5rem 0 1rem}
+        h3{color:var(--green);font-size:1.4rem;margin:2rem 0 0.75rem}
         p{color:rgba(255,255,255,0.9);margin-bottom:1.5rem;font-size:1.1rem}
-        ul{color:rgba(255,255,255,0.9);margin:1.5rem 0;padding-left:2rem}
+        ul,ol{color:rgba(255,255,255,0.9);margin:1.5rem 0;padding-left:2rem}
         li{margin-bottom:0.75rem}
-        .cta{display:inline-block;background:linear-gradient(135deg,#013759,#009DDD);color:#fff;padding:1.25rem 2.5rem;border-radius:12px;text-decoration:none;font-weight:700;margin:2rem 0}
-        .highlight-box{background:rgba(100,100,100,0.1);border-left:4px solid var(--state-secondary);padding:1.5rem;margin:2rem 0}
-        .tip-box{background:rgba(100,100,100,0.15);padding:1.5rem;margin:1.5rem 0;border-radius:8px}
-        footer{margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);text-align:center;color:rgba(255,255,255,0.5)}
-        footer a{color:#fff;text-shadow:0 0 10px var(--state-secondary);text-decoration:none}
+        li strong{color:var(--light-blue)}
+        a{color:var(--light-blue)}
+        a:hover{color:var(--green)}
+        .cta{display:inline-block;background:var(--green);color:var(--navy);padding:1.25rem 2.5rem;border-radius:8px;text-decoration:none;font-weight:700;margin:2rem 0}
+        .cta:hover{background:var(--light-blue)}
+        .highlight-box{background:rgba(0,157,221,0.1);border-left:4px solid var(--orange);padding:1.5rem;margin:2rem 0;border-radius:0 8px 8px 0}
+        .highlight-box strong{color:var(--orange)}
+        .tip-box{background:rgba(37,211,102,0.1);border-left:4px solid var(--green);padding:1.5rem;margin:1.5rem 0;border-radius:0 8px 8px 0}
+        .tip-box strong{color:var(--green)}
+        .info{background:rgba(0,157,221,0.1);border-left:4px solid var(--light-blue);padding:1.5rem;margin:2rem 0;border-radius:0 8px 8px 0}
+        .info h3{color:var(--light-blue);margin-top:0}
+        .warning{background:rgba(249,138,51,0.1);border-left:4px solid var(--orange);padding:1.5rem;margin:2rem 0;border-radius:0 8px 8px 0}
+        .warning strong{color:var(--orange)}
+        footer{margin-top:4rem;padding-top:2rem;border-top:2px solid var(--light-blue);text-align:center;color:rgba(255,255,255,0.6)}
+        footer a{color:var(--light-blue);text-decoration:none}
+        footer a:hover{color:var(--green)}
+        table{width:100%;border-collapse:collapse;margin:2rem 0}
+        th{background:var(--light-blue);color:var(--navy);padding:1rem;text-align:left}
+        td{padding:1rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+        blockquote{border-left:4px solid var(--green);padding-left:1.5rem;margin:2rem 0;font-style:italic;color:rgba(255,255,255,0.8)}
     </style>
 </head>
 <body>
 
-<div class="header">
-    <a href="https://MichiganDoc.com/">&larr; Back to MichiganDoc</a>
-</div>
+<header class="header" id="header">
+    <nav class="nav">
+        <a href="https://michigandoc.com/" class="logo" target="_blank" rel="noopener">
+            <img src="/assets/ohanaDoc-logo.png" alt="OhanaDoc" class="logo-symbol" style="height:45px;width:45px;object-fit:contain">
+            <div style="display:flex;flex-direction:column;gap:0.2rem">
+                <span style="font-family:'Poppins','Inter',sans-serif;font-size:1.4rem;font-weight:700"><span style="color:#25D366;">Michigan</span><span style="color:#009DDD;">Doc</span></span>
+                <span style="background:linear-gradient(90deg,#F98A33 0%,#25D366 50%,#009DDD 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:600;font-size:0.65rem">Powered by OhanaDoc</span>
+            </div>
+        </a>
+    </nav>
+</header>
 
 <div class="container">
     <article>
@@ -40,38 +68,8 @@
 
         <p><strong>GLP-1 medications like Ozempic, Wegovy, Mounjaro, and Zepbound are incredibly effective for weight loss</strong> - but they come with side effects. The good news? Most side effects are manageable, temporary, and significantly improve after the first month. This guide covers everything you need to know.</p>
 
-<div class="info" style="background:rgba(100,100,100,0.15);border-left:4px solid var(--state-secondary);padding:1.5rem;margin:2rem 0;border-radius:8px">
-<h3 style="margin-top:0;color:#fff;text-shadow:0 0 12px var(--state-secondary)">Telehealth in Michigan</h3>
-<p style="margin-bottom:0.5rem"><strong>Stats:</strong> Obesity: 32.4% | Telehealth: 61% | GLP-1 Users: 12,000+</p>
-<p style="margin-bottom:0"><strong>Regulations:</strong> Michigan allows licensed physicians to prescribe via telehealth after audio-video consultation.</p>
-</div>
-
-
-        <h2>Most Common Side Effects (And How Common They Really Are)</h2>
-
-        <p>Based on clinical trials and real-world data:</p>
-        <ul>
-            <li><strong>Nausea:</strong> 20-40% of patients (usually mild)</li>
-            <li><strong>Diarrhea:</strong> 15-30% of patients</li>
-            <li><strong>Constipation:</strong> 10-25% of patients</li>
-            <li><strong>Vomiting:</strong> 5-15% of patients</li>
-            <li><strong>Abdominal pain:</strong> 10-20% of patients</li>
-            <li><strong>Fatigue:</strong> 10-15% of patients</li>
-            <li><strong>Headache:</strong> 8-12% of patients</li>
-        </ul>
-
-        <div class="highlight-box">
-            <strong>Critical Truth:</strong> These percentages are from the TOTAL trial period. Side effects are MUCH more common in weeks 1-4, then dramatically decrease. By month 3, most patients have minimal to no side effects.
-        </div>
-
-        <h2>Managing Nausea (The #1 Side Effect)</h2>
-
-        <p>Nausea is the most common complaint, especially in the first 2-4 weeks. Here's what actually works:</p>
-
-        <h3>Immediate Relief Strategies:</h3>
-        <ul>
-            <li><strong>Eat smaller, more frequent meals</strong> - 5-6 small meals vs 3 large ones</li>
-            <li><strong>Avoid fatty, greasy foods</strong> - GLP-1 slows stomach emptying; fat makes it worse</li>
+<div class="info">
+<h3 style="margin-top:0;color:#fff; fat makes it worse</li>
             <li><strong>Stay hydrated</strong> - Dehydration worsens nausea</li>
             <li><strong>Ginger tea or ginger supplements</strong> - Natural anti-nausea properties</li>
             <li><strong>Avoid lying down after eating</strong> - Wait 2-3 hours</li>
@@ -195,13 +193,13 @@
 
         <a href="https://MichiganDoc.com/" class="cta">Get Expert GLP-1 Support</a>
 
-        <div style="margin-top:3rem;padding:2rem;background:rgba(255,255,255,0.03);border-left:4px solid var(--state-secondary);font-size:0.95rem">
+        <div style="margin-top:3rem;padding:2rem;background:rgba(255,255,255,0.03);border-left:4px solid var(--light-blue);font-size:0.95rem">
             <strong>Medical Disclaimer:</strong> This is educational content only. All medical decisions should be made with licensed physicians. Side effects vary by individual. Seek immediate medical care for severe symptoms.
         </div>
     </article>
 
     <footer>
-        <p>&copy; 2025 Harrington Maui Enterprises LLC.</p>
+        <p>&copy; 2026 Harrington Maui Enterprises LLC.</p>
         <p><a href="https://MichiganDoc.com/">MichiganDoc Home</a></p>
     </footer>
 </div>

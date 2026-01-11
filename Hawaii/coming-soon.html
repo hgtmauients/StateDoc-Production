@@ -9,193 +9,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --state-primary: #002F6C;
-            --state-secondary: #FFB81C;
-            --state-gradient: linear-gradient(135deg, #912B3E 0%, #AD3F52 50%, #FFC627 100%);
-            --state-glow: 0 0 30px rgba(255, 198, 39, 0.3);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0a0f1c 0%, #0b1220 50%, #0d1628 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        body::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 198, 39, 0.05) 0%, transparent 70%);
-            animation: pulse 15s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 0.8; }
-        }
-        
-        .container {
-            max-width: 700px;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            background: rgba(10, 15, 28, 0.9);
-            padding: 4rem 3rem;
-            border-radius: 30px;
-            border: 2px solid var(--state-secondary);
-            box-shadow: var(--state-glow), 0 20px 60px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(20px);
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .logo img {
-            width: 60px;
-            height: 60px;
-            filter: drop-shadow(0 0 20px rgba(255, 198, 39, 0.5));
-        }
-        
-        .logo-text {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--state-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            background: var(--state-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-        }
-        
-        .subtitle {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-            font-weight: 500;
-        }
-        
-        .message {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.8;
-            margin-bottom: 3rem;
-        }
-        
-        .coupon-box {
-            background: var(--state-gradient);
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            margin: 3rem 0;
-            box-shadow: var(--state-glow);
-        }
-        
-        .coupon-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--state-primary);
-            margin-bottom: 1rem;
-        }
-        
-        .coupon-code {
-            font-family: 'Courier New', monospace;
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--state-primary);
-            background: white;
-            padding: 1rem 2rem;
-            border-radius: 15px;
-            display: inline-block;
-            margin: 1rem 0;
-            letter-spacing: 0.1em;
-            border: 3px dashed var(--state-primary);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .coupon-description {
-            font-size: 1rem;
-            color: var(--state-primary);
-            font-weight: 600;
-            margin-top: 1rem;
-        }
-        
-        .early-supporter {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 2rem;
-            font-style: italic;
-        }
-        
-        .back-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: transparent;
-            color: var(--state-secondary);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border: 2px solid var(--state-secondary);
-            transition: all 0.3s ease;
-            margin-top: 2rem;
-        }
-        
-        .back-button:hover {
-            background: var(--state-secondary);
-            color: var(--state-primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 198, 39, 0.4);
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 3rem 2rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .logo-text {
-                font-size: 1.8rem;
-            }
-            
-            .coupon-code {
-                font-size: 2rem;
-                padding: 0.8rem 1.5rem;
-            }
-        }
+        :root{--navy:#013759;--light-blue:#009DDD;--green:#25D366;--orange:#F98A33;--white:#FFFFFF}
+        *{scrollbar-width:none;-ms-overflow-style:none}*::-webkit-scrollbar{display:none}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:0;background:var(--navy);color:var(--white);line-height:1.8}
+        .header{background:rgba(0,20,40,0.95);padding:1rem 2rem;border-bottom:2px solid var(--light-blue)}
+        .header a{color:var(--light-blue);text-decoration:none;font-weight:600}
+        .header a:hover{color:var(--green)}
+        .container{max-width:800px;margin:0 auto;padding:3rem 1.5rem}
+        h1{color:var(--white);font-size:clamp(2rem,5vw,2.8rem);font-weight:800;margin-bottom:1.5rem;border-bottom:3px solid var(--light-blue);padding-bottom:0.75rem}
+        h2{color:var(--light-blue);font-size:1.8rem;margin:2.5rem 0 1rem}
+        h3{color:var(--green);font-size:1.4rem;margin:2rem 0 0.75rem}
+        p{color:rgba(255,255,255,0.9);margin-bottom:1.5rem;font-size:1.1rem}
+        ul,ol{color:rgba(255,255,255,0.9);margin:1.5rem 0;padding-left:2rem}
+        li{margin-bottom:0.75rem}
+        li strong{color:var(--light-blue)}
+        a{color:var(--light-blue)}
+        a:hover{color:var(--green)}
+        .cta{display:inline-block;background:var(--green);color:var(--navy);padding:1.25rem 2.5rem;border-radius:8px;text-decoration:none;font-weight:700;margin:2rem 0}
+        .cta:hover{background:var(--light-blue)}
+        .highlight-box{background:rgba(0,157,221,0.1);border-left:4px solid var(--orange);padding:1.5rem;margin:2rem 0;border-radius:0 8px 8px 0}
+        .highlight-box strong{color:var(--orange)}
+        .tip-box{background:rgba(37,211,102,0.1);border-left:4px solid var(--green);padding:1.5rem;margin:1.5rem 0;border-radius:0 8px 8px 0}
+        .tip-box strong{color:var(--green)}
+        .info{background:rgba(0,157,221,0.1);border-left:4px solid var(--light-blue);padding:1.5rem;margin:2rem 0;border-radius:0 8px 8px 0}
+        .info h3{color:var(--light-blue);margin-top:0}
+        .warning{background:rgba(249,138,51,0.1);border-left:4px solid var(--orange);padding:1.5rem;margin:2rem 0;border-radius:0 8px 8px 0}
+        .warning strong{color:var(--orange)}
+        footer{margin-top:4rem;padding-top:2rem;border-top:2px solid var(--light-blue);text-align:center;color:rgba(255,255,255,0.6)}
+        footer a{color:var(--light-blue);text-decoration:none}
+        footer a:hover{color:var(--green)}
+        table{width:100%;border-collapse:collapse;margin:2rem 0}
+        th{background:var(--light-blue);color:var(--navy);padding:1rem;text-align:left}
+        td{padding:1rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+        blockquote{border-left:4px solid var(--green);padding-left:1.5rem;margin:2rem 0;font-style:italic;color:rgba(255,255,255,0.8)}
     </style>
 </head>
 <body>

@@ -976,7 +976,7 @@
         }
 
         .nav-links {
-            display: flex;
+            display: none;
             list-style: none;
             gap: 2rem;
             -webkit-overflow-scrolling: touch;
@@ -3587,7 +3587,7 @@
 
         /* Mobile Menu Toggle */
         .mobile-menu-toggle {
-            display: none;
+            display: flex;
             flex-direction: column;
             gap: 4px;
             cursor: pointer;
@@ -5270,6 +5270,73 @@
             background-clip: text !important;
             -webkit-text-fill-color: transparent !important;
         }
+    
+        
+
+    
+        /* OhanaDoc Branded Popup Styling */
+        .popup-content {
+            background: #013759 !important;
+            border: 2px solid #25D366 !important;
+            color: #FFFFFF !important;
+        }
+        .popup-header {
+            background: rgba(0, 20, 40, 0.95) !important;
+            border-bottom: 2px solid #009DDD !important;
+        }
+        .popup-header h2 {
+            color: #25D366 !important;
+            background: none !important;
+            -webkit-text-fill-color: #25D366 !important;
+        }
+        .popup-body {
+            background: #013759 !important;
+            color: #FFFFFF !important;
+        }
+        .popup-body h3 {
+            color: #009DDD !important;
+        }
+        .popup-body h4 {
+            color: #25D366 !important;
+        }
+        .popup-body p, .popup-body li {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        .popup-body a {
+            color: #009DDD !important;
+        }
+        .popup-body a:hover {
+            color: #25D366 !important;
+        }
+        .popup-close {
+            color: #F98A33 !important;
+            background: transparent !important;
+        }
+        .popup-close:hover {
+            color: #25D366 !important;
+        }
+        .about-section {
+            background: rgba(0, 157, 221, 0.1) !important;
+            border-left: 4px solid #009DDD !important;
+        }
+        .about-section h3 {
+            color: #25D366 !important;
+        }
+        .join-option {
+            background: rgba(0, 20, 40, 0.5) !important;
+            border: 1px solid rgba(0, 157, 221, 0.3) !important;
+        }
+        .join-option:hover {
+            border-color: #25D366 !important;
+            background: rgba(37, 211, 102, 0.1) !important;
+        }
+        .join-option h3 {
+            color: #009DDD !important;
+        }
+        .join-option p {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
     </style>
 </head>
 <body>
@@ -5628,20 +5695,7 @@
                 <a href="#how-it-works" class="mobile-menu-item" onclick="navigateToSection('#how-it-works')">How It Works</a>
                 <a href="#about" class="mobile-menu-item popup-trigger" data-popup="about-popup" onclick="openPopup('about-popup'); toggleMobileMenu();">About Us</a>
             </div>
-            
-            <!-- Theme Toggle at Bottom -->
-            <div class="mobile-theme-toggle" style="padding: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between;">
-                <span style="font-size: 0.95rem; font-weight: 600; color: rgba(255,255,255,0.9);">Theme</span>
-                <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle theme">
-                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                </button>
             </div>
-        </div>
     </div>
 
     <!-- Hero Section -->
@@ -5930,7 +5984,7 @@
             
             <!-- CATEGORY 1: WEIGHT LOSS SERVICES (Hero Priority) -->
             <div style="margin: 3rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Weight Loss Services</h2>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; color: #25D366;">Weight Loss Services</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">GLP-1 medications, compounded options, and comprehensive weight management from Rhode Island physicians</p>
             </div>
             
@@ -6031,7 +6085,7 @@
             
             <!-- CATEGORY 2: CORE SERVICES -->
             <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Core Telehealth Services</h2>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; color: #25D366;">Core Telehealth Services</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Primary care, mental health, sexual wellness, and prescription refills from Rhode Island physicians</p>
             </div>
             
@@ -6132,7 +6186,7 @@
             
             <!-- CATEGORY 3: MEN'S HEALTH -->
             <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Men's Health</h2>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; color: #25D366;">Men's Health</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">ED treatment, testosterone therapy, fertility support, and vitality optimization from Rhode Island physicians</p>
             </div>
             
@@ -6234,7 +6288,7 @@
             
             <!-- CATEGORY 4: WOMEN'S HEALTH -->
             <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Women's Health</h2>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; color: #25D366;">Women's Health</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Birth control, UTI treatment, and hormone therapy from Rhode Island women's health specialists</p>
             </div>
             
@@ -6336,7 +6390,7 @@
             
             <!-- CATEGORY 5: SPECIALTY CARE -->
             <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Specialty Care</h2>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; color: #25D366;">Specialty Care</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Hair loss, sleep health, skincare, supplements, and chronic condition management from Rhode Island specialists</p>
             </div>
             
@@ -6483,7 +6537,7 @@
             
             <!-- CATEGORY 6: LABS & TESTING -->
             <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Labs & Testing</h2>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; color: #25D366;">Labs & Testing</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Comprehensive lab testing with at-home kits and in-person draws throughout Rhode Island</p>
             </div>
             
@@ -6606,7 +6660,7 @@
             
             <!-- CATEGORY 7: INTEGRATIVE/WELLNESS -->
             <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Integrative & Wellness</h2>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; color: #25D366;">Integrative & Wellness</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Advanced peptide therapy, longevity protocols, and wellness optimization from Rhode Island physicians</p>
             </div>
             
@@ -6864,7 +6918,7 @@
     <div class="popup-overlay" id="join-popup">
         <div class="popup-content" style="max-width: 650px;">
             <div class="popup-header">
-                <h2 id="join-popup-title" style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Partner With RhodeIslandDoc</h2>
+                <h2 id="join-popup-title" style="color: #25D366; background-clip: text;">Partner With RhodeIslandDoc</h2>
                 <button class="popup-close" data-popup="join-popup">&times;</button>
             </div>
             <div class="popup-body">
@@ -6913,7 +6967,7 @@
     <div class="popup-overlay" id="privacy-popup">
         <div class="popup-content large" style="max-width: 900px;">
             <div class="popup-header">
-                <h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Privacy Policy</h2>
+                <h2 style="color: #25D366; background-clip: text;">Privacy Policy</h2>
                 <button class="popup-close" data-popup="privacy-popup">&times;</button>
             </div>
             <div class="popup-body" style="text-align: left;">
@@ -6964,7 +7018,7 @@
     <div class="popup-overlay" id="terms-popup">
         <div class="popup-content large" style="max-width: 900px;">
             <div class="popup-header">
-                <h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Terms of Use</h2>
+                <h2 style="color: #25D366; background-clip: text;">Terms of Use</h2>
                 <button class="popup-close" data-popup="terms-popup">&times;</button>
             </div>
             <div class="popup-body" style="text-align: left;">
@@ -7013,7 +7067,7 @@
     <div class="popup-overlay" id="contact-form-popup">
         <div class="popup-content" style="max-width: 600px;">
             <div class="popup-header">
-                <h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Contact Us</h2>
+                <h2 style="color: #25D366; background-clip: text;">Contact Us</h2>
                 <button class="popup-close" data-popup="contact-form-popup">&times;</button>
             </div>
             <div class="popup-body">
@@ -7238,7 +7292,7 @@
     <div class="popup-overlay" id="coming-soon-popup">
         <div class="popup-content coming-soon-popup-content" style="max-width: 650px;">
             <div class="popup-header">
-                <h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: clamp(1.5rem, 5vw, 2.5rem);">We're Almost Ready!</h2>
+                <h2 style="color: #25D366; background-clip: text; font-size: clamp(1.5rem, 5vw, 2.5rem);">We're Almost Ready!</h2>
                 <button class="popup-close" data-popup="coming-soon-popup">&times;</button>
             </div>
             <div class="popup-body" style="text-align: center;">
@@ -7282,10 +7336,10 @@
     </div>
 
 <!-- Education Popups -->
-    <div class="popup-overlay" id="weight-loss-guide-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Weight Loss Guide</h2><button class="popup-close" data-popup="weight-loss-guide-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">Your Complete Guide to Sustainable Weight Loss</h3><p style="margin-bottom: 1rem;">Achieving and maintaining a healthy weight involves understanding the science behind weight loss and implementing proven strategies tailored to your lifestyle.</p><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Understanding GLP-1 Medications</h4><p style="margin-bottom: 1rem;">GLP-1 receptor agonists like Semaglutide and Tirzepatide have revolutionized weight loss treatment. These medications work by mimicking natural hormones that regulate appetite and blood sugar, helping you feel fuller longer and reducing cravings.</p><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Key Benefits:</h4><ul style="margin-left: 1.5rem; margin-bottom: 1rem;"><li>Significant weight reduction (15-20% body weight on average)</li><li>Improved metabolic health and blood sugar control</li><li>Reduced cardiovascular risk factors</li><li>Enhanced energy levels and quality of life</li></ul><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Lifestyle Integration:</h4><p style="margin-bottom: 1rem;">While medications provide powerful support, combining them with healthy eating habits, regular physical activity, and stress management creates the foundation for lasting success. Our providers work with you to create a personalized plan that fits your life.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Ready to start your journey?</strong> Schedule a consultation with one of our Rhode Island-licensed physicians to discuss which weight loss treatment is right for you.</p></div></div></div>
-    <div class="popup-overlay" id="semaglutide-tirzepatide-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Semaglutide vs Tirzepatide</h2><button class="popup-close" data-popup="semaglutide-tirzepatide-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">Comparing Two Leading Weight Loss Medications</h3><p style="margin-bottom: 1.5rem;">Both Semaglutide and Tirzepatide are highly effective GLP-1 receptor agonists, but they have unique characteristics that may make one more suitable for your needs.</p><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;"><div style="padding: 1rem; background: rgba(31, 111, 235, 0.05); border-radius: 12px; border: 2px solid var(--state-secondary);"><h4 style="color: var(--state-secondary); margin-bottom: 0.75rem;">Semaglutide</h4><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Brands:</strong> Ozempic, Wegovy</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Mechanism:</strong> GLP-1 receptor agonist</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Average Weight Loss:</strong> 15% of body weight</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Dosing:</strong> Once weekly injection</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Starting Price:</strong> From $299/month</p></div><div style="padding: 1rem; background: rgba(31, 111, 235, 0.05); border-radius: 12px; border: 2px solid var(--state-secondary);"><h4 style="color: var(--state-secondary); margin-bottom: 0.75rem;">Tirzepatide</h4><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Brand:</strong> Mounjaro, Zepbound</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Mechanism:</strong> Dual GLP-1/GIP agonist</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Average Weight Loss:</strong> 20% of body weight</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Dosing:</strong> Once weekly injection</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Starting Price:</strong> From $399/month</p></div></div><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Key Differences:</h4><p style="margin-bottom: 1rem;">Tirzepatide's dual-action mechanism targeting both GLP-1 and GIP receptors often results in slightly greater weight loss compared to Semaglutide. However, individual results vary, and factors like tolerance, side effects, and cost may influence which medication is best for you.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Not sure which is right for you?</strong> Our Rhode Island physicians will evaluate your medical history, goals, and preferences to recommend the most appropriate treatment during your consultation.</p></div></div></div>
-    <div class="popup-overlay" id="telehealth-benefits-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Benefits of Telehealth</h2><button class="popup-close" data-popup="telehealth-benefits-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">Modern Healthcare, Delivered to You</h3><p style="margin-bottom: 1.5rem;">Telehealth has transformed how people access quality healthcare, offering convenience and accessibility without compromising on care quality.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Convenience & Accessibility</h4><p style="margin-bottom: 1rem;">Connect with Rhode Island-licensed physicians from anywhere in the state. No commute, no waiting rooms, no time off work. Your consultation happens on your schedule, whether you're in Anchorage, Fairbanks, Juneau, or anywhere across Rhode Island.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Privacy & Discretion</h4><p style="margin-bottom: 1rem;">Discuss sensitive health topics in the comfort and privacy of your own space. Our HIPAA-compliant platform ensures your medical information stays secure and confidential.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Fast Access to Care</h4><p style="margin-bottom: 1rem;">Skip the weeks-long wait for traditional appointments. Many patients can connect with a provider within 24-48 hours, receiving treatment recommendations and prescriptions quickly.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Cost-Effective</h4><p style="margin-bottom: 1rem;">Transparent pricing with no hidden fees. Many telehealth services cost less than traditional office visits, and you save on transportation costs and time off work.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Comprehensive Care</h4><p style="margin-bottom: 1rem;">From initial consultation to ongoing follow-ups, prescription management, and direct messaging with your care team, everything you need is accessible through one platform.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Experience telehealth done right.</strong> RhodeIslandDoc combines cutting-edge technology with compassionate care from Rhode Island-licensed physicians who understand your unique needs.</p></div></div></div>
-    <div class="popup-overlay" id="glp1-medications-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Understanding GLP-1 Medications</h2><button class="popup-close" data-popup="glp1-medications-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">The Science Behind GLP-1 Receptor Agonists</h3><p style="margin-bottom: 1.5rem;">GLP-1 (Glucagon-Like Peptide-1) medications represent a breakthrough in weight management and metabolic health, offering a scientifically-proven approach to sustainable weight loss.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">How GLP-1 Medications Work</h4><p style="margin-bottom: 1rem;">These medications mimic a natural hormone your body produces after eating. GLP-1 helps regulate:</p><ul style="margin-left: 1.5rem; margin-bottom: 1rem;"><li><strong>Appetite:</strong> Increases feelings of fullness and reduces hunger</li><li><strong>Blood Sugar:</strong> Stimulates insulin release when blood sugar is elevated</li><li><strong>Digestion:</strong> Slows gastric emptying, helping you feel satisfied longer</li><li><strong>Cravings:</strong> Reduces food-seeking behaviors and emotional eating</li></ul><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Available GLP-1 Medications</h4><div style="margin-bottom: 1rem;"><p style="margin-bottom: 0.5rem;"><strong>  Semaglutide (Ozempic, Wegovy):</strong> FDA-approved for weight management, showing 15% average body weight reduction</p><p style="margin-bottom: 0.5rem;"><strong>  Tirzepatide (Mounjaro, Zepbound):</strong> Dual GLP-1/GIP agonist with up to 20% weight loss results</p><p style="margin-bottom: 0.5rem;"><strong>  Compounded GLP-1:</strong> Custom-formulated alternatives offering similar benefits at more affordable prices</p></div><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Who Benefits Most?</h4><p style="margin-bottom: 1rem;">GLP-1 medications are particularly effective for individuals with:</p><ul style="margin-left: 1.5rem; margin-bottom: 1rem;"><li>BMI of 30 or higher (obesity)</li><li>BMI of 27+ with weight-related health conditions</li><li>Difficulty losing weight through diet and exercise alone</li><li>Type 2 diabetes or prediabetes</li></ul><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">What to Expect</h4><p style="margin-bottom: 1rem;">Most patients start noticing reduced appetite within the first week. Weight loss typically becomes noticeable within 4-6 weeks, with maximum effects seen after several months of treatment. Side effects are usually mild and temporary, most commonly including nausea, which typically improves as your body adjusts.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Ready to explore GLP-1 treatment?</strong> Schedule a consultation with our Rhode Island physicians to determine if GLP-1 medications are right for your weight loss journey.</p></div></div></div>
+    <div class="popup-overlay" id="weight-loss-guide-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="color: #25D366; background-clip: text;">Weight Loss Guide</h2><button class="popup-close" data-popup="weight-loss-guide-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">Your Complete Guide to Sustainable Weight Loss</h3><p style="margin-bottom: 1rem;">Achieving and maintaining a healthy weight involves understanding the science behind weight loss and implementing proven strategies tailored to your lifestyle.</p><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Understanding GLP-1 Medications</h4><p style="margin-bottom: 1rem;">GLP-1 receptor agonists like Semaglutide and Tirzepatide have revolutionized weight loss treatment. These medications work by mimicking natural hormones that regulate appetite and blood sugar, helping you feel fuller longer and reducing cravings.</p><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Key Benefits:</h4><ul style="margin-left: 1.5rem; margin-bottom: 1rem;"><li>Significant weight reduction (15-20% body weight on average)</li><li>Improved metabolic health and blood sugar control</li><li>Reduced cardiovascular risk factors</li><li>Enhanced energy levels and quality of life</li></ul><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Lifestyle Integration:</h4><p style="margin-bottom: 1rem;">While medications provide powerful support, combining them with healthy eating habits, regular physical activity, and stress management creates the foundation for lasting success. Our providers work with you to create a personalized plan that fits your life.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Ready to start your journey?</strong> Schedule a consultation with one of our Rhode Island-licensed physicians to discuss which weight loss treatment is right for you.</p></div></div></div>
+    <div class="popup-overlay" id="semaglutide-tirzepatide-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="color: #25D366; background-clip: text;">Semaglutide vs Tirzepatide</h2><button class="popup-close" data-popup="semaglutide-tirzepatide-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">Comparing Two Leading Weight Loss Medications</h3><p style="margin-bottom: 1.5rem;">Both Semaglutide and Tirzepatide are highly effective GLP-1 receptor agonists, but they have unique characteristics that may make one more suitable for your needs.</p><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;"><div style="padding: 1rem; background: rgba(31, 111, 235, 0.05); border-radius: 12px; border: 2px solid var(--state-secondary);"><h4 style="color: var(--state-secondary); margin-bottom: 0.75rem;">Semaglutide</h4><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Brands:</strong> Ozempic, Wegovy</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Mechanism:</strong> GLP-1 receptor agonist</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Average Weight Loss:</strong> 15% of body weight</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Dosing:</strong> Once weekly injection</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Starting Price:</strong> From $299/month</p></div><div style="padding: 1rem; background: rgba(31, 111, 235, 0.05); border-radius: 12px; border: 2px solid var(--state-secondary);"><h4 style="color: var(--state-secondary); margin-bottom: 0.75rem;">Tirzepatide</h4><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Brand:</strong> Mounjaro, Zepbound</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Mechanism:</strong> Dual GLP-1/GIP agonist</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Average Weight Loss:</strong> 20% of body weight</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Dosing:</strong> Once weekly injection</p><p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Starting Price:</strong> From $399/month</p></div></div><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Key Differences:</h4><p style="margin-bottom: 1rem;">Tirzepatide's dual-action mechanism targeting both GLP-1 and GIP receptors often results in slightly greater weight loss compared to Semaglutide. However, individual results vary, and factors like tolerance, side effects, and cost may influence which medication is best for you.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Not sure which is right for you?</strong> Our Rhode Island physicians will evaluate your medical history, goals, and preferences to recommend the most appropriate treatment during your consultation.</p></div></div></div>
+    <div class="popup-overlay" id="telehealth-benefits-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="color: #25D366; background-clip: text;">Benefits of Telehealth</h2><button class="popup-close" data-popup="telehealth-benefits-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">Modern Healthcare, Delivered to You</h3><p style="margin-bottom: 1.5rem;">Telehealth has transformed how people access quality healthcare, offering convenience and accessibility without compromising on care quality.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Convenience & Accessibility</h4><p style="margin-bottom: 1rem;">Connect with Rhode Island-licensed physicians from anywhere in the state. No commute, no waiting rooms, no time off work. Your consultation happens on your schedule, whether you're in Anchorage, Fairbanks, Juneau, or anywhere across Rhode Island.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Privacy & Discretion</h4><p style="margin-bottom: 1rem;">Discuss sensitive health topics in the comfort and privacy of your own space. Our HIPAA-compliant platform ensures your medical information stays secure and confidential.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Fast Access to Care</h4><p style="margin-bottom: 1rem;">Skip the weeks-long wait for traditional appointments. Many patients can connect with a provider within 24-48 hours, receiving treatment recommendations and prescriptions quickly.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Cost-Effective</h4><p style="margin-bottom: 1rem;">Transparent pricing with no hidden fees. Many telehealth services cost less than traditional office visits, and you save on transportation costs and time off work.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">Comprehensive Care</h4><p style="margin-bottom: 1rem;">From initial consultation to ongoing follow-ups, prescription management, and direct messaging with your care team, everything you need is accessible through one platform.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Experience telehealth done right.</strong> RhodeIslandDoc combines cutting-edge technology with compassionate care from Rhode Island-licensed physicians who understand your unique needs.</p></div></div></div>
+    <div class="popup-overlay" id="glp1-medications-popup"><div class="popup-content" style="max-width: 800px;"><div class="popup-header"><h2 style="color: #25D366; background-clip: text;">Understanding GLP-1 Medications</h2><button class="popup-close" data-popup="glp1-medications-popup">&times;</button></div><div class="popup-body"><h3 style="color: var(--state-secondary); margin-bottom: 1rem;">The Science Behind GLP-1 Receptor Agonists</h3><p style="margin-bottom: 1.5rem;">GLP-1 (Glucagon-Like Peptide-1) medications represent a breakthrough in weight management and metabolic health, offering a scientifically-proven approach to sustainable weight loss.</p><h4 style="color: var(--state-secondary); margin-top: 1rem; margin-bottom: 0.5rem;">How GLP-1 Medications Work</h4><p style="margin-bottom: 1rem;">These medications mimic a natural hormone your body produces after eating. GLP-1 helps regulate:</p><ul style="margin-left: 1.5rem; margin-bottom: 1rem;"><li><strong>Appetite:</strong> Increases feelings of fullness and reduces hunger</li><li><strong>Blood Sugar:</strong> Stimulates insulin release when blood sugar is elevated</li><li><strong>Digestion:</strong> Slows gastric emptying, helping you feel satisfied longer</li><li><strong>Cravings:</strong> Reduces food-seeking behaviors and emotional eating</li></ul><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Available GLP-1 Medications</h4><div style="margin-bottom: 1rem;"><p style="margin-bottom: 0.5rem;"><strong>  Semaglutide (Ozempic, Wegovy):</strong> FDA-approved for weight management, showing 15% average body weight reduction</p><p style="margin-bottom: 0.5rem;"><strong>  Tirzepatide (Mounjaro, Zepbound):</strong> Dual GLP-1/GIP agonist with up to 20% weight loss results</p><p style="margin-bottom: 0.5rem;"><strong>  Compounded GLP-1:</strong> Custom-formulated alternatives offering similar benefits at more affordable prices</p></div><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Who Benefits Most?</h4><p style="margin-bottom: 1rem;">GLP-1 medications are particularly effective for individuals with:</p><ul style="margin-left: 1.5rem; margin-bottom: 1rem;"><li>BMI of 30 or higher (obesity)</li><li>BMI of 27+ with weight-related health conditions</li><li>Difficulty losing weight through diet and exercise alone</li><li>Type 2 diabetes or prediabetes</li></ul><h4 style="color: var(--state-secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">What to Expect</h4><p style="margin-bottom: 1rem;">Most patients start noticing reduced appetite within the first week. Weight loss typically becomes noticeable within 4-6 weeks, with maximum effects seen after several months of treatment. Side effects are usually mild and temporary, most commonly including nausea, which typically improves as your body adjusts.</p><p style="margin-top: 1.5rem; padding: 1rem; background: rgba(31, 111, 235, 0.1); border-left: 4px solid var(--state-secondary); border-radius: 8px;"><strong>Ready to explore GLP-1 treatment?</strong> Schedule a consultation with our Rhode Island physicians to determine if GLP-1 medications are right for your weight loss journey.</p></div></div></div>
 
     <script>
         // Single-theme: no light/dark switching

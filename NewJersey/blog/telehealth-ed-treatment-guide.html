@@ -21,30 +21,58 @@
     </script>
     
     <style>
-        :root{--state-primary:#013759;--state-secondary:#009DDD}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+        :root{--navy:#013759;--light-blue:#009DDD;--green:#25D366;--orange:#F98A33;--white:#FFFFFF}
         *{scrollbar-width:none;-ms-overflow-style:none}*::-webkit-scrollbar{display:none}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:0;background:linear-gradient(135deg,#013759,#009DDD);color:#fff;line-height:1.8}
-        .header{background:rgba(10,15,28,0.95);padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,0.1)}
-        .header a{color:#fff;text-shadow:0 0 20px var(--state-secondary);text-decoration:none;font-weight:600}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:0;background:var(--navy);color:var(--white);line-height:1.8}
+        .header{background:rgba(0,20,40,0.95);padding:1rem 2rem;position:sticky;top:0;z-index:1000;backdrop-filter:blur(8px)}
+        .nav{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto}
+        .logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none}
+        .logo-symbol{height:45px;width:45px;object-fit:contain}
+        .header a{color:var(--light-blue);text-decoration:none;font-weight:600}
+        .header a:hover{color:var(--green)}
         .container{max-width:800px;margin:0 auto;padding:3rem 1.5rem}
-        h1{background:linear-gradient(135deg,#013759,#009DDD);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:clamp(2rem,5vw,2.8rem);font-weight:800;margin-bottom:1.5rem}
-        h2{color:#fff;text-shadow:0 0 15px var(--state-secondary);font-size:1.8rem;margin:2.5rem 0 1rem}
-        h3{color:#fff;text-shadow:0 0 12px var(--state-secondary);font-size:1.4rem;margin:2rem 0 0.75rem}
+        h1{color:var(--white);font-size:clamp(2rem,5vw,2.8rem);font-weight:800;margin-bottom:1.5rem;border-bottom:3px solid var(--light-blue);padding-bottom:0.75rem}
+        h2{color:var(--light-blue);font-size:1.8rem;margin:2.5rem 0 1rem}
+        h3{color:var(--green);font-size:1.4rem;margin:2rem 0 0.75rem}
         p{color:rgba(255,255,255,0.9);margin-bottom:1.5rem;font-size:1.1rem}
         ul,ol{color:rgba(255,255,255,0.9);margin:1.5rem 0;padding-left:2rem}
         li{margin-bottom:0.75rem}
-        .cta{display:inline-block;background:linear-gradient(135deg,#013759,#009DDD);color:#fff;padding:1.25rem 2.5rem;border-radius:12px;text-decoration:none;font-weight:700;margin:2rem 0;box-shadow:0 4px 15px rgba(0,0,0,0.3)}
-        .highlight-box{background:rgba(100,100,100,0.1);border-left:4px solid var(--state-secondary);padding:1.5rem;margin:2rem 0}
-        .author{margin:2rem 0;padding:1.5rem;background:rgba(255,255,255,0.03);border-radius:12px;font-size:0.95rem;color:rgba(255,255,255,0.7)}
-        footer{margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);text-align:center;color:rgba(255,255,255,0.5)}
-        footer a{color:#fff;text-shadow:0 0 10px var(--state-secondary);text-decoration:none}
+        li strong{color:var(--light-blue)}
+        a{color:var(--light-blue)}
+        a:hover{color:var(--green)}
+        .cta{display:inline-block;background:var(--green);color:var(--navy);padding:1.25rem 2.5rem;border-radius:8px;text-decoration:none;font-weight:700;margin:2rem 0}
+        .cta:hover{background:var(--light-blue)}
+        .highlight-box{background:rgba(0,157,221,0.1);border-left:4px solid var(--orange);padding:1.5rem;margin:2rem 0;border-radius:0 8px 8px 0}
+        .highlight-box strong{color:var(--orange)}
+        .tip-box{background:rgba(37,211,102,0.1);border-left:4px solid var(--green);padding:1.5rem;margin:1.5rem 0;border-radius:0 8px 8px 0}
+        .tip-box strong{color:var(--green)}
+        .info{background:rgba(0,157,221,0.1);border-left:4px solid var(--light-blue);padding:1.5rem;margin:2rem 0;border-radius:0 8px 8px 0}
+        .info h3{color:var(--light-blue);margin-top:0}
+        .warning{background:rgba(249,138,51,0.1);border-left:4px solid var(--orange);padding:1.5rem;margin:2rem 0;border-radius:0 8px 8px 0}
+        .warning strong{color:var(--orange)}
+        footer{margin-top:4rem;padding-top:2rem;border-top:2px solid var(--light-blue);text-align:center;color:rgba(255,255,255,0.6)}
+        footer a{color:var(--light-blue);text-decoration:none}
+        footer a:hover{color:var(--green)}
+        table{width:100%;border-collapse:collapse;margin:2rem 0}
+        th{background:var(--light-blue);color:var(--navy);padding:1rem;text-align:left}
+        td{padding:1rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+        blockquote{border-left:4px solid var(--green);padding-left:1.5rem;margin:2rem 0;font-style:italic;color:rgba(255,255,255,0.8)}
     </style>
 </head>
 <body>
 
-<div class="header">
-    <a href="https://NewJerseyDoc.com/">&larr; Back to NewJerseyDoc</a>
-</div>
+<header class="header" id="header">
+    <nav class="nav">
+        <a href="https://newjerseydoc.com/" class="logo" target="_blank" rel="noopener">
+            <img src="/assets/ohanaDoc-logo.png" alt="OhanaDoc" class="logo-symbol" style="height:45px;width:45px;object-fit:contain">
+            <div style="display:flex;flex-direction:column;gap:0.2rem">
+                <span style="font-family:'Poppins','Inter',sans-serif;font-size:1.4rem;font-weight:700"><span style="color:#25D366;">New Jersey</span><span style="color:#009DDD;">Doc</span></span>
+                <span style="background:linear-gradient(90deg,#F98A33 0%,#25D366 50%,#009DDD 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:600;font-size:0.65rem">Powered by OhanaDoc</span>
+            </div>
+        </a>
+    </nav>
+</header>
 
 <div class="container">
     <article>
@@ -54,183 +82,8 @@
             <strong>By NewJerseyDoc Medical Team</strong> | October 10, 2025 | 7 min read
         </div>
 
-        <div class="highlight-box" style="background:rgba(100,100,100,0.15);border-left:4px solid var(--state-secondary);padding:1.5rem;margin:2rem 0;border-radius:8px">
-            <h3 style="margin-top:0;color:#fff;text-shadow:0 0 12px var(--state-secondary)">Telehealth in New Jersey</h3>
-            <p style="margin-bottom:0.5rem"><strong>Health Stats:</strong> Obesity: 32.4% | Telehealth Users: 61% | Residents on GLP-1s: 12,000+</p>
-            <p style="margin-bottom:0"><strong>Regulations:</strong> New Jersey allows licensed physicians to prescribe via telehealth after audio-video consultation.</p>
-        </div>
-
-
-        <p><strong>Erectile dysfunction (ED) affects approximately 30 million American men</strong>, but only 25% seek treatment. The primary barriers? Embarrassment about discussing it with a doctor and inconvenience of scheduling appointments. Telehealth eliminates both obstacles, making ED treatment accessible, discreet, and convenient.</p>
-
-        <h2>What is Telehealth for ED?</h2>
-
-        <p>Telehealth for erectile dysfunction allows you to consult with licensed physicians from home, receive treatment recommendations, and get prescriptions delivered to your door - all without ever walking into a doctor's office or pharmacy.</p>
-
-        <p>The process is fully legal, regulated, and follows the same medical standards as traditional in-person visits. The only difference is the convenience.</p>
-
-        <h2>The Complete Process: Step-by-Step</h2>
-
-        <h3>Step 1: Online Health Questionnaire (5-10 minutes)</h3>
-
-        <p>You'll answer questions about:</p>
-        <ul>
-            <li>Your medical history and current health conditions</li>
-            <li>Medications you're currently taking</li>
-            <li>Severity and duration of ED symptoms</li>
-            <li>Cardiovascular health (crucial for ED medication safety)</li>
-            <li>Previous ED treatments you've tried</li>
-        </ul>
-
-        <p><strong>Why this matters:</strong> ED medications like Sildenafil (Viagra) and Tadalafil (Cialis) affect blood flow and can interact with certain medications (especially nitrates for heart conditions). A thorough medical history ensures your safety.</p>
-
-        <h3>Step 2: Virtual Physician Consultation</h3>
-
-        <p>You have two options:</p>
-
-        <p><strong>Synchronous Care (Live Video/Phone):</strong></p>
-        <ul>
-            <li>Schedule a video or phone appointment</li>
-            <li>Speak with physician in real-time</li>
-            <li>Discuss symptoms, concerns, and questions</li>
-            <li>Get immediate answers and recommendations</li>
-        </ul>
-
-        <p><strong>Asynchronous Care (Secure Messaging):</strong></p>
-        <ul>
-            <li>No appointment needed</li>
-            <li>Physician reviews your questionnaire within 24 hours</li>
-            <li>Prescribes if medically appropriate</li>
-            <li>Messages you with any questions or clarifications</li>
-        </ul>
-
-        <div class="highlight-box">
-            <strong>Privacy Note:</strong> All consultations are completely confidential and HIPAA-compliant. Your information is never shared without your consent.
-        </div>
-
-        <h3>Step 3: Prescription Approval</h3>
-
-        <p>If the physician determines ED medication is safe and appropriate for you, they'll write a prescription. Not everyone is approved - certain medical conditions (recent stroke, severe heart disease, use of nitrate medications) make ED drugs unsafe.</p>
-
-        <p><strong>Safety first:</strong> Legitimate telehealth platforms will decline to prescribe if it's medically unsafe. If a service approves everyone without proper medical review, it's a red flag.</p>
-
-        <h3>Step 4: Medication Delivery</h3>
-
-        <p>You have two delivery options:</p>
-
-        <p><strong>Local Pharmacy Pickup:</strong></p>
-        <ul>
-            <li>Prescription sent to your  New Jersey pharmacy electronically</li>
-            <li>Pick up same-day at Longs Drugs, CVS, Walgreens, etc.</li>
-            <li>Use your insurance if covered (or pay cash)</li>
-        </ul>
-
-        <p><strong>Mail Order Delivery:</strong></p>
-        <ul>
-            <li>Medication shipped directly to your door</li>
-            <li>Discreet, unmarked packaging</li>
-            <li>Typically arrives in 2-5 business days</li>
-            <li>Often cheaper than retail pharmacy</li>
-        </ul>
-
-        <h2>ED Medication Options via Telehealth</h2>
-
-        <h3>Sildenafil (Generic Viagra)</h3>
-        <ul>
-            <li><strong>How it works:</strong> Increases blood flow, takes effect in 30-60 minutes</li>
-            <li><strong>Duration:</strong> 4-6 hours</li>
-            <li><strong>Dosing:</strong> 25mg, 50mg, 100mg</li>
-            <li><strong>Cost:</strong> From $3/pill ($30/month for 10 pills)</li>
-            <li><strong>Best for:</strong> Men who want on-demand dosing</li>
-        </ul>
-
-        <h3>Tadalafil (Generic Cialis)</h3>
-        <ul>
-            <li><strong>How it works:</strong> Same mechanism as Sildenafil, longer duration</li>
-            <li><strong>Duration:</strong> Up to 36 hours ("weekend pill")</li>
-            <li><strong>Dosing:</strong> 5mg daily OR 10mg/20mg on-demand</li>
-            <li><strong>Cost:</strong> From $30/month (daily) or $40/month (on-demand)</li>
-            <li><strong>Best for:</strong> Men who want spontaneity (36-hour window)</li>
-        </ul>
-
-        <h3>Daily Tadalafil (5mg)</h3>
-        <ul>
-            <li><strong>How it works:</strong> Low daily dose keeps medication in system 24/7</li>
-            <li><strong>Benefits:</strong> Always ready, no planning needed</li>
-            <li><strong>Cost:</strong> From $30/month</li>
-            <li><strong>Best for:</strong> Men in relationships who want spontaneity</li>
-        </ul>
-
-        <h2>Cost Comparison: Telehealth vs Traditional</h2>
-
-        <p><strong>Traditional Doctor Visit:</strong></p>
-        <ul>
-            <li>Office visit copay: $30-75</li>
-            <li>Specialist copay (urologist): $50-100</li>
-            <li>Prescription copay: $20-50/month</li>
-            <li>Total first month: $100-225</li>
-        </ul>
-
-        <p><strong>Through NewJerseyDoc Telehealth:</strong></p>
-        <ul>
-            <li>Consultation: Included in medication cost</li>
-            <li>Sildenafil: From $30/month</li>
-            <li>Tadalafil: From $30/month</li>
-            <li>Total first month: $30-40</li>
-        </ul>
-
-        <h2>Privacy & Discretion</h2>
-
-        <p>We understand ED is a sensitive topic. Here's how we protect your privacy:</p>
-
-        <ul>
-            <li><strong>Confidential consultations:</strong> HIPAA-compliant, encrypted communication</li>
-            <li><strong>Discreet packaging:</strong> No labels indicating medical contents</li>
-            <li><strong>Private billing:</strong> Statements show "OhanaDoc" not "ED medication"</li>
-            <li><strong>Secure platform:</strong> 256-bit encryption, same as banking</li>
-        </ul>
-
-        <h2>Is Telehealth ED Treatment Right for You?</h2>
-
-        <p><strong>Telehealth works well if you:</strong></p>
-        <ul>
-            <li>Have mild to moderate ED symptoms</li>
-            <li>Are generally healthy (no recent heart issues)</li>
-            <li>Want convenience and discretion</li>
-            <li>Prefer avoiding in-person doctor visits</li>
-            <li>Need affordable treatment options</li>
-        </ul>
-
-        <p><strong>You should see a doctor in-person if:</strong></p>
-        <ul>
-            <li>You have severe cardiovascular disease</li>
-            <li>ED came on suddenly (could indicate serious health issue)</li>
-            <li>You're under 30 with ED (may have underlying cause)</li>
-            <li>You have complex medical conditions</li>
-            <li>Medications don't work (may need specialized testing)</li>
-        </ul>
-
-        <h2>Effectiveness: Does it Really Work?</h2>
-
-        <p><strong>Clinical data shows:</strong></p>
-        <ul>
-            <li>Sildenafil: Effective in 70-80% of men</li>
-            <li>Tadalafil: Effective in 75-85% of men</li>
-            <li>Most patients notice improvement within first use</li>
-            <li>Effectiveness improves over first 4-8 doses as you find optimal timing/dosing</li>
-        </ul>
-
-        <p>At NewJerseyDoc, approximately 85% of our ED patients report significant improvement in erectile function within the first month of treatment.</p>
-
-        <a href="https://NewJerseyDoc.com/" class="cta">Get Started with Discreet ED Treatment</a>
-
-        <h2>What Patients Ask Most</h2>
-
-        <h3>Will my insurance cover telehealth ED treatment?</h3>
-        <p>Some insurance plans cover ED medications (especially if you have diabetes or other conditions). However, many patients find our cash-pay pricing ($30-40/month) is cheaper than insurance copays and eliminates paperwork hassles.</p>
-
-        <h3>How long until I get my medication?</h3>
-        <p>Most consultations are completed within 24 hours. Prescriptions are sent electronically to your pharmacy immediately upon approval. Local pickup is available same-day; mail order takes 2-5 business days.</p>
+        <div class="highlight-box" style="background:rgba(100,100,100,0.15);border-left:4px solid var(--light-blue);padding:1.5rem;margin:2rem 0;border-radius:8px">
+            <h3 style="margin-top:0;color:#fff; mail order takes 2-5 business days.</p>
 
         <h3>Is telehealth ED treatment safe?</h3>
         <p>Yes, when done through licensed platforms with actual physicians. NewJerseyDoc physicians review your medical history, screen for contraindications, and only prescribe when medically appropriate. We follow the same safety standards as traditional doctors.</p>
@@ -250,13 +103,13 @@
 
         <p>Treatment starts at $30/month with no hidden fees, no subscription traps, and the ability to cancel anytime.</p>
 
-        <div style="margin-top:3rem;padding:2rem;background:rgba(255,255,255,0.03);border-left:4px solid var(--state-secondary);font-size:0.95rem">
+        <div style="margin-top:3rem;padding:2rem;background:rgba(255,255,255,0.03);border-left:4px solid var(--light-blue);font-size:0.95rem">
             <strong>Medical Disclaimer:</strong> This content is for informational purposes only. All consultations are with licensed physicians who make independent medical decisions. Not all patients are approved for ED medication. Call 911 for medical emergencies.
         </div>
     </article>
 
     <footer>
-        <p>&copy; 2025 Harrington Maui Enterprises LLC. All rights reserved.</p>
+        <p>&copy; 2026 Harrington Maui Enterprises LLC. All rights reserved.</p>
         <p><a href="https://NewJerseyDoc.com/">NewJerseyDoc Home</a> | <a href="https://NewJerseyDoc.com/blog/">All Blog Posts</a></p>
     </footer>
 </div>

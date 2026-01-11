@@ -69,49 +69,47 @@
 }
     </script>
     
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
-        :root{--navy-bg:#013759;--light-blue:#87CEEB;--text-white:#ffffff;--accent-green:#25D366;--accent-orange:#F98A33}
+        :root{--state-secondary:#009DDD;--navy:#013759;--light-blue:#009DDD;--white:#ffffff;--green:#25D366;--orange:#F98A33}
 
         *{scrollbar-width:none;-ms-overflow-style:none}*::-webkit-scrollbar{display:none}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:0;background:var(--navy-bg);color:var(--text-white);line-height:1.8}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:0;background:var(--navy);color:var(--white);line-height:1.8}
         .header{background:rgba(10,15,28,0.95);padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,0.1)}
-        .header a{color:#ffffff;text-shadow:0 0 10px #F98A33;text-decoration:none;font-weight:600}
+        .header a{color:#ffffff;text-decoration:none;font-weight:600}
         .container{max-width:800px;margin:0 auto;padding:3rem 1.5rem}
-        h1{color:var(--accent-green);font-size:clamp(2rem,5vw,2.8rem);font-weight:800;margin-bottom:1.5rem;text-shadow:0 0 15px rgba(37,211,102,0.5)}
-        h2{color:var(--light-blue);font-size:1.8rem;margin:2.5rem 0 1rem;text-shadow:0 0 10px rgba(135,206,235,0.5)}
-        h3{color:var(--accent-orange);font-size:1.4rem;margin:2rem 0 0.75rem;text-shadow:0 0 8px rgba(249,138,51,0.5)}
-        p{color:var(--text-white);margin-bottom:1.5rem;font-size:1.1rem}
-        ul{color:var(--text-white);margin:1.5rem 0;padding-left:2rem}
+        h1{color:var(--green);font-size:clamp(2rem,5vw,2.8rem);font-weight:800;margin-bottom:1.5rem}
+        h2{color:var(--light-blue);font-size:1.8rem;margin:2.5rem 0 1rem}
+        h3{color:var(--orange);font-size:1.4rem;margin:2rem 0 0.75rem}
+        p{color:var(--white);margin-bottom:1.5rem;font-size:1.1rem}
+        ul{color:var(--white);margin:1.5rem 0;padding-left:2rem}
         li{margin-bottom:0.75rem}
-        .cta{display:inline-block;background:var(--accent-orange);color:var(--navy-bg);padding:1.25rem 2.5rem;border-radius:12px;text-decoration:none;font-weight:700;margin:2rem 0;box-shadow:0 4px 15px rgba(249,138,51,0.3)}
-        .highlight-box{background:rgba(255,255,255,0.05);border-left:4px solid var(--accent-orange);padding:1.5rem;margin:2rem 0;border-radius:8px}
+        .cta{display:inline-block;background:var(--orange);color:var(--navy);padding:1.25rem 2.5rem;border-radius:12px;text-decoration:none;font-weight:700;margin:2rem 0;box-shadow:0 4px 15px rgba(249,138,51,0.3)}
+        .highlight-box{background:rgba(255,255,255,0.05);border-left:4px solid var(--orange);padding:1.5rem;margin:2rem 0;border-radius:8px}
         .tip-box{background:rgba(255,255,255,0.08);padding:1.5rem;margin:1.5rem 0;border-radius:8px;border:1px solid var(--light-blue)}
-        .accent-green{color:var(--accent-green);text-shadow:0 0 8px rgba(37,211,102,0.6)}
-        .accent-orange{color:var(--accent-orange);text-shadow:0 0 8px rgba(249,138,51,0.6)}
-        .service-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:2rem;margin:1rem 0;border-left:4px solid var(--accent-green)}
-        .service-card h3{color:var(--accent-green);text-shadow:0 0 10px rgba(37,211,102,0.5);margin-top:0}
+        .accent-green{color:var(--green)}
+        .accent-orange{color:var(--orange)}
+        .service-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:2rem;margin:1rem 0;border-left:4px solid var(--green)}
+        .service-card h3{color:var(--green);margin-top:0}
         .faq-item{border-bottom:1px solid rgba(255,255,255,0.1);padding:1.5rem 0}
         .faq-question{color:var(--light-blue);cursor:pointer;font-weight:600}
-        .faq-question:hover{color:var(--accent-orange)}
+        .faq-question:hover{color:var(--orange)}
         footer{margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);text-align:center;color:rgba(255,255,255,0.6)}
-        footer a{color:#ffffff;text-shadow:0 0 8px #F98A33;text-decoration:none}
+        footer a{color:#ffffff;text-decoration:none}
 
         /* Header Styles */
         .header{background:#013759;border-bottom:1px solid rgba(255,255,255,0.1);position:relative;z-index:1000}
         .nav{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 2rem}
-        .logo{display:flex;align-items:center;text-decoration:none;color:#ffffff}
-        .logo-symbol{height:40px;width:40px;margin-right:1rem}
-        .logo-text{display:flex;flex-direction:column}
-        .brand-name{font-size:1.5rem;font-weight:700;color:#ffffff}
+        
+        
+        
+        
 
-        .powered-by {
-            font-family: 'Poppins', 'Inter', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.65);
-            letter-spacing: 0.02em;
-            transition: all 0.3s ease;
-        }
+        
 
         .powered-by strong {
             font-weight: 600;
@@ -119,14 +117,12 @@
             transition: all 0.3s ease;
         }
 
-        .logo:hover .powered-by {
-            color: rgba(255, 255, 255, 0.85);
-        }
+        .logo:hover 
 
         .logo:hover .powered-by strong {
-            color: var(--accent-orange);
+            color: var(--orange);
         }
-        .powered-by{font-size:0.875rem;color:#9ca3af}
+        
         .nav-links{display:flex;list-style:none;margin:0;padding:0;gap:2rem}
         .nav-item{position:relative}
         .nav-links a{color:#ffffff;text-decoration:none;font-weight:500;padding:1rem 0;display:block}
@@ -169,8 +165,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--background);
+            color: var(--white);
+            background: var(--navy);
         }
         
         .container {
@@ -180,10 +176,9 @@
         }
         
         header {
-            background: var(--current-primary);
+            background: var(--navy);
             color: white;
             padding: 20px 0;
-            box-shadow: var(--current-shadow);
         }
         
         header .container {
@@ -198,14 +193,12 @@
         }
         
         .hero {
-            background: var(--current-gradient);
+            background: var(--navy);
             color: white;
             padding: 60px 0;
             text-align: center;
             position: relative;
         }
-
-
 
         .hero h1 {
             font-size: 42px;
@@ -230,7 +223,7 @@
             text-align: center;
             font-size: 36px;
             margin-bottom: 40px;
-            color: var(--accent-green);
+            color: var(--green);
             text-shadow: 0 0 15px rgba(37,211,102,0.5);
         }
         
@@ -245,33 +238,33 @@
             padding: 30px;
             border-radius: 12px;
             border: 1px solid rgba(255,255,255,0.1);
-            border-left: 4px solid var(--accent-green);
+            border-left: 4px solid var(--green);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 24px rgba(249,138,51,0.2);
-            border-color: var(--accent-orange);
+            border-color: var(--orange);
         }
 
         .service-card h3 {
             font-size: 22px;
-            color: var(--accent-green);
+            color: var(--green);
             margin-bottom: 15px;
             text-shadow: 0 0 10px rgba(37,211,102,0.5);
         }
 
         .service-card p {
-            color: var(--text-white);
+            color: var(--white);
             margin-bottom: 20px;
         }
 
         .service-card a {
             display: inline-block;
             padding: 10px 20px;
-            background: var(--accent-orange);
-            color: var(--navy-bg);
+            background: var(--orange);
+            color: var(--navy);
             text-decoration: none;
             border-radius: 6px;
             font-weight: 600;
@@ -279,7 +272,7 @@
         }
         
         .service-card a:hover {
-            background: #1d4ed8;
+            background: var(--light-blue);
         }
         
         .content {
@@ -290,11 +283,11 @@
             font-size: 32px;
             color: var(--light-blue);
             margin-bottom: 20px;
-            text-shadow: 0 0 12px rgba(135,206,235,0.5);
+            text-shadow: 0 0 12px rgba(0,157,221,0.5);
         }
 
         .content p {
-            color: var(--text-white);
+            color: var(--white);
             margin-bottom: 20px;
             font-size: 18px;
         }
@@ -309,18 +302,18 @@
             color: var(--light-blue);
             margin-bottom: 40px;
             text-align: center;
-            text-shadow: 0 0 12px rgba(135,206,235,0.5);
+            text-shadow: 0 0 12px rgba(0,157,221,0.5);
         }
 
         .telemedicine-approach h3 {
             font-size: 24px;
-            color: var(--accent-green);
+            color: var(--green);
             margin-bottom: 15px;
             text-shadow: 0 0 10px rgba(37,211,102,0.5);
         }
 
         .telemedicine-approach p {
-            color: var(--text-white);
+            color: var(--white);
             margin-bottom: 20px;
             font-size: 16px;
             line-height: 1.6;
@@ -338,7 +331,7 @@
             padding: 30px;
             border-radius: 12px;
             border: 1px solid rgba(255,255,255,0.1);
-            border-left: 4px solid var(--accent-orange);
+            border-left: 4px solid var(--orange);
         }
         
         .faq {
@@ -351,7 +344,7 @@
             font-size: 36px;
             margin-bottom: 40px;
             color: var(--light-blue);
-            text-shadow: 0 0 15px rgba(135,206,235,0.5);
+            text-shadow: 0 0 15px rgba(0,157,221,0.5);
         }
 
         .faq-item {
@@ -360,24 +353,24 @@
             margin-bottom: 20px;
             border-radius: 12px;
             border: 1px solid rgba(255,255,255,0.1);
-            border-left: 4px solid var(--accent-orange);
+            border-left: 4px solid var(--orange);
         }
 
         .faq-question {
             font-size: 20px;
             font-weight: 700;
-            color: var(--accent-green);
+            color: var(--green);
             margin-bottom: 12px;
             text-shadow: 0 0 8px rgba(37,211,102,0.6);
             cursor: pointer;
         }
 
         .faq-question:hover {
-            color: var(--accent-orange);
+            color: var(--orange);
         }
 
         .faq-answer {
-            color: var(--text-white);
+            color: var(--white);
             line-height: 1.7;
         }
         
@@ -388,7 +381,7 @@
 
         .related-links h2 {
             font-size: 32px;
-            color: var(--accent-green);
+            color: var(--green);
             margin-bottom: 30px;
             text-align: center;
             text-shadow: 0 0 12px rgba(37,211,102,0.5);
@@ -413,8 +406,8 @@
 
         .link-card:hover {
             background: rgba(249,138,51,0.1);
-            color: var(--accent-orange);
-            border-color: var(--accent-orange);
+            color: var(--orange);
+            border-color: var(--orange);
         }
         
         footer {
@@ -442,6 +435,109 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1;
+            background: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+        
+        .logo::before,
+        .logo::after {
+            display: none !important;
+        }
+        
+        .logo-symbol {
+            height: 45px;
+            width: 45px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.2));
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+        
+        .brand-name {
+            font-family: 'Poppins', 'Inter', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #4FC3F7;
+            line-height: 1;
+            letter-spacing: -0.01em;
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover .brand-name {
+            background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%);
+            -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.8)) 
+                    drop-shadow(0 0 2px rgba(255, 255, 255, 0.6))
+                    drop-shadow(0 0 4px var(--state-secondary));
+        }
+        
+        .powered-by {
+            font-family: 'Poppins', 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.65);
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+        }
+        
+        .powered-by strong {
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover .powered-by {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        .logo:hover .powered-by strong {
+            color: var(--state-secondary);
+        }
+
+        .logo:hover,
+        .logo:focus,
+        .logo:active,
+        .logo:focus-visible {
+            transform: none;
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            outline: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            fill: var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover .logo-icon {
+            fill: var(--accent-strong);
+            transform: rotate(10deg);
+        }
+
     </style>
 
     <script>
@@ -465,155 +561,15 @@
   </head>
   <body>
     <!-- Header from main index page -->
-    <header class="header" id="header">
+                <header class="header" id="header">
         <nav class="nav">
-            <a href="/" class="logo">
+            <a href="https://virginiadoc.com" class="logo" target="_blank" rel="noopener">
                 <img src="/assets/ohanaDoc-logo.png" alt="OhanaDoc" class="logo-symbol">
                 <div class="logo-text">
-                    <span class="brand-name">VirginiaDoc</span>
-                    <span class="powered-by">Powered by <strong>OhanaDoc</strong></span>
+                    <span class="brand-name"><span style="color: #25D366;">Virginia</span><span style="color: #009DDD;">Doc</span></span>
+                    <span class="powered-by" style="background: linear-gradient(90deg, #F98A33 0%, #25D366 50%, #009DDD 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600;">Powered by OhanaDoc</span>
                 </div>
             </a>
-            <ul class="nav-links">
-                <li class="nav-item dropdown mega-dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">
-                        Treatments
-                    </a>
-                    <div class="mega-dropdown-menu">
-                        <div class="mega-dropdown-grid">
-                            <div class="mega-dropdown-section">
-                                <h3>Weight Loss Services</h3>
-                                <a href="/weight-loss/best-glp1-options.html" class="mega-dropdown-item featured">
-                                    <div class="mega-dropdown-content">
-                                        <h4>Semaglutide <span style="display: inline-block; white-space: nowrap;">(Ozempic/Wegovy)</span></h4>
-                                        <p>Weekly GLP-1 injection, 15% avg loss</p>
-                                        <span class="price-tag featured-tag">From $299/mo</span>
-                                    </div>
-                                </a>
-                                <a href="/weight-loss/best-peptide-therapy.html" class="mega-dropdown-item featured">
-                                    <div class="mega-dropdown-content">
-                                        <h4>Tirzepatide <span style="display: inline-block; white-space: nowrap;">(Mounjaro)</span></h4>
-                                        <p>Dual-action, up to 20% weight loss</p>
-                                        <span class="price-tag featured-tag">From $399/mo</span>
-                                    </div>
-                                </a>
-                                <a href="/weight-loss/best-non-glp1-alternatives.html" class="mega-dropdown-item">
-                                    <div class="mega-dropdown-content">
-                                        <h4>Compounded GLP-1</h4>
-                                        <p>Affordable, custom formulations</p>
-                                        <span class="price-tag">From $199/mo</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="mega-dropdown-section">
-                                <h3>Men's Health</h3>
-                                <a href="/mens-health/best-ed-treatments.html" class="mega-dropdown-item featured">
-                                    <div class="mega-dropdown-content">
-                                        <h4>Erectile Dysfunction</h4>
-                                        <p>Sildenafil, Tadalafil, injections</p>
-                                        <span class="price-tag featured-tag">From $89/mo</span>
-                                    </div>
-                                </a>
-                                <a href="/mens-health/best-testosterone-therapy.html" class="mega-dropdown-item">
-                                    <div class="mega-dropdown-content">
-                                        <h4>Testosterone Therapy</h4>
-                                        <p>HRT for low testosterone</p>
-                                        <span class="price-tag">From $149/mo</span>
-                                    </div>
-                                </a>
-                                <a href="/mens-health/best-peptides-vitality.html" class="mega-dropdown-item">
-                                    <div class="mega-dropdown-content">
-                                        <h4>Peptide Therapy</h4>
-                                        <p>CJC-1295, Ipamorelin for vitality</p>
-                                        <span class="price-tag">From $299/mo</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="mega-dropdown-section">
-                                <h3>Women's Health</h3>
-                                <a href="/womens-health/best-birth-control-online.html" class="mega-dropdown-item featured">
-                                    <div class="mega-dropdown-content">
-                                        <h4>Birth Control</h4>
-                                        <p>Oral contraceptives, patches</p>
-                                        <span class="price-tag featured-tag">From $29/mo</span>
-                                    </div>
-                                </a>
-                                <a href="/womens-health/best-hormone-therapy.html" class="mega-dropdown-item">
-                                    <div class="mega-dropdown-content">
-                                        <h4>Hormone Therapy</h4>
-                                        <p>BHRT, estrogen/progesterone</p>
-                                        <span class="price-tag">From $199/mo</span>
-                                    </div>
-                                </a>
-                                <a href="/womens-health/best-menopause-treatment.html" class="mega-dropdown-item">
-                                    <div class="mega-dropdown-content">
-                                        <h4>Menopause Treatment</h4>
-                                        <p>HRT, symptom management</p>
-                                        <span class="price-tag">From $149/mo</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="mega-dropdown-section">
-                                <h3>Dermatology</h3>
-                                <a href="/dermatology/best-acne-treatment-online.html" class="mega-dropdown-item">
-                                    <div class="mega-dropdown-content">
-                                        <h4>Acne Treatment</h4>
-                                        <p>Prescription retinoids, antibiotics</p>
-                                        <span class="price-tag">From $79/mo</span>
-                                    </div>
-                                </a>
-                                <a href="/dermatology/best-anti-aging-skincare.html" class="mega-dropdown-item">
-                                    <div class="mega-dropdown-content">
-                                        <h4>Anti-Aging</h4>
-                                        <p>Retinols, peptides, growth factors</p>
-                                        <span class="price-tag">From $149/mo</span>
-                                    </div>
-                                </a>
-                                <a href="/dermatology/best-hair-loss-treatment.html" class="mega-dropdown-item">
-                                    <div class="mega-dropdown-content">
-                                        <h4>Hair Restoration</h4>
-                                        <p>Minoxidil, finasteride, PRP</p>
-                                        <span class="price-tag">From $89/mo</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="mega-dropdown-section">
-                                <h3>Primary Care</h3>
-                                <a href="/primary-care/best-uti-treatment-online.html" class="mega-dropdown-item">
-                                    <div class="mega-dropdown-content">
-                                        <h4>UTI Treatment</h4>
-                                        <p>Antibiotics, prevention strategies</p>
-                                        <span class="price-tag">From $49/visit</span>
-                                    </div>
-                                </a>
-                                <a href="/primary-care/best-migraine-visit.html" class="mega-dropdown-item">
-                                    <div class="mega-dropdown-content">
-                                        <h4>Migraine Care</h4>
-                                        <p>Triptans, preventatives, Botox</p>
-                                        <span class="price-tag">From $99/visit</span>
-                                    </div>
-                                </a>
-                                <a href="/primary-care/best-sinus-infection-treatment.html" class="mega-dropdown-item">
-                                    <div class="mega-dropdown-content">
-                                        <h4>Sinus Infections</h4>
-                                        <p>Antibiotics, nasal treatments</p>
-                                        <span class="price-tag">From $69/visit</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a href="/blog/">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" onclick="event.preventDefault(); return false;">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" onclick="event.preventDefault(); return false;">Contact</a>
-                </li>
-            </ul>
         </nav>
     </header>
 

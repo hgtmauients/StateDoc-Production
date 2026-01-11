@@ -8,10 +8,14 @@
     <link rel="canonical" href="https://TennesseeDoc.com/blog/">
     
     <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
         :root{--state-primary:#013759;--state-secondary:#009DDD;--state-gradient:linear-gradient(135deg,#013759,#009DDD)}
         *{scrollbar-width:none;-ms-overflow-style:none}*::-webkit-scrollbar{display:none}
         body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:0;background:linear-gradient(135deg,#013759,#009DDD);color:#fff;line-height:1.7;transition:all 0.3s}
-        .header{background:rgba(10,15,28,0.95);padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,0.1);transition:all 0.3s}
+        .header{background:rgba(0,20,40,0.95);padding:1rem 2rem;position:sticky;top:0;z-index:1000;backdrop-filter:blur(8px)}
+        .nav{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto}
+        .logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none}
+        .logo-symbol{height:45px;width:45px;object-fit:contain}
         .header a{color:#fff;text-shadow:0 0 20px var(--state-secondary);text-decoration:none;font-weight:600}
         .container{max-width:1000px;margin:0 auto;padding:3rem 1.5rem}
         h1{background:var(--state-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:3rem;font-weight:800;margin-bottom:1rem;text-align:center}
@@ -32,7 +36,10 @@
         .sun-icon{opacity:1;position:absolute}
         .moon-icon{opacity:0;position:absolute;transform:rotate(-90deg) scale(0)}
         body.light-mode{background:linear-gradient(135deg,#013759,#009DDD);color:#111827}
-        body.light-mode .header{background:linear-gradient(135deg,rgba(0,63,127,0.20),rgba(0,63,127,0.25),rgba(255,184,28,0.38));border-bottom:2px solid rgba(255,184,28,0.4)}
+        body.light-mode .header{background:rgba(0,20,40,0.95);padding:1rem 2rem;position:sticky;top:0;z-index:1000;backdrop-filter:blur(8px)}
+        .nav{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto}
+        .logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none}
+        .logo-symbol{height:45px;width:45px;object-fit:contain}
         body.light-mode .header a{color:#111827;text-shadow:none}
         body.light-mode .subtitle{color:#374151}
         body.light-mode .blog-card{background:white;border:1px solid rgba(0,0,0,0.1);box-shadow:0 4px 12px rgba(0,0,0,0.12)}
@@ -50,15 +57,17 @@
 </head>
 <body>
 
-<div class="header">
-    <div style="display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:0 auto">
-        <a href="https://TennesseeDoc.com/">&larr; Back to TennesseeDoc</a>
-        <div style="display:flex;align-items:center;gap:0.5rem">
-            <img src="/assets/ohanaDoc-logo.png" alt="OhanaDoc" style="height:28px;width:28px;object-fit:contain">
-            <span style="font-size:0.85rem;color:rgba(255,255,255,0.6)">Powered by <strong style="color:#fff">OhanaDoc</strong></span>
-        </div>
-    </div>
-</div>
+<header class="header" id="header">
+    <nav class="nav">
+        <a href="https://tennesseedoc.com/" class="logo" target="_blank" rel="noopener">
+            <img src="/assets/ohanaDoc-logo.png" alt="OhanaDoc" class="logo-symbol" style="height:45px;width:45px;object-fit:contain">
+            <div style="display:flex;flex-direction:column;gap:0.2rem">
+                <span style="font-family:'Poppins','Inter',sans-serif;font-size:1.4rem;font-weight:700"><span style="color:#25D366;">Tennessee</span><span style="color:#009DDD;">Doc</span></span>
+                <span style="background:linear-gradient(90deg,#F98A33 0%,#25D366 50%,#009DDD 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:600;font-size:0.65rem">Powered by OhanaDoc</span>
+            </div>
+        </a>
+    </nav>
+</header>
 
 <div class="container">
     <h1>TennesseeDoc Health Blog</h1>
@@ -67,56 +76,56 @@
     <div class="blog-grid">
         
         <div class="blog-card">
-            <div class="meta">October 10, 2025 | 8 min read</div>
+            <div class="meta">January 9, 2026 | 8 min read</div>
             <h3>Semaglutide vs Tirzepatide: Which is Right for You?</h3>
             <p>Complete comparison of the two most effective weight loss medications. Clinical trial results, side effects, costs, and expert recommendations.</p>
             <a href="/blog/semaglutide-vs-tirzepatide-comparison/">Read Article </a>
         </div>
 
         <div class="blog-card">
-            <div class="meta">October 10, 2025 | 7 min read</div>
+            <div class="meta">January 9, 2026 | 7 min read</div>
             <h3>How Telehealth for ED Treatment Works</h3>
             <p>Everything you need to know about getting ED treatment online. Process, privacy, costs, and what to expect from virtual consultations.</p>
             <a href="/blog/telehealth-ed-treatment-guide/">Read Article </a>
         </div>
 
         <div class="blog-card">
-            <div class="meta">October 10, 2025 | 9 min read</div>
+            <div class="meta">January 9, 2026 | 9 min read</div>
             <h3>Weight Loss Medications Guide 2025</h3>
             <p>Complete overview of all weight loss medication options including GLP-1s, costs, effectiveness, and how to get started safely.</p>
             <a href="/blog/weight-loss-medication-complete-guide/">Read Article </a>
         </div>
 
         <div class="blog-card">
-            <div class="meta">October 10, 2025 | 6 min read</div>
+            <div class="meta">January 9, 2026 | 6 min read</div>
             <h3>Telehealth vs Traditional Doctor Visits</h3>
             <p>Comprehensive comparison of virtual and in-person healthcare. Pros, cons, cost analysis, and when to use each approach.</p>
             <a href="/blog/telehealth-vs-traditional-doctor/">Read Article </a>
         </div>
 
         <div class="blog-card">
-            <div class="meta">October 10, 2025 | 8 min read</div>
+            <div class="meta">January 9, 2026 | 8 min read</div>
             <h3>GLP-1 Side Effects: Management Guide</h3>
             <p>Expert strategies for managing nausea, GI issues, and other GLP-1 side effects. What works, what doesn't, and when to call your doctor.</p>
             <a href="/blog/glp1-side-effects-management/">Read Article </a>
         </div>
 
         <div class="blog-card">
-            <div class="meta">October 10, 2025 | 7 min read</div>
+            <div class="meta">January 9, 2026 | 7 min read</div>
             <h3>How Much Does Semaglutide Cost in 2025?</h3>
             <p>Complete price breakdown for Semaglutide (Ozempic/Wegovy). Retail costs, insurance coverage, manufacturer savings, and telehealth pricing.</p>
             <a href="/blog/how-much-does-semaglutide-cost/">Read Article </a>
         </div>
 
         <div class="blog-card">
-            <div class="meta">October 10, 2025 | 6 min read</div>
+            <div class="meta">January 9, 2026 | 6 min read</div>
             <h3>What is Telehealth? Complete Guide 2025</h3>
             <p>Everything you need to know about virtual healthcare. How it works, what it treats, costs, and is it as good as traditional doctor visits.</p>
             <a href="/blog/what-is-telehealth/">Read Article </a>
         </div>
 
         <div class="blog-card">
-            <div class="meta">October 10, 2025 | 7 min read</div>
+            <div class="meta">January 9, 2026 | 7 min read</div>
             <h3>Is Telehealth Covered by Insurance?</h3>
             <p>Complete guide to insurance coverage for telehealth in 2025. Medicare, Medicaid, commercial plans, copays, and how to maximize benefits.</p>
             <a href="/blog/is-telehealth-covered-by-insurance/">Read Article </a>
