@@ -1,0 +1,425 @@
+{
+  "stateConfig": {
+    "name": "New York",
+    "code": "NY",
+    "domain": "newyorkdoc.com",
+    "adjective": "New York",
+    "majorCities": "Honolulu, Hilo, Kailua, Pearl City",
+    "colors": {
+      "primary": "#003A70",
+      "secondary": "#C60C30",
+      "tertiary": "#FF5470",
+      "accent": "#0055A5"
+    },
+    "regulations": {
+      "telehealthAllowed": true,
+      "requiresInPerson": false,
+      "notes": "New York permits telehealth prescriptions for most medications when provided by licensed NY physicians following proper medical evaluation."
+    }
+  },
+  
+  "topics": {
+    "weight-loss": {
+      "displayName": "Weight Loss",
+      "hubPage": "/weight-loss",
+      "pages": [
+        {
+          "slug": "best-glp1-options",
+          "status": "published",
+          "title": "Best GLP-1 Options for Weight Loss in New York",
+          "h1": "Best GLP-1 Options for Weight Loss in New York",
+          "metaDescription": "Compare safe, physician-supervised GLP-1 weight loss treatments in New York. Semaglutide, tirzepatide, and alternatives from licensed NY providers. Same-day consultations available.",
+          "keywords": "GLP-1 New York, semaglutide NY, tirzepatide New York, Ozempic online NY, Wegovy New York, Mounjaro NY, weight loss treatment New York",
+          "heroIntro": "Compare safe, physician-supervised GLP-1 treatments including semaglutide and tirzepatide from licensed New York providers. Same-day consultations available with transparent pricing.",
+          "targetKeywords": {
+            "primary": "best GLP-1 New York",
+            "secondary": ["best GLP-1 options NY", "GLP-1 weight loss New York", "semaglutide New York", "tirzepatide NY"],
+            "longTail": ["best weight loss medication New York", "GLP-1 prescription online NY", "compounded semaglutide New York"]
+          },
+          "services": [
+            {
+              "title": "Compounded Semaglutide",
+              "description": "Affordable alternative to Ozempic/Wegovy. Same active ingredient, FDA-registered compounding pharmacy. Average 12-18% weight loss. Starting at $297/month with physician supervision included.",
+              "link": "/services/semaglutide",
+              "cta": "Learn More"
+            },
+            {
+              "title": "Compounded Tirzepatide",
+              "description": "Most effective GLP-1 option available. Dual GIP/GLP-1 action for superior results. Average 15-22% weight loss in trials. Starting at $450/month with complete medical support.",
+              "link": "/services/tirzepatide",
+              "cta": "Learn More"
+            },
+            {
+              "title": "Brand-Name GLP-1 Options",
+              "description": "Ozempic, Wegovy, Mounjaro, and Zepbound available when insurance covers or preferred by patient. Full prior authorization support and ongoing monitoring from NY-licensed physicians.",
+              "link": "/services/brand-glp1",
+              "cta": "Start Visit"
+            },
+            {
+              "title": "Non-GLP-1 Alternatives",
+              "description": "Metformin, topiramate, naltrexone-bupropion, and other proven weight loss medications for patients who don't qualify for or prefer alternatives to GLP-1 therapy.",
+              "link": "/weight-loss#alternatives",
+              "cta": "Explore Options"
+            }
+          ],
+          "paaQuestions": [
+            {
+              "question": "What is the most effective GLP-1 for weight loss?",
+              "answer": "Tirzepatide (Mounjaro/Zepbound) shows the highest average weight loss at 15-22%, followed by semaglutide (Ozempic/Wegovy) at 12-18%. Both are highly effective when combined with lifestyle modifications and medical supervision."
+            },
+            {
+              "question": "Are compounded GLP-1 medications safe?",
+              "answer": "Yes, when obtained from FDA-registered 503B compounding pharmacies with proper physician oversight. Compounded semaglutide and tirzepatide contain the same active ingredients as brand versions but are more affordable during FDA-approved shortages."
+            },
+            {
+              "question": "How much does GLP-1 treatment cost in New York?",
+              "answer": "Compounded semaglutide costs $297-$397/month, compounded tirzepatide costs $450-$597/month, while brand versions range from $900-$1,350/month without insurance. NewYorkDoc offers transparent pricing with no hidden fees."
+            },
+            {
+              "question": "Can I get GLP-1 prescribed online in New York?",
+              "answer": "Yes, New York permits telehealth prescriptions for GLP-1 medications when provided by licensed NY physicians following proper medical evaluation. Same-day consultations are available through NewYorkDoc."
+            },
+            {
+              "question": "Do I qualify for GLP-1 treatment?",
+              "answer": "Most patients with BMI ≥30 (or ≥27 with weight-related conditions) qualify for GLP-1 therapy. Final eligibility is determined by your physician based on medical history, current medications, and individual health factors."
+            },
+            {
+              "question": "What's the difference between Ozempic and Wegovy?",
+              "answer": "Both contain semaglutide, but Wegovy is FDA-approved specifically for weight loss (doses up to 2.4mg) while Ozempic is approved for diabetes (max 2mg). The active ingredient and mechanism are identical."
+            }
+          ],
+          "relatedLinks": [
+            {
+              "title": "GLP-1 Intake & Pricing",
+              "url": "/weight-loss",
+              "description": "Complete pricing information and qualification checker"
+            },
+            {
+              "title": "Prescription Refills",
+              "url": "/services/prescription-refills",
+              "description": "Existing patient refill management"
+            },
+            {
+              "title": "GLP-1 Side Effects Guide",
+              "url": "/blog/glp1-side-effects-management",
+              "description": "Comprehensive management strategies"
+            },
+            {
+              "title": "Weight Loss Medication Guide",
+              "url": "/blog/weight-loss-medication-complete-guide",
+              "description": "Compare all available options"
+            }
+          ]
+        },
+        {
+          "slug": "best-non-glp1-alternatives",
+          "status": "planned",
+          "title": "Best Non-GLP-1 Weight Loss Alternatives in New York",
+          "targetKeywords": {
+            "primary": "non-GLP-1 weight loss New York",
+            "secondary": ["weight loss alternatives NY", "metformin weight loss New York", "naltrexone-bupropion NY"]
+          }
+        },
+        {
+          "slug": "best-peptide-therapy",
+          "status": "planned",
+          "title": "Best Peptide Therapy for Weight Loss in New York",
+          "targetKeywords": {
+            "primary": "peptide therapy New York",
+            "secondary": ["peptides weight loss NY", "AOD-9604 New York", "CJC-1295 NY"]
+          }
+        }
+      ]
+    },
+    
+    "mens-health": {
+      "displayName": "Men's Health",
+      "hubPage": "/mens-health",
+      "pages": [
+        {
+          "slug": "best-ed-treatments",
+          "status": "published",
+          "title": "Best ED Treatments for Men in New York",
+          "h1": "Best ED Treatments for Men in New York",
+          "metaDescription": "Compare proven erectile dysfunction treatments in New York. Tadalafil, sildenafil, and advanced options from licensed NY physicians. Discreet, confidential online consultations.",
+          "keywords": "ED treatment New York, erectile dysfunction NY, Cialis online New York, Viagra New York, tadalafil NY, sildenafil New York, mens health telehealth",
+          "heroIntro": "Discreet, confidential erectile dysfunction treatment from licensed New York physicians. Compare tadalafil, sildenafil, and advanced options with same-day consultations and affordable pricing.",
+          "targetKeywords": {
+            "primary": "best ED treatment New York",
+            "secondary": ["ED treatment online NY", "tadalafil New York", "sildenafil NY", "Viagra online New York"],
+            "longTail": ["best erectile dysfunction treatment New York", "ED medication online NY", "Cialis prescription New York"]
+          },
+          "services": [
+            {
+              "title": "Tadalafil (Generic Cialis)",
+              "description": "Lasts up to 36 hours for spontaneous intimacy. Lower-dose daily option available. 70-85% effective for most men. Starting at $30/month with physician consultation included.",
+              "link": "/services/tadalafil",
+              "cta": "Learn More"
+            },
+            {
+              "title": "Sildenafil (Generic Viagra)",
+              "description": "Proven effectiveness for 25+ years. Works in 30-60 minutes, lasts 4-6 hours. Ideal for planned activity. Starting at $20/month with medical supervision.",
+              "link": "/services/sildenafil",
+              "cta": "Learn More"
+            },
+            {
+              "title": "Daily Tadalafil",
+              "description": "Low-dose continuous therapy for spontaneous readiness anytime. Improves urinary symptoms and overall vascular health. Convenient once-daily dosing.",
+              "link": "/services/daily-tadalafil",
+              "cta": "Start Visit"
+            },
+            {
+              "title": "Combination Therapy",
+              "description": "Advanced treatment protocols combining medications and lifestyle interventions for difficult cases. Personalized plans from experienced physicians for optimal results.",
+              "link": "/mens-health#advanced",
+              "cta": "Explore Options"
+            }
+          ],
+          "paaQuestions": [
+            {
+              "question": "What is the most effective ED treatment?",
+              "answer": "Tadalafil and sildenafil are equally effective for most men, with 70-85% success rates. Tadalafil lasts up to 36 hours while sildenafil lasts 4-6 hours. The best option depends on individual lifestyle, medical history, and personal preference."
+            },
+            {
+              "question": "Can I get ED medication prescribed online in New York?",
+              "answer": "Yes, New York permits licensed physicians to prescribe ED medications via telehealth after proper medical evaluation. No in-person visit required. Consultations are confidential and HIPAA-compliant."
+            },
+            {
+              "question": "How much does ED treatment cost in New York?",
+              "answer": "Generic tadalafil costs $30-$90/month, generic sildenafil costs $20-$60/month depending on dosage and frequency. NewYorkDoc offers transparent pricing with physician consultation included."
+            },
+            {
+              "question": "Is generic Cialis as effective as brand Cialis?",
+              "answer": "Yes, generic tadalafil contains the same active ingredient and is bioequivalent to brand Cialis. It works identically but costs 90% less. The FDA requires generic medications to meet the same quality and effectiveness standards."
+            },
+            {
+              "question": "Are there side effects from ED medications?",
+              "answer": "Common side effects are mild and include headache, flushing, nasal congestion, and upset stomach. These occur in 10-15% of users and are typically temporary. Serious side effects are rare but require immediate medical attention."
+            },
+            {
+              "question": "What's the difference between daily and as-needed tadalafil?",
+              "answer": "Daily tadalafil (2.5-5mg) provides continuous coverage for spontaneous intimacy, while as-needed (10-20mg) is taken before anticipated activity. Daily dosing also improves urinary symptoms and may benefit overall vascular health."
+            }
+          ],
+          "relatedLinks": [
+            {
+              "title": "Men's Health Services",
+              "url": "/mens-health",
+              "description": "Complete ED, testosterone, and wellness offerings"
+            },
+            {
+              "title": "Prescription Refills",
+              "url": "/services/prescription-refills",
+              "description": "Existing patient medication management"
+            },
+            {
+              "title": "Telehealth ED Treatment Guide",
+              "url": "/blog/telehealth-ed-treatment-guide",
+              "description": "Comprehensive overview of online ED care"
+            },
+            {
+              "title": "Tadalafil vs Sildenafil Comparison",
+              "url": "/blog/tadalafil-vs-sildenafil-comparison",
+              "description": "Detailed medication comparison"
+            }
+          ]
+        },
+        {
+          "slug": "best-peptides-vitality",
+          "status": "planned",
+          "title": "Best Peptides for Vitality in New York",
+          "targetKeywords": {
+            "primary": "peptides for men New York",
+            "secondary": ["BPC-157 NY", "peptide therapy men New York", "vitality peptides NY"]
+          }
+        },
+        {
+          "slug": "best-testosterone-therapy",
+          "status": "planned",
+          "title": "Best Testosterone Therapy in New York",
+          "targetKeywords": {
+            "primary": "testosterone therapy New York",
+            "secondary": ["TRT New York", "testosterone replacement NY", "low T treatment New York"]
+          }
+        }
+      ]
+    },
+    
+    "womens-health": {
+      "displayName": "Women's Health",
+      "hubPage": "/womens-health",
+      "pages": [
+        {
+          "slug": "best-hormone-therapy",
+          "status": "planned",
+          "title": "Best Hormone Therapy for Women in New York",
+          "targetKeywords": {
+            "primary": "hormone therapy New York",
+            "secondary": ["HRT New York", "bioidentical hormones NY", "menopause treatment New York"]
+          }
+        },
+        {
+          "slug": "best-birth-control-online",
+          "status": "planned",
+          "title": "Best Birth Control Online in New York",
+          "targetKeywords": {
+            "primary": "birth control online New York",
+            "secondary": ["online contraception NY", "pill prescription New York", "IUD consultation NY"]
+          }
+        },
+        {
+          "slug": "best-menopause-treatment",
+          "status": "planned",
+          "title": "Best Menopause Treatment in New York",
+          "targetKeywords": {
+            "primary": "menopause treatment New York",
+            "secondary": ["menopause symptoms NY", "hot flash treatment New York", "perimenopause NY"]
+          }
+        }
+      ]
+    },
+    
+    "primary-care": {
+      "displayName": "Primary Care",
+      "hubPage": "/primary-care",
+      "pages": [
+        {
+          "slug": "best-uti-treatment-online",
+          "status": "planned",
+          "title": "Best UTI Treatment Online in New York",
+          "targetKeywords": {
+            "primary": "UTI treatment online New York",
+            "secondary": ["online UTI prescription NY", "urinary tract infection New York", "UTI antibiotics online NY"]
+          }
+        },
+        {
+          "slug": "best-migraine-visit",
+          "status": "planned",
+          "title": "Best Online Migraine Visit in New York",
+          "targetKeywords": {
+            "primary": "migraine treatment New York",
+            "secondary": ["migraine prescription online NY", "headache treatment New York", "migraine medication NY"]
+          }
+        },
+        {
+          "slug": "best-sinus-infection-treatment",
+          "status": "planned",
+          "title": "Best Sinus Infection Treatment Online in New York",
+          "targetKeywords": {
+            "primary": "sinus infection treatment New York",
+            "secondary": ["sinusitis online NY", "sinus antibiotics New York", "sinus infection prescription NY"]
+          }
+        }
+      ]
+    },
+    
+    "dermatology": {
+      "displayName": "Dermatology",
+      "hubPage": "/dermatology",
+      "pages": [
+        {
+          "slug": "best-acne-treatment-online",
+          "status": "planned",
+          "title": "Best Acne Treatment Online in New York",
+          "targetKeywords": {
+            "primary": "acne treatment online New York",
+            "secondary": ["tretinoin prescription NY", "acne medication New York", "dermatology online NY"]
+          }
+        },
+        {
+          "slug": "best-anti-aging-skincare",
+          "status": "planned",
+          "title": "Best Anti-Aging Skincare in New York",
+          "targetKeywords": {
+            "primary": "anti-aging skincare New York",
+            "secondary": ["retinol prescription NY", "wrinkle treatment New York", "skincare online NY"]
+          }
+        },
+        {
+          "slug": "best-hair-loss-treatment",
+          "status": "planned",
+          "title": "Best Hair Loss Treatment in New York",
+          "targetKeywords": {
+            "primary": "hair loss treatment New York",
+            "secondary": ["finasteride NY", "minoxidil prescription New York", "hair regrowth NY"]
+          }
+        }
+      ]
+    }
+  },
+  
+  "globalSettings": {
+    "ctaPrimary": "Start Visit",
+    "ctaSecondary": "See if You Qualify",
+    "trustChips": [
+      "State-licensed physicians",
+      "HIPAA-compliant",
+      "Same-day availability"
+    ],
+    "utmParameters": {
+      "source": "services_hub",
+      "medium": "internal",
+      "campaign": "state_ny"
+    },
+    "disclaimer": "Medical Disclaimer: This content is for educational purposes only and does not constitute medical advice. All treatment decisions should be made in consultation with licensed physicians. Provider judgment determines eligibility.",
+    "footer": {
+      "copyright": "© 2025 Harrington Maui Enterprises LLC. All rights reserved.",
+      "poweredBy": "Powered by OhanaDoc",
+      "links": [
+        { "title": "Privacy Policy", "url": "/privacy" },
+        { "title": "Terms of Service", "url": "/terms" }
+      ]
+    }
+  },
+  
+  "schemaTemplates": {
+    "organization": {
+      "@type": "Organization",
+      "@id": "https://{domain}/#organization",
+      "name": "{StateDoc}",
+      "url": "https://{domain}",
+      "logo": "https://{domain}/assets/ohanaDoc-logo.png",
+      "description": "{State}'s premier telehealth platform, powered by OhanaDoc",
+      "poweredBy": {
+        "@type": "Organization",
+        "name": "OhanaDoc",
+        "url": "https://ohanadoc.com"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "{STATE_CODE}",
+        "addressCountry": "US"
+      }
+    }
+  },
+  
+  "contentGuidelines": {
+    "minWordCount": 2000,
+    "maxWordCount": 3000,
+    "internalLinksPerPage": 6,
+    "h2Count": "6-10",
+    "h3Count": "10-15",
+    "imageAltFormat": "[service] telehealth in {State}",
+    "keywordDensity": "1-2%",
+    "readabilityTarget": "Grade 8-10"
+  },
+  
+  "rolloutPlan": {
+    "phase1": {
+      "topics": ["weight-loss", "mens-health"],
+      "priority": "high",
+      "timeline": "Week 1-2"
+    },
+    "phase2": {
+      "topics": ["womens-health", "primary-care"],
+      "priority": "medium",
+      "timeline": "Week 3-4"
+    },
+    "phase3": {
+      "topics": ["dermatology", "mental-health"],
+      "priority": "low",
+      "timeline": "Week 5-6"
+    }
+  }
+}
+

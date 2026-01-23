@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://MichiganDoc.com/sitemap.xml
+Sitemap: https://www.michigandoc.com/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1

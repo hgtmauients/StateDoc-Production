@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://IndianaDoc.com/sitemap.xml
+Sitemap: https://www.indianadoc.com/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
