@@ -119,7 +119,9 @@ function Generate-Sitemap {
         }
     }
     
-    # Legal pages
+    # Legal pages (only included if files exist on disk)
+    # OhanaDoc franchise sites use popups instead and have no standalone files.
+    # Other tenants may still use standalone legal pages.
     if (Test-Path (Join-Path $StatePath 'privacy.html')) {
         $urls += @{
             loc = "$BaseUrl/privacy"
@@ -196,7 +198,7 @@ function Generate-Sitemap {
         }
     }
     
-    # Legal pages
+    # Legal pages (only rendered if files exist on disk)
     if ($legalPages) {
         $xml += "`n    "
         $xml += "`n    <!-- Legal Pages -->"

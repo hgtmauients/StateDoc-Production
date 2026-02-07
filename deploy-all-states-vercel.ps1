@@ -1,5 +1,6 @@
-# Deploy All 20 States to Vercel
-# Deploys each state's homepage to Vercel production
+# Deploy All Franchise Sites to Vercel
+# Deploys each franchise site's homepage to Vercel production
+# NOTE: Franchise count is dynamic - see YOUR-20-STATES-CONFIG.json (deprecated) or query database
 #
 # USAGE:
 #   .\deploy-all-states-vercel.ps1                    # Deploy all states
@@ -148,7 +149,7 @@ if ($SpecificState) {
     Write-Host "The 7-category homepage is now LIVE on all production domains!" -ForegroundColor White
 } else {
     Write-Host "DEPLOYMENT COMPLETED WITH ISSUES" -ForegroundColor Yellow
-    Write-Host "Successfully deployed: $successCount / 20 states" -ForegroundColor White
+    Write-Host "Successfully deployed: $successCount franchise sites" -ForegroundColor White
     if ($skippedCount -gt 0) {
         Write-Host ""
         Write-Host "NEXT STEPS:" -ForegroundColor Cyan
