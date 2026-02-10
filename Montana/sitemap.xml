@@ -3,7 +3,7 @@
     <!-- Homepage -->
     <url>
         <loc>https://www.montanadoc.com/</loc>
-        <lastmod>2026-02-09</lastmod>
+        <lastmod>2026-02-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -11,66 +11,66 @@
     <!-- Blog Index -->
     <url>
         <loc>https://www.montanadoc.com/blog/</loc>
-        <lastmod>2026-02-09</lastmod>
+        <lastmod>2026-02-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <!-- Blog Articles (21 total) -->
-    <url><loc>https://www.montanadoc.com/blog/adhd-medication-guide</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/anxiety-medication-guide</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/bipolar-medication-guide</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/depression-medication-guide</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/glp1-side-effects-management</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/hair-loss-treatments-that-work</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/how-long-to-lose-weight-ozempic</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/how-much-does-semaglutide-cost</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/how-to-get-ozempic-prescribed-online</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/is-compounded-semaglutide-safe</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/is-online-prescription-legal</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/is-telehealth-covered-by-insurance</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/mounjaro-vs-ozempic-comparison</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/ocd-medication-guide</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/semaglutide-vs-tirzepatide-comparison</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/sleep-medication-guide</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/tadalafil-vs-sildenafil-comparison</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/telehealth-ed-treatment-guide</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/telehealth-vs-traditional-doctor</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/weight-loss-medication-complete-guide</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.montanadoc.com/blog/what-is-telehealth</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/adhd-medication-guide</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/anxiety-medication-guide</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/bipolar-medication-guide</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/depression-medication-guide</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/glp1-side-effects-management</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/hair-loss-treatments-that-work</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/how-long-to-lose-weight-ozempic</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/how-much-does-semaglutide-cost</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/how-to-get-ozempic-prescribed-online</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/is-compounded-semaglutide-safe</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/is-online-prescription-legal</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/is-telehealth-covered-by-insurance</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/mounjaro-vs-ozempic-comparison</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/ocd-medication-guide</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/semaglutide-vs-tirzepatide-comparison</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/sleep-medication-guide</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/tadalafil-vs-sildenafil-comparison</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/telehealth-ed-treatment-guide</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/telehealth-vs-traditional-doctor</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/weight-loss-medication-complete-guide</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.montanadoc.com/blog/what-is-telehealth</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     
     <!--  Collection (33 pages) -->
-    <url><loc>https://www.montanadoc.com/weight-loss/best-glp1-options</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/weight-loss/best-non-glp1-alternatives</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/weight-loss/best-peptide-therapy</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/mens-health/best-ed-treatments</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/mens-health/best-peptides-vitality</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/mens-health/best-testosterone-therapy</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/womens-health/best-birth-control-online</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/womens-health/best-hormone-therapy</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/womens-health/best-menopause-treatment</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/dermatology/best-acne-treatment-online</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/dermatology/best-anti-aging-skincare</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/dermatology/best-hair-loss-treatment</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/primary-care/best-migraine-visit</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/primary-care/best-sinus-infection-treatment</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/primary-care/best-uti-treatment-online</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/mental-health/adhd-medication-management</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/mental-health/anxiety-medication-management</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/mental-health/bipolar-medication-management</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/mental-health/depression-medication-management</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/mental-health/ocd-medication-management</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/mental-health/sleep-disorder-medication-management</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/chronic-disease-management/diabetes-care-management</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/chronic-disease-management/hypertension-management</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/chronic-disease-management/thyroid-disorder-treatment</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/cardiovascular-health/cholesterol-management</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/cardiovascular-health/heart-disease-prevention</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/digestive-health/gerd-acid-reflux-treatment</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/digestive-health/ibs-treatment</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/pain-management/arthritis-care</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/pain-management/chronic-pain-treatment</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/pain-management/fibromyalgia-management</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/preventive-care/annual-physicals</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.montanadoc.com/preventive-care/health-screenings</loc><lastmod>2026-02-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/weight-loss/best-glp1-options</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/weight-loss/best-non-glp1-alternatives</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/weight-loss/best-peptide-therapy</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/mens-health/best-ed-treatments</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/mens-health/best-peptides-vitality</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/mens-health/best-testosterone-therapy</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/womens-health/best-birth-control-online</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/womens-health/best-hormone-therapy</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/womens-health/best-menopause-treatment</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/dermatology/best-acne-treatment-online</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/dermatology/best-anti-aging-skincare</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/dermatology/best-hair-loss-treatment</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/primary-care/best-migraine-visit</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/primary-care/best-sinus-infection-treatment</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/primary-care/best-uti-treatment-online</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/mental-health/adhd-medication-management</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/mental-health/anxiety-medication-management</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/mental-health/bipolar-medication-management</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/mental-health/depression-medication-management</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/mental-health/ocd-medication-management</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/mental-health/sleep-disorder-medication-management</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/chronic-disease-management/diabetes-care-management</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/chronic-disease-management/hypertension-management</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/chronic-disease-management/thyroid-disorder-treatment</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/cardiovascular-health/cholesterol-management</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/cardiovascular-health/heart-disease-prevention</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/digestive-health/gerd-acid-reflux-treatment</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/digestive-health/ibs-treatment</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/pain-management/arthritis-care</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/pain-management/chronic-pain-treatment</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/pain-management/fibromyalgia-management</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/preventive-care/annual-physicals</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.montanadoc.com/preventive-care/health-screenings</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 </urlset>
