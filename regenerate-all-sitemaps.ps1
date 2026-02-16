@@ -78,7 +78,7 @@ function Generate-Sitemap {
         # Blog index
         if (Test-Path (Join-Path $blogPath 'index.html')) {
             $urls += @{
-                loc = "$BaseUrl/blog/"
+                loc = "$BaseUrl/blog"
                 lastmod = $Today
                 changefreq = 'weekly'
                 priority = '0.9'
@@ -165,7 +165,7 @@ function Generate-Sitemap {
     $xml += "`n    </url>"
     
     # Blog section
-    $blogUrl = "$BaseUrl/blog/"
+    $blogUrl = "$BaseUrl/blog"
     $blogIndexPath = Join-Path (Join-Path $StatePath 'blog') 'index.html'
     if (Test-Path $blogIndexPath) {
         $xml += "`n    "
