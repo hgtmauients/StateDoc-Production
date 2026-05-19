@@ -52,7 +52,7 @@ $CollectionDirs = @(
     'preventive-care'
 )
 
-function Generate-Sitemap {
+function New-Sitemap {
     param(
         [string]$StatePath,
         [string]$Domain
@@ -148,8 +148,6 @@ function Generate-Sitemap {
 '@
     
     # Group URLs by type for nice formatting
-    $homepage = $urls | Where-Object { $_.comment -eq 'Homepage' }
-    $blogIndex = $urls | Where-Object { $_.comment -eq 'Blog Index' }
     $blogArticles = $urls | Where-Object { $_.type -eq 'blog' }
     $collectionPages = $urls | Where-Object { $_.type -eq 'collection' }
     $legalPages = $urls | Where-Object { $_.comment -like '*Policy*' -or $_.comment -like '*Terms*' }
@@ -227,10 +225,12 @@ if ($TargetState -eq "ALL") {
 }
 
 $results = @()
+$hadErrors = $false
 
 foreach ($state in $StatesToProcess) {
     if (-not $StateConfig.ContainsKey($state)) {
         Write-Host "Unknown state: $state" -ForegroundColor Red
+        $hadErrors = $true
         continue
     }
     
@@ -239,25 +239,31 @@ foreach ($state in $StatesToProcess) {
     
     if (-not (Test-Path $statePath)) {
         Write-Host "State folder not found: $statePath" -ForegroundColor Red
+        $hadErrors = $true
         continue
     }
     
     Write-Host "Processing $state ($domain)..." -ForegroundColor Cyan
-    
-    $result = Generate-Sitemap -StatePath $statePath -Domain $domain
-    
-    # Write sitemap
-    $sitemapPath = Join-Path $statePath 'sitemap.xml'
-    $result.xml | Out-File -FilePath $sitemapPath -Encoding UTF8 -Force
-    
-    Write-Host "  - Generated sitemap: $($result.urlCount) URLs ($($result.blogCount) blogs, $($result.collectionCount) collections)" -ForegroundColor Green
-    
-    $results += [PSCustomObject]@{
-        State = $state
-        Domain = $domain
-        TotalUrls = $result.urlCount
-        Blogs = $result.blogCount
-        Collections = $result.collectionCount
+    try {
+        $result = New-Sitemap -StatePath $statePath -Domain $domain
+
+        # Write sitemap
+        $sitemapPath = Join-Path $statePath 'sitemap.xml'
+        $result.xml | Out-File -FilePath $sitemapPath -Encoding UTF8 -Force
+
+        Write-Host "  - Generated sitemap: $($result.urlCount) URLs ($($result.blogCount) blogs, $($result.collectionCount) collections)" -ForegroundColor Green
+
+        $results += [PSCustomObject]@{
+            State = $state
+            Domain = $domain
+            TotalUrls = $result.urlCount
+            Blogs = $result.blogCount
+            Collections = $result.collectionCount
+        }
+    }
+    catch {
+        Write-Host "Failed processing ${state}: $($_.Exception.Message)" -ForegroundColor Red
+        $hadErrors = $true
     }
 }
 
@@ -267,3 +273,11 @@ $results | Format-Table -AutoSize
 
 $totalUrls = ($results | Measure-Object -Property TotalUrls -Sum).Sum
 Write-Host "Total URLs across all sitemaps: $totalUrls" -ForegroundColor Cyan
+
+if ($hadErrors -or $results.Count -eq 0) {
+    Write-Host "Sitemap regeneration completed with errors." -ForegroundColor Red
+    exit 1
+}
+
+Write-Host "Sitemap regeneration completed successfully." -ForegroundColor Green
+exit 0
