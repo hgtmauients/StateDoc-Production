@@ -7333,7 +7333,7 @@
             
 
             <!-- Service Banner -->
-            <div class="service-banner" id="serviceBanner" data-active-service="weight-loss">
+            <div class="service-banner" id="serviceBanner" data-active-service="smartintake">
                 <!-- Desktop Navigation Chevrons -->
                 <button class="banner-nav banner-nav-prev" onclick="navigateBanner('prev')" aria-label="Previous service - Navigate to previous telehealth treatment">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -7347,6 +7347,24 @@
                 </button>
                 
                 <div class="banner-container" id="bannerContainer">
+                    <!-- SmartIntake Slide — always first -->
+                    <div class="banner-slide" data-service="smartintake" style="background:linear-gradient(135deg,rgba(0,157,221,0.12) 0%,rgba(37,211,102,0.10) 100%);border:1px solid rgba(37,211,102,0.25);border-radius:12px;">
+                        <h3 style="font-size:clamp(1.1rem,3vw,1.45rem);">Not Sure Where to Start? <span class="highlight" style="-webkit-text-fill-color:unset;background:none;color:#25D366;">Let AI Guide You</span></h3>
+                        <p style="margin-bottom:0.75rem;">Answer a few quick questions and our AI matches you to the right Hawaii physician and service — takes under 5 minutes.</p>
+                        <div class="banner-features">
+                            <div class="banner-feature">🔒 Private</div>
+                            <div class="banner-feature">⚡ &lt; 5 min</div>
+                            <div class="banner-feature">🩺 Licensed HI Doctors</div>
+                            <div class="banner-feature">AI-Matched Care</div>
+                        </div>
+                        <button class="banner-cta btn-premium hover-premium" onclick="window.SmartIntake && window.SmartIntake.open()" style="background:linear-gradient(135deg,#009DDD,#25D366)!important;color:#fff!important;font-weight:700;">
+                            Start SmartIntake™
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+
                     <!-- Weight Loss Slide -->
                     <div class="banner-slide" data-service="weight-loss">
                         <h3>Transform Your Life with <span class="highlight">Weight Loss</span> Programs</h3>
