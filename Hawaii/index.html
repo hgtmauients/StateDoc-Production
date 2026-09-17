@@ -8784,15 +8784,15 @@
                             <div class="mega-dropdown-cta">
                                 <h4>Not sure what you need?</h4>
                                 <p>Speak with a Hawaii physician to find the right treatment</p>
-                                <a href="#" class="mega-cta-btn" onclick="window.SmartIntake && window.SmartIntake.open(); return false;">Start General Consultation</a>
+                                <a href="#" class="mega-cta-btn" onclick="openPopup('coming-soon-popup'); return false;">Start General Consultation</a>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li class="nav-item"><a href="#how-it-works">How It Works</a></li>
                 <li class="nav-item"><a href="#about" class="popup-trigger" data-popup="about-popup">About</a></li>
-                <li class="nav-item"><a href="#" onclick="window.SmartIntake && window.SmartIntake.open(); return false;">Patient Login</a></li>
-                <li class="nav-item"><a href="#" class="nav-cta" onclick="window.SmartIntake && window.SmartIntake.open(); return false;">Sign Up</a></li>                <li class="nav-item">
+                <li class="nav-item"><a href="#" onclick="openPopup('coming-soon-popup'); return false;">Patient Login</a></li>
+                <li class="nav-item"><a href="#" class="nav-cta" onclick="openPopup('coming-soon-popup'); return false;">Sign Up</a></li>                <li class="nav-item">
                     <button id="branding-toggle" class="branding-toggle" aria-label="Toggle between OhanaDoc and State branding">
                         <img src="/assets/ohanaDoc-logo.png" alt="OhanaDoc" class="brand-logo">
                     </button>
@@ -8910,24 +8910,6 @@
                 </button>
                 
                 <div class="banner-container" id="bannerContainer">
-                    <!-- SmartIntake Slide — injected by build script, always first -->
-                    <div class="banner-slide" data-service="smartintake" style="background:linear-gradient(135deg,rgba(0,157,221,0.12) 0%,rgba(37,211,102,0.10) 100%);border:1px solid rgba(37,211,102,0.25);border-radius:12px;">
-                        <h3 style="font-size:clamp(1.1rem,3vw,1.45rem);">Skip the Paperwork. <span class="highlight" style="-webkit-text-fill-color:unset;background:none;color:#25D366;">Get to the Care.</span></h3>
-                        <p style="margin-bottom:0.75rem;">OhanaDoc SmartIntake<sup style="font-size:0.65em;">TM</sup> gathers only what your provider actually needs — no endless forms, no repeating your whole medical history. A few focused questions and your licensed doctor is ready to connect the moment you are.</p>
-                        <div class="banner-features">
-                            <div class="banner-feature">🔒 Private</div>
-                            <div class="banner-feature">⚡ Under 5 Min</div>
-                            <div class="banner-feature">📋 No Redundant Forms</div>
-                            <div class="banner-feature">🩺 Provider-Ready</div>
-                        </div>
-                        <button class="banner-cta btn-premium hover-premium" onclick="window.SmartIntake && window.SmartIntake.open()" style="background:linear-gradient(135deg,#009DDD,#25D366)!important;color:#fff!important;font-weight:700;">
-                            Start OhanaDoc SmartIntake™
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <!-- /SmartIntake Slide -->
 
                     <!-- Weight Loss Slide -->
                     <div class="banner-slide" data-service="weight-loss">
@@ -8939,7 +8921,7 @@
                             <div class="banner-feature"> Fast Shipping</div>
                             <div class="banner-feature"> From $199/mo</div>
                         </div>
-                        <button class="banner-cta btn-premium hover-premium" onclick="window.SmartIntake && window.SmartIntake.open()">
+                        <button class="banner-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
                             Sign Up Now
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -8957,7 +8939,7 @@
                             <div class="banner-feature"> Ongoing Care</div>
                             <div class="banner-feature"> From $65/visit</div>
                         </div>
-                        <button class="banner-cta btn-premium hover-premium" onclick="window.SmartIntake && window.SmartIntake.open()">
+                        <button class="banner-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
                             Sign Up Now
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -8975,7 +8957,7 @@
                             <div class="banner-feature"> Fast Delivery</div>
                             <div class="banner-feature"> From $30/mo</div>
                         </div>
-                        <button class="banner-cta btn-premium hover-premium" onclick="window.SmartIntake && window.SmartIntake.open()">
+                        <button class="banner-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
                             Sign Up Now
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -8993,7 +8975,7 @@
                             <div class="banner-feature"> Prescription Support</div>
                             <div class="banner-feature"> From $85/mo</div>
                         </div>
-                        <button class="banner-cta btn-premium hover-premium" onclick="window.SmartIntake && window.SmartIntake.open()">
+                        <button class="banner-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
                             Sign Up Now
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -9011,7 +8993,7 @@
                             <div class="banner-feature"> Custom Plans</div>
                             <div class="banner-feature"> From $25/mo</div>
                         </div>
-                        <button class="banner-cta btn-premium hover-premium" onclick="window.SmartIntake && window.SmartIntake.open()">
+                        <button class="banner-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
                             Sign Up Now
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -9029,7 +9011,7 @@
                             <div class="banner-feature"> Ongoing Monitoring</div>
                             <div class="banner-feature"> From $79/mo</div>
                         </div>
-                        <button class="banner-cta btn-premium hover-premium" onclick="window.SmartIntake && window.SmartIntake.open()">
+                        <button class="banner-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
                             Sign Up Now
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -9047,7 +9029,7 @@
                             <div class="banner-feature"> Longevity Plans</div>
                             <div class="banner-feature"> From $150/mo</div>
                         </div>
-                        <button class="banner-cta btn-premium hover-premium" onclick="window.SmartIntake && window.SmartIntake.open()">
+                        <button class="banner-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
                             Sign Up Now
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -9065,7 +9047,7 @@
                             <div class="banner-feature"> Wellness Plans</div>
                             <div class="banner-feature"> From $40/mo</div>
                         </div>
-                        <button class="banner-cta btn-premium hover-premium" onclick="window.SmartIntake && window.SmartIntake.open()">
+                        <button class="banner-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
                             Sign Up Now
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -9083,7 +9065,7 @@
                             <div class="banner-feature"> Expert Guidance</div>
                             <div class="banner-feature"> Custom Quote</div>
                         </div>
-                        <button class="banner-cta btn-premium hover-premium" onclick="window.SmartIntake && window.SmartIntake.open()">
+                        <button class="banner-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
                             Sign Up Now
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -9712,7 +9694,7 @@
                     <div class="treatment-price">Starting at $199/month</div>
                     </div>
                     <div class="treatment-actions">
-                        <button class="treatment-cta btn-premium hover-premium" onclick="window.SmartIntake && window.SmartIntake.open()">
+                        <button class="treatment-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
                             Sign Up
                         </button>
                         <button class="btn-details" onclick="toggleCard(this)">
@@ -9873,9 +9855,9 @@
             </div>
             <div class="footer-section">
                 <h3>Patient Portal</h3>
-                <p><a href="#" onclick="window.SmartIntake && window.SmartIntake.open(); return false;">Patient Login</a></p>
-                <p><a href="#" onclick="window.SmartIntake && window.SmartIntake.open(); return false;">Create Account</a></p>
-                <p><a href="#" onclick="window.SmartIntake && window.SmartIntake.open(); return false;">Schedule Appointment</a></p>
+                <p><a href="#" onclick="openPopup('coming-soon-popup'); return false;">Patient Login</a></p>
+                <p><a href="#" onclick="openPopup('coming-soon-popup'); return false;">Create Account</a></p>
+                <p><a href="#" onclick="openPopup('coming-soon-popup'); return false;">Schedule Appointment</a></p>
                 <p><a href="#" onclick="openPopup('privacy-popup'); return false;">Privacy Policy</a></p>
                 <p><a href="#" onclick="openPopup('terms-popup'); return false;">Terms of Service</a></p>
             </div>
@@ -10138,7 +10120,7 @@
                 </div>
                 
                 <div class="popup-cta">
-                    <button class="popup-btn" onclick="window.SmartIntake && window.SmartIntake.open()">Get Started Today</button>
+                    <button class="popup-btn" onclick="openPopup('coming-soon-popup')">Get Started Today</button>
                 </div>
             </div>
         </div>
@@ -10270,7 +10252,7 @@
                 
                 <div class="popup-cta">
                     <a href="/terms.html" class="popup-btn secondary" target="_blank">View Full Terms</a>
-                    <button class="popup-btn" onclick="window.SmartIntake && window.SmartIntake.open()">I Agree - Continue</button>
+                    <button class="popup-btn" onclick="openPopup('coming-soon-popup')">I Agree - Continue</button>
                 </div>
             </div>
         </div>
@@ -12226,11 +12208,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
-<!-- smartintake-embed -->
-<script src="https://smartintake-ohanadoc.vercel.app/embed.js"
-        data-state="HI"
-        data-service="primary-care"
-        data-redirect-base="https://www.ohanadoc.com"
-        defer></script>
+
 </body>
 </html>
