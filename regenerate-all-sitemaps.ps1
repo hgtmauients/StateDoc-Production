@@ -101,6 +101,52 @@ function Get-PreferredBaseUrl {
     return "https://$d"
 }
 
+function Update-RobotsSitemapLine {
+    <#
+        .SYNOPSIS
+        Point robots.txt at the sitemap this script just wrote.
+
+        .DESCRIPTION
+        robots.txt used to be maintained by scripts/fix-all-robots-txt.ps1, which
+        carried its own hardcoded folder-to-domain map and repaired the Sitemap
+        line with the pattern https?://[^\s/]+/sitemap\.xml. That pattern cannot
+        match a host containing a space, so on the three files that were actually
+        broken -- "https://New newnewNewMexicoDoc.com/sitemap.xml" and the two
+        Carolinas -- it matched nothing, changed nothing, and reported them as
+        already correct. Google could not discover those sitemaps for months.
+
+        Deriving the line here instead means robots.txt and sitemap.xml always
+        agree on the host, because both come from Get-PreferredBaseUrl, and there
+        is no second domain map to drift.
+    #>
+    param(
+        [string]$SitePath,
+        [string]$BaseUrl
+    )
+
+    $robotsPath = Join-Path $SitePath 'robots.txt'
+    if (-not (Test-Path $robotsPath)) { return $null }
+
+    $content = Get-Content $robotsPath -Raw
+    $desired = "Sitemap: $BaseUrl/sitemap.xml"
+
+    # Match the whole line rather than the URL, so a malformed host with spaces
+    # is still replaced instead of being silently skipped.
+    $pattern = '(?im)^[ \t]*Sitemap:.*$'
+
+    if ($content -match $pattern) {
+        $updated = [regex]::Replace($content, $pattern, $desired)
+    }
+    else {
+        $updated = $content.TrimEnd() + "`n`n$desired`n"
+    }
+
+    if ($updated -eq $content) { return $false }
+
+    Set-Content -Path $robotsPath -Value $updated -NoNewline
+    return $true
+}
+
 function New-Sitemap {
     param(
         [string]$StatePath,
@@ -312,6 +358,14 @@ foreach ($siteName in $SitesToProcess) {
         $result.xml | Out-File -FilePath $sitemapPath -Encoding UTF8 -Force
 
         Write-Host "  - Generated sitemap: $($result.urlCount) URLs ($($result.blogCount) blogs, $($result.collectionCount) collections)" -ForegroundColor Green
+
+        $robotsChanged = Update-RobotsSitemapLine -SitePath $site.Path -BaseUrl (Get-PreferredBaseUrl -Domain $site.Domain)
+        if ($robotsChanged -eq $true) {
+            Write-Host "  - Updated robots.txt Sitemap line" -ForegroundColor Green
+        }
+        elseif ($null -eq $robotsChanged) {
+            Write-Host "  - No robots.txt in this folder" -ForegroundColor DarkGray
+        }
 
         $results += [PSCustomObject]@{
             Site = $site.Name

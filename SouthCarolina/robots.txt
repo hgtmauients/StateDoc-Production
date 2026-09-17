@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://South southSouthCarolinaDoc.com/sitemap.xml
+Sitemap: https://www.southcarolinadoc.com/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
