@@ -29,6 +29,16 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/services",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:path*",
+      "destination": "/",
+      "permanent": true
+    },
     { "source": "/privacy.min.html", "destination": "/privacy.html", "permanent": true },
     { "source": "/terms.min.html", "destination": "/terms.html", "permanent": true },
     { "source": "/home", "destination": "/", "permanent": true },
