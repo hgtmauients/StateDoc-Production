@@ -28,7 +28,8 @@ Write-Host ""
 $stateConfig = @{
     "Alaska" = @{ folder = "Alaska"; domain = "alaskadoc.com" }
     "Arizona" = @{ folder = "Arizona"; domain = "arizonadoc.com" }
-    "Dakota" = @{ folder = "Dakota"; domain = "dakotadoc.com" }
+    "NorthDakota" = @{ folder = "NorthDakota"; domain = "northdakotadoc.com" }
+    "SouthDakota" = @{ folder = "SouthDakota"; domain = "dakotadoc.com" }
     "Hawaii" = @{ folder = "Hawaii"; domain = "hawaiidoc.com" }
     "Illinois" = @{ folder = "Illinois"; domain = "illinoisdoc.com" }
     "Indiana" = @{ folder = "Indiana"; domain = "indianadoc.com" }

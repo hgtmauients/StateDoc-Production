@@ -4,7 +4,8 @@
 $states = @(
     @{folder='Alaska'; name='Alaska'},
     @{folder='Arizona'; name='Arizona'},
-    @{folder='Dakota'; name='Dakota'},
+    @{folder='NorthDakota'; name='NorthDakota'},
+    @{folder='SouthDakota'; name='SouthDakota'},
     @{folder='Hawaii'; name='Hawaii'},
     @{folder='Illinois'; name='Illinois'},
     @{folder='Indiana'; name='Indiana'},
