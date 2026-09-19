@@ -233,31 +233,31 @@
     </script>
 
     <style>
-        :root{--state-primary:#013759;--state-secondary:#009DDD;--state-accent:#25D366;--state-orange:#F98A33;}
+        :root{--state-primary:#013759;--state-secondary:#009DDD;--state-accent:#25D366;--state-orange:#F98A33;--navy:#013759;--light-blue:#009DDD;--white:#FFFFFF}
         *{scrollbar-width:none;-ms-overflow-style:none}*::-webkit-scrollbar{display:none}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:0;background:linear-gradient(135deg,var(--state-primary),var(--state-secondary));color:#fff;line-height:1.7}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:0;background:var(--navy);color:var(--white);line-height:1.8;text-shadow:none}
         .header{background:rgba(0,20,40,0.95);padding:1rem 2rem;position:sticky;top:0;z-index:1000;backdrop-filter:blur(8px)}
         .nav{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto}
         .logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none}
         .logo-symbol{height:45px;width:45px;object-fit:contain}
-        .header a{color:#fff;text-shadow:0 0 20px var(--state-secondary);text-decoration:none;font-weight:600}
+        .header a{color:#fff;text-shadow:none;text-decoration:none;font-weight:500}
         .container{max-width:1000px;margin:0 auto;padding:3rem 1.5rem}
-        h1{color:var(--state-secondary);font-size:3rem;font-weight:800;margin-bottom:1rem;text-align:center}
-        .subtitle{text-align:center;font-size:1.2rem;color:rgba(255,255,255,0.75);margin-bottom:3rem}
+        h1{color:var(--white);font-size:clamp(2rem,5vw,2.8rem);font-weight:800;margin-bottom:1.5rem;text-align:center;text-shadow:none;border-bottom:3px solid var(--light-blue);padding-bottom:0.75rem}
+        .subtitle{text-align:center;font-size:1.2rem;color:rgba(255,255,255,0.75);margin-bottom:3rem;text-shadow:none}
         .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;margin:2rem 0}
         .blog-card{background:rgba(255,255,255,0.05);border-radius:12px;padding:2rem;border:1px solid rgba(255,255,255,0.1);transition:all 0.3s}
-        .blog-card:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(255,184,28,0.2)}
-        .blog-card h3{color:#fff;text-shadow:0 0 15px var(--state-secondary);font-size:1.5rem;margin-bottom:1rem}
-        .blog-card p{font-size:1rem;color:rgba(255,255,255,0.85);margin-bottom:1.5rem}
-        .blog-card a{display:inline-block;color:#fff;border-bottom:2px solid var(--state-secondary);text-decoration:none;font-weight:600}
-        .blog-card a:hover{text-decoration:underline}
-        .meta{font-size:0.9rem;color:rgba(255,255,255,0.55);margin-bottom:1rem}
+        .blog-card:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(0,0,0,0.25)}
+        .blog-card h3{color:var(--white);text-shadow:none;font-size:1.5rem;margin-bottom:1rem;font-weight:800}
+        .blog-card p{font-size:1.1rem;color:rgba(255,255,255,0.9);margin-bottom:1.5rem;text-shadow:none}
+        .blog-card a{display:inline-block;color:var(--light-blue);border-bottom:2px solid var(--light-blue);text-decoration:none;font-weight:600;text-shadow:none}
+        .blog-card a:hover{color:var(--state-accent)}
+        .meta{font-size:0.9rem;color:rgba(255,255,255,0.55);margin-bottom:1rem;text-shadow:none}
         footer{margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);text-align:center;color:rgba(255,255,255,0.55)}
-        footer a{color:#fff;text-shadow:0 0 10px var(--state-secondary);text-decoration:none}
+        footer a{color:#9ca3af;text-shadow:none;text-decoration:none}
     </style>
 </head>
 <body>
-<!-- Built: 2026-09-18 21:17:16 UTC -->
+<!-- Built: 2026-09-18 23:54:59 UTC -->
 <header class="header" id="header">
     <nav class="nav">
         <a href="https://www.hawaiidoc.com/" class="logo">
