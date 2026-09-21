@@ -16,7 +16,7 @@
         <priority>0.9</priority>
     </url>
     
-    <!-- Blog Articles (21 total) -->
+    <!-- Blog Articles (23 total) -->
     <url><loc>https://www.ohiodoc.com/blog/adhd-medication-guide</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://www.ohiodoc.com/blog/anxiety-medication-guide</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://www.ohiodoc.com/blog/bipolar-medication-guide</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -31,6 +31,8 @@
     <url><loc>https://www.ohiodoc.com/blog/is-telehealth-covered-by-insurance</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://www.ohiodoc.com/blog/mounjaro-vs-ozempic-comparison</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://www.ohiodoc.com/blog/ocd-medication-guide</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.ohiodoc.com/blog/ohio-glp-1-visit-prep-checklist-for-weight-loss-patients-2026</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.ohiodoc.com/blog/ohiodoc-online-doctor-visits-for-ohio-residents</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://www.ohiodoc.com/blog/semaglutide-vs-tirzepatide-comparison</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://www.ohiodoc.com/blog/sleep-medication-guide</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://www.ohiodoc.com/blog/tadalafil-vs-sildenafil-comparison</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -39,7 +41,7 @@
     <url><loc>https://www.ohiodoc.com/blog/weight-loss-medication-complete-guide</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://www.ohiodoc.com/blog/what-is-telehealth</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     
-    <!--  Collection (33 pages) -->
+    <!--  Collection (34 pages) -->
     <url><loc>https://www.ohiodoc.com/cardiovascular-health/cholesterol-management</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
     <url><loc>https://www.ohiodoc.com/cardiovascular-health/heart-disease-prevention</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
     <url><loc>https://www.ohiodoc.com/chronic-disease-management/diabetes-care-management</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
@@ -70,6 +72,7 @@
     <url><loc>https://www.ohiodoc.com/weight-loss/best-glp1-options</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
     <url><loc>https://www.ohiodoc.com/weight-loss/best-non-glp1-alternatives</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
     <url><loc>https://www.ohiodoc.com/weight-loss/best-peptide-therapy</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.ohiodoc.com/weight-loss/ohio-telehealth-weight-loss-consultation-guide</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
     <url><loc>https://www.ohiodoc.com/womens-health/best-birth-control-online</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
     <url><loc>https://www.ohiodoc.com/womens-health/best-hormone-therapy</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
     <url><loc>https://www.ohiodoc.com/womens-health/best-menopause-treatment</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
