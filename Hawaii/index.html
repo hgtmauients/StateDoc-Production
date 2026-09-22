@@ -6225,6 +6225,69 @@
     
         
     </style>
+
+    <style id="odecon-card-expand">
+        .treatment-card .treatment-details > p,
+        .service-card .treatment-details > p {
+            display: none !important;
+            height: 0 !important;
+            max-height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            opacity: 0 !important;
+        }
+        .treatment-card.expanded .treatment-summary,
+        .service-card.expanded .treatment-summary {
+            -webkit-line-clamp: unset !important;
+            line-clamp: unset !important;
+            display: block !important;
+            overflow: visible !important;
+            max-height: none !important;
+            height: auto !important;
+        }
+    </style>
+    <script id="odecon-card-expand-js">
+    (function () {
+        function unifyCard(card) {
+            if (card.getAttribute('data-copy-unified') === '1') return;
+            var summary = card.querySelector('.treatment-summary');
+            var details = card.querySelector('.treatment-details');
+            if (!details) return;
+            var detailsP = null;
+            for (var i = 0; i < details.children.length; i++) {
+                if (details.children[i].tagName === 'P') {
+                    detailsP = details.children[i];
+                    break;
+                }
+            }
+            var full = detailsP ? (detailsP.textContent || '').trim() : '';
+            if (!full && summary) {
+                full = (summary.textContent || '').trim();
+            }
+            if (!full) return;
+            if (!summary) {
+                summary = document.createElement('p');
+                summary.className = 'treatment-summary';
+                card.insertBefore(summary, details);
+            }
+            summary.textContent = full;
+            if (detailsP && detailsP.parentNode) {
+                detailsP.parentNode.removeChild(detailsP);
+            }
+            card.setAttribute('data-copy-unified', '1');
+        }
+        function run() {
+            var cards = document.querySelectorAll('.treatment-card, .service-card');
+            for (var i = 0; i < cards.length; i++) unifyCard(cards[i]);
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', run);
+        } else {
+            run();
+        }
+    })();
+    </script>
 </head>
 <body>
     <!-- Header with Advanced Dropdown Navigation -->
@@ -6804,7 +6867,7 @@
             <div class="treatments-grid" aria-label="Weight Loss Services Carousel">
                 <div class="treatment-card animate-on-scroll featured-treatment" id="semaglutide">
                     <h3>Semaglutide <span style="display: inline-block; white-space: nowrap;">(Ozempic/&#8203;Wegovy)</span></h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">The gold standard for weight loss. Weekly injections that reduce appetite and slow digestion, leading to significant sustainable weight loss. Clinical trials demonstrate 15% average weight loss with improved blood sugar control.</p>
                     <div class="treatment-details">
                         <p>The gold standard for weight loss. Weekly injections that reduce appetite and slow digestion, leading to significant sustainable weight loss. Clinical trials demonstrate 15% average weight loss with improved blood sugar control.</p>
                     <div class="treatment-features">
@@ -6828,7 +6891,7 @@
 
                 <div class="treatment-card animate-on-scroll featured-treatment" id="tirzepatide">
                     <h3>Tirzepatide <span style="display: inline-block; white-space: nowrap;">(Mounjaro/&#8203;Zepbound)</span></h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Next-generation dual-action GLP-1 medication combining GLP-1 and GIP receptor agonists. Superior weight loss results with up to 20% body weight reduction in clinical studies, along with improved metabolic health markers.</p>
                     <div class="treatment-details">
                         <p>Next-generation dual-action GLP-1 medication combining GLP-1 and GIP receptor agonists. Superior weight loss results with up to 20% body weight reduction in clinical studies, along with improved metabolic health markers.</p>
                     <div class="treatment-features">
@@ -6852,7 +6915,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="compounded-glp1">
                     <h3>Compounded GLP-1 Injections</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Affordable compounded versions of Semaglutide and Tirzepatide with same active ingredients and effectiveness. Custom formulations tailored to your needs with significant cost savings compared to brand-name medications.</p>
                     <div class="treatment-details">
                         <p>Affordable compounded versions of Semaglutide and Tirzepatide with same active ingredients and effectiveness. Custom formulations tailored to your needs with significant cost savings compared to brand-name medications.</p>
                     <div class="treatment-features">
@@ -6876,7 +6939,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="non-glp1-weight-loss">
                     <h3>Non-GLP-1 Weight Loss Medications</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Effective weight loss alternatives to GLP-1 medications. FDA-approved options including Phentermine (appetite suppressant), Contrave (naltrexone-bupropion), and Qsymia (phentermine-topiramate). Physician-guided treatment from Hawaii doctors with personalized protocols.</p>
                     <div class="treatment-details">
                         <p>Effective weight loss alternatives to GLP-1 medications. FDA-approved options including Phentermine (appetite suppressant), Contrave (naltrexone-bupropion), and Qsymia (phentermine-topiramate). Physician-guided treatment from Hawaii doctors with personalized protocols.</p>
                     <div class="treatment-features">
@@ -6909,7 +6972,7 @@
             <div class="treatments-grid" aria-label="Primary Care Services Carousel">
                 <div class="treatment-card animate-on-scroll " id="primary-care">
                     <h3>Primary Care</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Comprehensive primary care services with Hawaii-licensed physicians. General health consultations, preventive screenings, chronic disease management, wellness checkups, and prescription refills - all from the comfort of home.</p>
                     <div class="treatment-details">
                         <p>Comprehensive primary care services with Hawaii-licensed physicians. General health consultations, preventive screenings, chronic disease management, wellness checkups, and prescription refills - all from the comfort of home.</p>
                     <div class="treatment-features">
@@ -6933,7 +6996,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="sleep-aids">
                     <h3>Sleep & Insomnia</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Comprehensive treatment for sleep disorders and insomnia including prescription sleep aids (melatonin, trazodone, eszopiclone), sleep hygiene coaching, and personalized sleep optimization programs from Hawaii physicians.</p>
                     <div class="treatment-details">
                         <p>Comprehensive treatment for sleep disorders and insomnia including prescription sleep aids (melatonin, trazodone, eszopiclone), sleep hygiene coaching, and personalized sleep optimization programs from Hawaii physicians.</p>
                     <div class="treatment-features">
@@ -6957,7 +7020,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="migraine-headache">
                     <h3>Migraine & Headache</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Effective treatment for migraines and chronic headaches including prescription medications (triptans, preventive medications) and rescue treatments. Get fast relief and reduce frequency of headaches with personalized care from Hawaii physicians.</p>
                     <div class="treatment-details">
                         <p>Effective treatment for migraines and chronic headaches including prescription medications (triptans, preventive medications) and rescue treatments. Get fast relief and reduce frequency of headaches with personalized care from Hawaii physicians.</p>
                     <div class="treatment-features">
@@ -6989,7 +7052,7 @@
             <div class="treatments-grid" aria-label="Mental Health Services Carousel">
                 <div class="treatment-card animate-on-scroll " id="mental-health">
                     <h3>Mental Health</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Comprehensive mental health support with licensed psychiatrists. Treatment for anxiety, depression, PTSD, and overall mental wellness. Medication management available with flexible online visits.</p>
                     <div class="treatment-details">
                         <p>Comprehensive mental health support with licensed psychiatrists. Treatment for anxiety, depression, PTSD, and overall mental wellness. Medication management available with flexible online visits.</p>
                     <div class="treatment-features">
@@ -7021,7 +7084,7 @@
             <div class="treatments-grid" aria-label="Men's Health Services Carousel">
                 <div class="treatment-card animate-on-scroll " id="ed-treatment">
                     <h3>ED Treatment (Erectile Dysfunction)</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Comprehensive erectile dysfunction treatment with proven FDA-approved medications including Sildenafil (Viagra), Tadalafil (Cialis), and Vardenafil (Levitra). Fast, confidential consultations with Hawaii physicians and discreet delivery to your door.</p>
                     <div class="treatment-details">
                         <p>Comprehensive erectile dysfunction treatment with proven FDA-approved medications including Sildenafil (Viagra), Tadalafil (Cialis), and Vardenafil (Levitra). Fast, confidential consultations with Hawaii physicians and discreet delivery to your door.</p>
                     <div class="treatment-features">
@@ -7046,7 +7109,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="mens-vitality">
                     <h3>Men's Vitality & Wellness</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Comprehensive vitality and wellness programs including energy optimization, performance enhancement, stress management, and longevity support. Custom protocols from Hawaii physicians combining lifestyle optimization with targeted therapies.</p>
                     <div class="treatment-details">
                         <p>Comprehensive vitality and wellness programs including energy optimization, performance enhancement, stress management, and longevity support. Custom protocols from Hawaii physicians combining lifestyle optimization with targeted therapies.</p>
                     <div class="treatment-features">
@@ -7078,7 +7141,7 @@
             <div class="treatments-grid" aria-label="Women's Health Services Carousel">
                 <div class="treatment-card animate-on-scroll " id="birth-control">
                     <h3>Birth Control</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Convenient access to birth control pills, patches, rings, and emergency contraception. Same-day prescriptions available with ongoing support from Hawaii physicians. Multiple brands and formulations to fit your needs.</p>
                     <div class="treatment-details">
                         <p>Convenient access to birth control pills, patches, rings, and emergency contraception. Same-day prescriptions available with ongoing support from Hawaii physicians. Multiple brands and formulations to fit your needs.</p>
                     <div class="treatment-features">
@@ -7102,7 +7165,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="uti-treatment">
                     <h3>UTI Treatment</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Quick and effective treatment for urinary tract infections with fast diagnosis and same-day antibiotic prescriptions. Prevention guidance and testing available to reduce future UTI occurrences.</p>
                     <div class="treatment-details">
                         <p>Quick and effective treatment for urinary tract infections with fast diagnosis and same-day antibiotic prescriptions. Prevention guidance and testing available to reduce future UTI occurrences.</p>
                     <div class="treatment-features">
@@ -7127,7 +7190,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="hormone-therapy">
                     <h3>Hormone Therapy (HRT/Menopause)</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Comprehensive hormone replacement therapy for menopause support, PCOS management, and hormone optimization. Includes estrogen, progesterone, and testosterone replacement with personalized dosing and ongoing monitoring from Hawaii physicians.</p>
                     <div class="treatment-details">
                         <p>Comprehensive hormone replacement therapy for menopause support, PCOS management, and hormone optimization. Includes estrogen, progesterone, and testosterone replacement with personalized dosing and ongoing monitoring from Hawaii physicians.</p>
                     <div class="treatment-features">
@@ -7151,7 +7214,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="womens-sexual-health">
                     <h3>Women's Sexual Health</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Comprehensive sexual health support for women including libido enhancement, arousal therapies, vaginal health treatments, and overall sexual wellness. FDA-approved medications and therapies with 100% confidential consultations from Hawaii physicians.</p>
                     <div class="treatment-details">
                         <p>Comprehensive sexual health support for women including libido enhancement, arousal therapies, vaginal health treatments, and overall sexual wellness. FDA-approved medications and therapies with 100% confidential consultations from Hawaii physicians.</p>
                     <div class="treatment-features">
@@ -7184,7 +7247,7 @@
             <div class="treatments-grid" aria-label="Other Services Services Carousel">
                 <div class="treatment-card animate-on-scroll " id="sexual-health">
                     <h3>Sexual Health & Wellness</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Full sexual health support including ED, PE, libido enhancement, and orgasm therapies for both men and women. All treatments are FDA-approved with 100% confidential consultations from Hawaii physicians.</p>
                     <div class="treatment-details">
                         <p>Full sexual health support including ED, PE, libido enhancement, and orgasm therapies for both men and women. All treatments are FDA-approved with 100% confidential consultations from Hawaii physicians.</p>
                     <div class="treatment-features">
@@ -7209,7 +7272,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="refill-service">
                     <h3>Refill Service</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Convenient prescription refill service for existing patients. Set up automatic shipments so you never run out of your medications. Easy online refill requests with fast, discreet delivery to your door.</p>
                     <div class="treatment-details">
                         <p>Convenient prescription refill service for existing patients. Set up automatic shipments so you never run out of your medications. Easy online refill requests with fast, discreet delivery to your door.</p>
                     <div class="treatment-features">
@@ -7233,7 +7296,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="hair-restoration">
                     <h3>Hair Loss Treatment</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Comprehensive hair health program including evidence-based medications such as finasteride (DHT blocker) and minoxidil (growth promoter), with oral and topical options. Custom formulations and ongoing monitoring from Hawaii physicians ensure safe, effective results tailored to you.</p>
                     <div class="treatment-details">
                         <p>Comprehensive hair health program including evidence-based medications such as finasteride (DHT blocker) and minoxidil (growth promoter), with oral and topical options. Custom formulations and ongoing monitoring from Hawaii physicians ensure safe, effective results tailored to you.</p>
                     <div class="treatment-features">
@@ -7257,7 +7320,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="anti-aging">
                     <h3>Anti-Aging Therapies</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Comprehensive anti-aging solutions including prescription retinoids, skincare protocols, and aesthetic treatments. Slow aging, reduce wrinkles, and enhance skin health with evidence-based therapies from Hawaii physicians.</p>
                     <div class="treatment-details">
                         <p>Comprehensive anti-aging solutions including prescription retinoids, skincare protocols, and aesthetic treatments. Slow aging, reduce wrinkles, and enhance skin health with evidence-based therapies from Hawaii physicians.</p>
                     <div class="treatment-features">
@@ -7281,7 +7344,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="in-person-labs">
                     <h3>In Person Routine Labs</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Professional blood draws at convenient local lab locations throughout Hawaii. Perfect for comprehensive panels, routine monitoring, or when at-home testing isn't suitable. Results delivered quickly with physician review and consultation.</p>
                     <div class="treatment-details">
                         <p>Professional blood draws at convenient local lab locations throughout Hawaii. Perfect for comprehensive panels, routine monitoring, or when at-home testing isn't suitable. Results delivered quickly with physician review and consultation.</p>
                     <div class="treatment-features">
@@ -7305,7 +7368,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="peptide-therapy">
                     <h3>Peptide Therapy</h3>
-                    <p class="treatment-summary"></p>
+                    <p class="treatment-summary">Cutting-edge peptide therapy including BPC-157 for healing and recovery, TB-500 for tissue repair, CJC-1295 for growth hormone optimization, and other specialized peptides. Physician-guided protocols from Hawaii specialists for optimal results.</p>
                     <div class="treatment-details">
                         <p>Cutting-edge peptide therapy including BPC-157 for healing and recovery, TB-500 for tissue repair, CJC-1295 for growth hormone optimization, and other specialized peptides. Physician-guided protocols from Hawaii specialists for optimal results.</p>
                     <div class="treatment-features">

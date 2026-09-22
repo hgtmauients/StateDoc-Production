@@ -6224,6 +6224,69 @@
     
         
     </style>
+
+    <style id="odecon-card-expand">
+        .treatment-card .treatment-details > p,
+        .service-card .treatment-details > p {
+            display: none !important;
+            height: 0 !important;
+            max-height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            opacity: 0 !important;
+        }
+        .treatment-card.expanded .treatment-summary,
+        .service-card.expanded .treatment-summary {
+            -webkit-line-clamp: unset !important;
+            line-clamp: unset !important;
+            display: block !important;
+            overflow: visible !important;
+            max-height: none !important;
+            height: auto !important;
+        }
+    </style>
+    <script id="odecon-card-expand-js">
+    (function () {
+        function unifyCard(card) {
+            if (card.getAttribute('data-copy-unified') === '1') return;
+            var summary = card.querySelector('.treatment-summary');
+            var details = card.querySelector('.treatment-details');
+            if (!details) return;
+            var detailsP = null;
+            for (var i = 0; i < details.children.length; i++) {
+                if (details.children[i].tagName === 'P') {
+                    detailsP = details.children[i];
+                    break;
+                }
+            }
+            var full = detailsP ? (detailsP.textContent || '').trim() : '';
+            if (!full && summary) {
+                full = (summary.textContent || '').trim();
+            }
+            if (!full) return;
+            if (!summary) {
+                summary = document.createElement('p');
+                summary.className = 'treatment-summary';
+                card.insertBefore(summary, details);
+            }
+            summary.textContent = full;
+            if (detailsP && detailsP.parentNode) {
+                detailsP.parentNode.removeChild(detailsP);
+            }
+            card.setAttribute('data-copy-unified', '1');
+        }
+        function run() {
+            var cards = document.querySelectorAll('.treatment-card, .service-card');
+            for (var i = 0; i < cards.length; i++) unifyCard(cards[i]);
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', run);
+        } else {
+            run();
+        }
+    })();
+    </script>
 </head>
 <body>
     <!-- Header with Advanced Dropdown Navigation -->
@@ -6813,7 +6876,7 @@
             <div class="treatments-grid" aria-label="Weight Loss Services Carousel">
                 <div class="treatment-card animate-on-scroll " id="compounded-glp1">
                     <h3>Compounded GLP-1 Injections</h3>
-                    <p class="treatment-summary">Affordable compounded GLP-1. Same ingredients, 50-70% cost savings.</p>
+                    <p class="treatment-summary">Affordable compounded versions of Semaglutide and Tirzepatide with same active ingredients and effectiveness. Custom formulations tailored to your needs with significant cost savings compared to brand-name medications.</p>
                     <div class="treatment-details">
                         <p>Affordable compounded versions of Semaglutide and Tirzepatide with same active ingredients and effectiveness. Custom formulations tailored to your needs with significant cost savings compared to brand-name medications.</p>
                     <div class="treatment-features">
@@ -6836,7 +6899,7 @@
 
                 <div class="treatment-card animate-on-scroll featured-treatment" id="semaglutide">
                     <h3>Semaglutide <span style="display: inline-block; white-space: nowrap;">(Ozempic/&#8203;Wegovy)</span></h3>
-                    <p class="treatment-summary">Gold standard for weight loss. Weekly GLP-1 injection, FDA-approved.</p>
+                    <p class="treatment-summary">The gold standard for weight loss. Weekly injections that reduce appetite and slow digestion, leading to significant sustainable weight loss. Clinical trials demonstrate 15% average weight loss with improved blood sugar control.</p>
                     <div class="treatment-details">
                         <p>The gold standard for weight loss. Weekly injections that reduce appetite and slow digestion, leading to significant sustainable weight loss. Clinical trials demonstrate 15% average weight loss with improved blood sugar control.</p>
                     <div class="treatment-features">
@@ -6859,7 +6922,7 @@
 
                 <div class="treatment-card animate-on-scroll featured-treatment" id="tirzepatide">
                     <h3>Tirzepatide <span style="display: inline-block; white-space: nowrap;">(Mounjaro/&#8203;Zepbound)</span></h3>
-                    <p class="treatment-summary">Next-gen dual-action GLP-1. Up to 20% weight loss, FDA-approved.</p>
+                    <p class="treatment-summary">Next-generation dual-action GLP-1 medication combining GLP-1 and GIP receptor agonists. Superior weight loss results with up to 20% body weight reduction in clinical studies, along with improved metabolic health markers.</p>
                     <div class="treatment-details">
                         <p>Next-generation dual-action GLP-1 medication combining GLP-1 and GIP receptor agonists. Superior weight loss results with up to 20% body weight reduction in clinical studies, along with improved metabolic health markers.</p>
                     <div class="treatment-features">
@@ -6882,7 +6945,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="non-glp1-weight-loss">
                     <h3>Non-GLP-1 Weight Loss Medications</h3>
-                    <p class="treatment-summary">Alternative weight loss medications including Phentermine, Contrave, and Qsymia.</p>
+                    <p class="treatment-summary">Effective weight loss alternatives to GLP-1 medications. FDA-approved options including Phentermine (appetite suppressant), Contrave (naltrexone-bupropion), and Qsymia (phentermine-topiramate). Physician-guided treatment from Dakota doctors with personalized protocols.</p>
                     <div class="treatment-details">
                         <p>Effective weight loss alternatives to GLP-1 medications. FDA-approved options including Phentermine (appetite suppressant), Contrave (naltrexone-bupropion), and Qsymia (phentermine-topiramate). Physician-guided treatment from Dakota doctors with personalized protocols.</p>
                     <div class="treatment-features">
@@ -6914,7 +6977,7 @@
             <div class="treatments-grid" aria-label="Men's Health Services Carousel">
                 <div class="treatment-card animate-on-scroll " id="ed-treatment">
                     <h3>ED Treatment (Erectile Dysfunction)</h3>
-                    <p class="treatment-summary">FDA-approved medications for erectile dysfunction. Discreet, confidential care.</p>
+                    <p class="treatment-summary">Comprehensive erectile dysfunction treatment with proven FDA-approved medications including Sildenafil (Viagra), Tadalafil (Cialis), and Vardenafil (Levitra). Fast, confidential consultations with Dakota physicians and discreet delivery to your door.</p>
                     <div class="treatment-details">
                         <p>Comprehensive erectile dysfunction treatment with proven FDA-approved medications including Sildenafil (Viagra), Tadalafil (Cialis), and Vardenafil (Levitra). Fast, confidential consultations with Dakota physicians and discreet delivery to your door.</p>
                     <div class="treatment-features">
@@ -6938,7 +7001,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="testosterone-therapy">
                     <h3>Testosterone Therapy (TRT)</h3>
-                    <p class="treatment-summary">Restore energy, strength, and vitality with physician-guided testosterone replacement.</p>
+                    <p class="treatment-summary">Comprehensive testosterone replacement therapy (TRT) for men with low testosterone. At-home testing, personalized treatment protocols, and ongoing monitoring from Dakota physicians. Restore energy, muscle mass, libido, and overall vitality.</p>
                     <div class="treatment-details">
                         <p>Comprehensive testosterone replacement therapy (TRT) for men with low testosterone. At-home testing, personalized treatment protocols, and ongoing monitoring from Dakota physicians. Restore energy, muscle mass, libido, and overall vitality.</p>
                     <div class="treatment-features">
@@ -6962,7 +7025,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="peptide-therapy">
                     <h3>Peptide Therapy</h3>
-                    <p class="treatment-summary">Advanced peptides including BPC-157, TB-500, and specialized healing protocols.</p>
+                    <p class="treatment-summary">Cutting-edge peptide therapy including BPC-157 for healing and recovery, TB-500 for tissue repair, CJC-1295 for growth hormone optimization, and other specialized peptides. Physician-guided protocols from Dakota specialists for optimal results.</p>
                     <div class="treatment-details">
                         <p>Cutting-edge peptide therapy including BPC-157 for healing and recovery, TB-500 for tissue repair, CJC-1295 for growth hormone optimization, and other specialized peptides. Physician-guided protocols from Dakota specialists for optimal results.</p>
                     <div class="treatment-features">
@@ -6994,7 +7057,7 @@
             <div class="treatments-grid" aria-label="Women's Health Services Carousel">
                 <div class="treatment-card animate-on-scroll " id="birth-control">
                     <h3>Birth Control</h3>
-                    <p class="treatment-summary">Pills, patches, and emergency contraception with same-day prescriptions.</p>
+                    <p class="treatment-summary">Convenient access to birth control pills, patches, rings, and emergency contraception. Same-day prescriptions available with ongoing support from Dakota physicians. Multiple brands and formulations to fit your needs.</p>
                     <div class="treatment-details">
                         <p>Convenient access to birth control pills, patches, rings, and emergency contraception. Same-day prescriptions available with ongoing support from Dakota physicians. Multiple brands and formulations to fit your needs.</p>
                     <div class="treatment-features">
@@ -7017,7 +7080,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="hormone-therapy">
                     <h3>Hormone Therapy (HRT/Menopause)</h3>
-                    <p class="treatment-summary">HRT for menopause support, PCOS management, and hormone optimization.</p>
+                    <p class="treatment-summary">Comprehensive hormone replacement therapy for menopause support, PCOS management, and hormone optimization. Includes estrogen, progesterone, and testosterone replacement with personalized dosing and ongoing monitoring from Dakota physicians.</p>
                     <div class="treatment-details">
                         <p>Comprehensive hormone replacement therapy for menopause support, PCOS management, and hormone optimization. Includes estrogen, progesterone, and testosterone replacement with personalized dosing and ongoing monitoring from Dakota physicians.</p>
                     <div class="treatment-features">
@@ -7040,7 +7103,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="hormone-panels">
                     <h3>Hormone Panels</h3>
-                    <p class="treatment-summary">Comprehensive hormone testing including testosterone, estrogen, thyroid, and more.</p>
+                    <p class="treatment-summary">Complete hormone panel testing including testosterone, estrogen, progesterone, thyroid hormones (TSH, T3, T4), cortisol, and DHEA. At-home testing kits or in-person draws available with physician result review and treatment recommendations.</p>
                     <div class="treatment-details">
                         <p>Complete hormone panel testing including testosterone, estrogen, progesterone, thyroid hormones (TSH, T3, T4), cortisol, and DHEA. At-home testing kits or in-person draws available with physician result review and treatment recommendations.</p>
                     <div class="treatment-features">
@@ -7071,7 +7134,7 @@
             <div class="treatments-grid" aria-label="Dermatology Services Carousel">
                 <div class="treatment-card animate-on-scroll " id="anti-aging">
                     <h3>Anti-Aging Therapies</h3>
-                    <p class="treatment-summary">Advanced skincare, anti-aging treatments, and aesthetic medicine.</p>
+                    <p class="treatment-summary">Comprehensive anti-aging solutions including prescription retinoids, skincare protocols, and aesthetic treatments. Slow aging, reduce wrinkles, and enhance skin health with evidence-based therapies from Dakota physicians.</p>
                     <div class="treatment-details">
                         <p>Comprehensive anti-aging solutions including prescription retinoids, skincare protocols, and aesthetic treatments. Slow aging, reduce wrinkles, and enhance skin health with evidence-based therapies from Dakota physicians.</p>
                     <div class="treatment-features">
@@ -7102,7 +7165,7 @@
             <div class="treatments-grid" aria-label="Mental Health Services Carousel">
                 <div class="treatment-card animate-on-scroll " id="mental-health">
                     <h3>Mental Health</h3>
-                    <p class="treatment-summary">Licensed therapists for anxiety, depression, and wellness. Prescription support.</p>
+                    <p class="treatment-summary">Comprehensive mental health support with licensed therapists and psychiatrists. Treatment for anxiety, depression, PTSD, and overall mental wellness. Medication management and therapy services available with flexible online sessions.</p>
                     <div class="treatment-details">
                         <p>Comprehensive mental health support with licensed therapists and psychiatrists. Treatment for anxiety, depression, PTSD, and overall mental wellness. Medication management and therapy services available with flexible online sessions.</p>
                     <div class="treatment-features">
@@ -7133,7 +7196,7 @@
             <div class="treatments-grid" aria-label="Primary Care Services Carousel">
                 <div class="treatment-card animate-on-scroll " id="primary-care">
                     <h3>Primary Care</h3>
-                    <p class="treatment-summary">General health consultations, preventive care, and routine checkups.</p>
+                    <p class="treatment-summary">Comprehensive primary care services with Dakota-licensed physicians. General health consultations, preventive screenings, chronic disease management, wellness checkups, and prescription refills - all from the comfort of home.</p>
                     <div class="treatment-details">
                         <p>Comprehensive primary care services with Dakota-licensed physicians. General health consultations, preventive screenings, chronic disease management, wellness checkups, and prescription refills - all from the comfort of home.</p>
                     <div class="treatment-features">
@@ -7164,7 +7227,7 @@
             <div class="treatments-grid" aria-label="Other Services Services Carousel">
                 <div class="treatment-card animate-on-scroll " id="sexual-health">
                     <h3>Sexual Health & Wellness</h3>
-                    <p class="treatment-summary">Comprehensive sexual health solutions for men and women. FDA-approved, discreet care.</p>
+                    <p class="treatment-summary">Full sexual health support including ED, PE, libido enhancement, and orgasm therapies for both men and women. All treatments are FDA-approved with 100% confidential consultations from Dakota physicians.</p>
                     <div class="treatment-details">
                         <p>Full sexual health support including ED, PE, libido enhancement, and orgasm therapies for both men and women. All treatments are FDA-approved with 100% confidential consultations from Dakota physicians.</p>
                     <div class="treatment-features">
@@ -7188,7 +7251,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="refill-service">
                     <h3>Refill Service</h3>
-                    <p class="treatment-summary">Easy prescription refills with auto-ship. For existing patients.</p>
+                    <p class="treatment-summary">Convenient prescription refill service for existing patients. Set up automatic shipments so you never run out of your medications. Easy online refill requests with fast, discreet delivery to your door.</p>
                     <div class="treatment-details">
                         <p>Convenient prescription refill service for existing patients. Set up automatic shipments so you never run out of your medications. Easy online refill requests with fast, discreet delivery to your door.</p>
                     <div class="treatment-features">
@@ -7211,7 +7274,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="fertility-support">
                     <h3>Fertility Support</h3>
-                    <p class="treatment-summary">Male fertility testing and treatment to support conception goals.</p>
+                    <p class="treatment-summary">Comprehensive male fertility support including at-home sperm testing, hormone optimization, and fertility-enhancing medications. Expert guidance from Dakota physicians to help you and your partner achieve your conception goals.</p>
                     <div class="treatment-details">
                         <p>Comprehensive male fertility support including at-home sperm testing, hormone optimization, and fertility-enhancing medications. Expert guidance from Dakota physicians to help you and your partner achieve your conception goals.</p>
                     <div class="treatment-features">
@@ -7234,7 +7297,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="mens-vitality">
                     <h3>Men's Vitality & Wellness</h3>
-                    <p class="treatment-summary">Complete wellness optimization for energy, performance, and longevity.</p>
+                    <p class="treatment-summary">Comprehensive vitality and wellness programs including energy optimization, performance enhancement, stress management, and longevity support. Custom protocols from Dakota physicians combining lifestyle optimization with targeted therapies.</p>
                     <div class="treatment-details">
                         <p>Comprehensive vitality and wellness programs including energy optimization, performance enhancement, stress management, and longevity support. Custom protocols from Dakota physicians combining lifestyle optimization with targeted therapies.</p>
                     <div class="treatment-features">
@@ -7257,7 +7320,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="uti-treatment">
                     <h3>UTI Treatment</h3>
-                    <p class="treatment-summary">Fast diagnosis and antibiotic treatment, often with same-day prescriptions.</p>
+                    <p class="treatment-summary">Quick and effective treatment for urinary tract infections with fast diagnosis and same-day antibiotic prescriptions. Prevention guidance and testing available to reduce future UTI occurrences.</p>
                     <div class="treatment-details">
                         <p>Quick and effective treatment for urinary tract infections with fast diagnosis and same-day antibiotic prescriptions. Prevention guidance and testing available to reduce future UTI occurrences.</p>
                     <div class="treatment-features">
@@ -7281,7 +7344,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="womens-sexual-health">
                     <h3>Women's Sexual Health</h3>
-                    <p class="treatment-summary">Libido enhancement, arousal support, and sexual wellness treatments for women.</p>
+                    <p class="treatment-summary">Comprehensive sexual health support for women including libido enhancement, arousal therapies, vaginal health treatments, and overall sexual wellness. FDA-approved medications and therapies with 100% confidential consultations from Dakota physicians.</p>
                     <div class="treatment-details">
                         <p>Comprehensive sexual health support for women including libido enhancement, arousal therapies, vaginal health treatments, and overall sexual wellness. FDA-approved medications and therapies with 100% confidential consultations from Dakota physicians.</p>
                     <div class="treatment-features">
@@ -7305,7 +7368,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="hair-restoration">
                     <h3>Hair Loss Treatment</h3>
-                    <p class="treatment-summary">Proven therapies like Finasteride and Minoxidil with personalized regimens to restore hair and confidence.</p>
+                    <p class="treatment-summary">Comprehensive hair health program including evidence-based medications such as finasteride (DHT blocker) and minoxidil (growth promoter), with oral and topical options. Custom formulations and ongoing monitoring from Dakota physicians ensure safe, effective results tailored to you.</p>
                     <div class="treatment-details">
                         <p>Comprehensive hair health program including evidence-based medications such as finasteride (DHT blocker) and minoxidil (growth promoter), with oral and topical options. Custom formulations and ongoing monitoring from Dakota physicians ensure safe, effective results tailored to you.</p>
                     <div class="treatment-features">
@@ -7328,7 +7391,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="sleep-aids">
                     <h3>Sleep & Insomnia</h3>
-                    <p class="treatment-summary">Treatment for sleep disorders including medications and sleep hygiene programs.</p>
+                    <p class="treatment-summary">Comprehensive treatment for sleep disorders and insomnia including prescription sleep aids (melatonin, trazodone, eszopiclone), sleep hygiene coaching, and personalized sleep optimization programs from Dakota physicians.</p>
                     <div class="treatment-details">
                         <p>Comprehensive treatment for sleep disorders and insomnia including prescription sleep aids (melatonin, trazodone, eszopiclone), sleep hygiene coaching, and personalized sleep optimization programs from Dakota physicians.</p>
                     <div class="treatment-features">
@@ -7351,7 +7414,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="supplements">
                     <h3>Vitamins & Supplements</h3>
-                    <p class="treatment-summary">Daily vitamins, specialized supplements, and wellness products for men and women.</p>
+                    <p class="treatment-summary">Comprehensive vitamin and supplement offerings including daily multivitamins, specialized nutrients, immune support, and wellness products. Men's and women's specific formulations available with quality-tested ingredients.</p>
                     <div class="treatment-details">
                         <p>Comprehensive vitamin and supplement offerings including daily multivitamins, specialized nutrients, immune support, and wellness products. Men's and women's specific formulations available with quality-tested ingredients.</p>
                     <div class="treatment-features">
@@ -7375,7 +7438,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="dermatology">
                     <h3>Dermatology</h3>
-                    <p class="treatment-summary">Comprehensive skin care for lumps, bumps, burns, eczema, psoriasis, rashes.</p>
+                    <p class="treatment-summary">Complete dermatology services including treatment for skin conditions like lumps, bumps, burns, eczema, psoriasis, rashes, itches, and more. Expert care from Dakota physicians with prescription treatments and ongoing monitoring.</p>
                     <div class="treatment-details">
                         <p>Complete dermatology services including treatment for skin conditions like lumps, bumps, burns, eczema, psoriasis, rashes, itches, and more. Expert care from Dakota physicians with prescription treatments and ongoing monitoring.</p>
                     <div class="treatment-features">
@@ -7398,7 +7461,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="migraine-headache">
                     <h3>Migraine & Headache</h3>
-                    <p class="treatment-summary">Fast relief for migraines and chronic headaches with prescription treatments.</p>
+                    <p class="treatment-summary">Effective treatment for migraines and chronic headaches including prescription medications (triptans, preventive medications) and rescue treatments. Get fast relief and reduce frequency of headaches with personalized care from Dakota physicians.</p>
                     <div class="treatment-details">
                         <p>Effective treatment for migraines and chronic headaches including prescription medications (triptans, preventive medications) and rescue treatments. Get fast relief and reduce frequency of headaches with personalized care from Dakota physicians.</p>
                     <div class="treatment-features">
@@ -7421,7 +7484,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="metabolic-testing">
                     <h3>Metabolic Testing</h3>
-                    <p class="treatment-summary">Blood sugar, A1C, insulin, and metabolic health screening.</p>
+                    <p class="treatment-summary">Comprehensive metabolic testing including fasting glucose, hemoglobin A1C, insulin levels, and complete metabolic panels. Essential for diabetes screening, weight loss programs, and overall health monitoring with Dakota physician review.</p>
                     <div class="treatment-details">
                         <p>Comprehensive metabolic testing including fasting glucose, hemoglobin A1C, insulin levels, and complete metabolic panels. Essential for diabetes screening, weight loss programs, and overall health monitoring with Dakota physician review.</p>
                     <div class="treatment-features">
@@ -7444,7 +7507,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="cholesterol-lipid">
                     <h3>Cholesterol & Lipid Panels</h3>
-                    <p class="treatment-summary">Complete cardiovascular health screening including cholesterol and triglycerides.</p>
+                    <p class="treatment-summary">Comprehensive lipid panel testing including total cholesterol, LDL, HDL, triglycerides, and cardiovascular risk markers. Essential for heart health monitoring and treatment optimization from Dakota physicians.</p>
                     <div class="treatment-details">
                         <p>Comprehensive lipid panel testing including total cholesterol, LDL, HDL, triglycerides, and cardiovascular risk markers. Essential for heart health monitoring and treatment optimization from Dakota physicians.</p>
                     <div class="treatment-features">
@@ -7467,7 +7530,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="home-specialty-labs">
                     <h3>Home Specialty Labs</h3>
-                    <p class="treatment-summary">At-home lab testing kits delivered to your door. Convenient and accurate.</p>
+                    <p class="treatment-summary">Comprehensive at-home lab testing kits delivered directly to you. Test for hormones, thyroid function, metabolic health, and more from the comfort of home. Results reviewed by Dakota physicians with personalized treatment recommendations.</p>
                     <div class="treatment-details">
                         <p>Comprehensive at-home lab testing kits delivered directly to you. Test for hormones, thyroid function, metabolic health, and more from the comfort of home. Results reviewed by Dakota physicians with personalized treatment recommendations.</p>
                     <div class="treatment-features">
@@ -7490,7 +7553,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="in-person-labs">
                     <h3>In Person Routine Labs</h3>
-                    <p class="treatment-summary">Local lab draw appointments at convenient locations near you.</p>
+                    <p class="treatment-summary">Professional blood draws at convenient local lab locations throughout Dakota. Perfect for comprehensive panels, routine monitoring, or when at-home testing isn't suitable. Results delivered quickly with physician review and consultation.</p>
                     <div class="treatment-details">
                         <p>Professional blood draws at convenient local lab locations throughout Dakota. Perfect for comprehensive panels, routine monitoring, or when at-home testing isn't suitable. Results delivered quickly with physician review and consultation.</p>
                     <div class="treatment-features">
@@ -7513,7 +7576,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="longevity-stacks">
                     <h3>Longevity Stacks</h3>
-                    <p class="treatment-summary">NAD+, resveratrol, and comprehensive anti-aging supplement protocols.</p>
+                    <p class="treatment-summary">Science-backed longevity supplement stacks including NAD+ boosters, resveratrol, metformin, rapamycin protocols, and comprehensive anti-aging formulations. Extend healthspan and optimize cellular function with physician-designed protocols from Dakota specialists.</p>
                     <div class="treatment-details">
                         <p>Science-backed longevity supplement stacks including NAD+ boosters, resveratrol, metformin, rapamycin protocols, and comprehensive anti-aging formulations. Extend healthspan and optimize cellular function with physician-designed protocols from Dakota specialists.</p>
                     <div class="treatment-features">
@@ -7537,7 +7600,7 @@
 
                 <div class="treatment-card animate-on-scroll " id="wellness-optimization">
                     <h3>Wellness Optimization Programs</h3>
-                    <p class="treatment-summary">Complete health optimization with personalized protocols and ongoing monitoring.</p>
+                    <p class="treatment-summary">Comprehensive wellness optimization combining advanced testing, personalized nutrition, supplement protocols, lifestyle optimization, and ongoing physician support. Achieve peak performance, vitality, and longevity with integrated care from Dakota physicians.</p>
                     <div class="treatment-details">
                         <p>Comprehensive wellness optimization combining advanced testing, personalized nutrition, supplement protocols, lifestyle optimization, and ongoing physician support. Achieve peak performance, vitality, and longevity with integrated care from Dakota physicians.</p>
                     <div class="treatment-features">
