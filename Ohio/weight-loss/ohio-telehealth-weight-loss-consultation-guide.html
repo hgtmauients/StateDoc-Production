@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Prepare for an Ohio telehealth weight loss visit. Learn what to discuss about GLP-1 options, labs, and follow-up care with OhioDoc — Serving patients across Ohio, including Columbus, Cleveland, and Cincinnati. For Ohioans.">
     <meta name="keywords" content="Weight Loss Ohio">
-    
-    <meta name="author" content="Ohio Telemedicine">
-    
+    <meta name="author" content="OhioDoc">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Ohio Telehealth Weight Loss Consultation Guide">
@@ -23,6 +21,8 @@
     <title>Ohio Telehealth Weight Loss Consultation Guide</title>
     
     <!-- Favicon -->
+    
+    
     <link rel="icon" type="image/png" href="/assets/ohanaDoc-logo.png">
     <link rel="apple-touch-icon" href="/assets/ohanaDoc-logo.png">
     
@@ -38,7 +38,7 @@
   "description": "Prepare for an Ohio telehealth weight loss visit. Learn what to discuss about GLP-1 options, labs, and follow-up care with OhioDoc \u2014 Serving patients across Ohio, including Columbus, Cleveland, and Cincinnati. For Ohioans.",
   "url": "https://www.ohiodoc.com/weight-loss/ohio-telehealth-weight-loss-consultation-guide",
   "datePublished": "2026-09-21T04:42:32.476967",
-  "dateModified": "2026-09-21T04:42:32.476973",
+  "dateModified": "2026-09-22T00:18:00.559559",
   "inLanguage": "en-US",
   "isPartOf": {
     "@type": "MedicalBusiness",
@@ -66,7 +66,36 @@
       "@type": "City",
       "name": "Cincinnati"
     }
-  ]
+  ],
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Ohio Telehealth Weight Loss Consultation Guide available by telehealth in Ohio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Adults who can complete a medical evaluation by telehealth may be treated when a Ohio-licensed physician (OH) decides it is appropriate. Controlled substances and some conditions follow stricter rules. OhioDoc does not guarantee a prescription."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who reviews my consultation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A licensed clinician reviews your intake and any labs. OhioDoc uses clinicians licensed in Ohio. Unlicensed or offshore reviewers do not make the prescribing decision."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will insurance cover this visit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Coverage varies by plan. Ask your carrier about telehealth benefits. Itemized receipts can be used for HSA, FSA, or out-of-network reimbursement when your plan allows."
+        }
+      }
+    ]
+  }
 }
     </script>
     
@@ -76,34 +105,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
-        :root{--navy:#013759;--light-blue:#009DDD;--white:#ffffff;--green:#25D366;--orange:#F98A33}
+        
+        
+        
+        
+
+        :root{
+            --navy: #013759;
+            --light-blue: #009DDD;
+            --green: #25D366;
+            --orange: #F98A33;
+            --white: #ffffff;
+
+            /* Back-compat aliases used by older CSS blocks */
+            --navy-bg: var(--navy);
+            --background: var(--navy);
+            --text-white: #ffffff;
+            --text-primary: #ffffff;
+            --accent-green: var(--green);
+            --accent-orange: var(--orange);
+
+            /* Theme tokens used in some legacy blocks */
+            --current-primary: var(--navy);
+            --current-shadow: 0 10px 30px rgba(0,0,0,0.35);
+            --current-gradient: linear-gradient(135deg, rgba(1,55,89,1) 0%, rgba(0,157,221,0.35) 100%);
+        }
 
         *{scrollbar-width:none;-ms-overflow-style:none}*::-webkit-scrollbar{display:none}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:0;background:var(--navy-bg);color:var(--text-white);line-height:1.8}
+        html,body{min-height:100%;background:#013759;background:var(--navy, #013759);color:#ffffff;color:var(--white, #ffffff)}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:0;background:var(--navy, #013759);color:#ffffff;line-height:1.8}
         .header{background:rgba(10,15,28,0.95);padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,0.1)}
-        .header a{color:#ffffff;text-shadow:0 0 10px #F98A33;text-decoration:none;font-weight:600}
+        .header a{color:#ffffff;text-decoration:none;font-weight:600}
         .container{max-width:800px;margin:0 auto;padding:3rem 1.5rem}
-        h1{color:var(--accent-green);font-size:clamp(2rem,5vw,2.8rem);font-weight:800;margin-bottom:1.5rem;text-shadow:0 0 15px rgba(37,211,102,0.5)}
-        h2{color:var(--light-blue);font-size:1.8rem;margin:2.5rem 0 1rem;text-shadow:0 0 10px rgba(135,206,235,0.5)}
-        h3{color:var(--accent-orange);font-size:1.4rem;margin:2rem 0 0.75rem;text-shadow:0 0 8px rgba(249,138,51,0.5)}
+        h1{color:var(--accent-green);font-size:clamp(2rem,5vw,2.8rem);font-weight:800;margin-bottom:1.5rem}
+        h2{color:var(--light-blue);font-size:1.8rem;margin:2.5rem 0 1rem}
+        h3{color:var(--accent-orange);font-size:1.4rem;margin:2rem 0 0.75rem}
         p{color:var(--text-white);margin-bottom:1.5rem;font-size:1.1rem}
         ul{color:var(--text-white);margin:1.5rem 0;padding-left:2rem}
         li{margin-bottom:0.75rem}
-        .cta{display:inline-block;background:var(--accent-orange);color:var(--navy-bg);padding:1.25rem 2.5rem;border-radius:12px;text-decoration:none;font-weight:700;margin:2rem 0;box-shadow:0 4px 15px rgba(249,138,51,0.3)}
+        .cta{display:inline-block;background:var(--accent-orange);color:var(--navy-bg);padding:1.25rem 2.5rem;border-radius:12px;text-decoration:none;font-weight:700;margin:2rem 0;box-shadow:0 4px 15px rgba(0,0,0,0.25)}
         .highlight-box{background:rgba(255,255,255,0.05);border-left:4px solid var(--accent-orange);padding:1.5rem;margin:2rem 0;border-radius:8px}
         .tip-box{background:rgba(255,255,255,0.08);padding:1.5rem;margin:1.5rem 0;border-radius:8px;border:1px solid var(--light-blue)}
-        .accent-green{color:var(--accent-green);text-shadow:0 0 8px rgba(37,211,102,0.6)}
-        .accent-orange{color:var(--accent-orange);text-shadow:0 0 8px rgba(249,138,51,0.6)}
+        .accent-green{color:var(--accent-green)}
+        .accent-orange{color:var(--accent-orange)}
         .service-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:2rem;margin:1rem 0;border-left:4px solid var(--accent-green)}
-        .service-card h3{color:var(--accent-green);text-shadow:0 0 10px rgba(37,211,102,0.5);margin-top:0}
+        .service-card h3{color:var(--accent-green);margin-top:0}
         .faq-item{border-bottom:1px solid rgba(255,255,255,0.1);padding:1.5rem 0}
         .faq-question{color:var(--light-blue);cursor:pointer;font-weight:600}
         .faq-question:hover{color:var(--accent-orange)}
         footer{margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);text-align:center;color:rgba(255,255,255,0.6)}
-        footer a{color:#ffffff;text-shadow:0 0 8px #F98A33;text-decoration:none}
+        footer a{color:#ffffff;text-decoration:none}
 
         /* Header Styles */
-        .header{background:#013759;border-bottom:1px solid rgba(255,255,255,0.1);position:relative;z-index:1000}
+        .header{background:var(--navy);border-bottom:1px solid rgba(255,255,255,0.1);position:relative;z-index:1000}
         .nav{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 2rem}
         .logo{display:flex;align-items:center;text-decoration:none;color:#ffffff;gap:0.5rem}
         .logo-symbol{height:45px;width:45px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(255,255,255,0.2))}
@@ -133,37 +187,88 @@
             color: var(--accent-orange);
         }
         .powered-by{font-size:0.875rem;color:#9ca3af}
+        .header,.nav{overflow:visible}
         .nav-links{display:flex;list-style:none;margin:0;padding:0;gap:2rem}
         .nav-item{position:relative}
-        .nav-links a{color:#ffffff;text-decoration:none;font-weight:500;padding:1rem 0;display:block}
+        .nav-links > .nav-item > a{color:#ffffff;text-decoration:none;font-weight:500;padding:1rem 0;display:block}
         .dropdown-toggle{cursor:pointer}
-        .mega-dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#013759;border-radius:8px;box-shadow:0 20px 25px -5px rgba(0,0,0,0.3),0 10px 10px -5px rgba(0,0,0,0.2);min-width:800px;padding:2rem;border:1px solid rgba(255,255,255,0.1)}
+        .nav-item.mega-dropdown{position:static}
+        .mega-dropdown-menu{
+            display:none;
+            position:absolute;
+            top:100%;
+            left:0;
+            right:0;
+            width:100%;
+            max-width:1200px;
+            margin:0 auto;
+            z-index:2000;
+            background:#013759;
+            border-radius:8px;
+            box-shadow:0 20px 25px -5px rgba(0,0,0,0.3),0 10px 10px -5px rgba(0,0,0,0.2);
+            padding:1.5rem;
+            border:1px solid rgba(255,255,255,0.1);
+            box-sizing:border-box;
+        }
         .dropdown.active .mega-dropdown-menu{display:block}
-        .mega-dropdown-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-        .mega-dropdown-section h3{color:#ffffff;font-size:1.125rem;font-weight:600;margin-bottom:1rem;border-bottom:2px solid #F98A33;padding-bottom:0.5rem}
-        .mega-dropdown-item{display:block;text-decoration:none;color:#ffffff;padding:1rem;border-radius:6px;margin-bottom:0.5rem;transition:all 0.2s;border:1px solid rgba(255,255,255,0.1)}
+        .mega-dropdown-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem}
+        .mega-dropdown-section{min-width:0}
+        .mega-dropdown-section h3{
+            color:#ffffff;
+            font-size:0.95rem;
+            font-weight:600;
+            margin:0 0 0.75rem;
+            border-bottom:2px solid #F98A33;
+            padding-bottom:0.5rem;
+        }
+        .header .mega-dropdown-item,
+        .mega-dropdown-item{
+            display:block;
+            text-decoration:none;
+            color:#ffffff;
+            padding:0.75rem;
+            border-radius:6px;
+            margin:0 0 0.5rem;
+            transition:all 0.2s;
+            border:1px solid rgba(255,255,255,0.1);
+        }
         .mega-dropdown-item:hover{background:rgba(255,255,255,0.1);border-color:#F98A33}
-        .mega-dropdown-item.featured{background:rgba(249,138,51,0.1);border:1px solid #F98A33}
-        .mega-dropdown-content h4{font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:0.25rem}
-        .mega-dropdown-content p{color:#cccccc;font-size:0.875rem;margin-bottom:0.5rem}
-        .price-tag{background:#F98A33;color:#ffffff;padding:0.25rem 0.75rem;border-radius:9999px;font-size:0.75rem;font-weight:600}
+        .mega-dropdown-item.featured{background:rgba(255,255,255,0.06);border:1px solid #F98A33}
+        .mega-dropdown-content h4{font-size:0.9rem;font-weight:600;color:#ffffff;margin:0 0 0.25rem;line-height:1.3}
+        .mega-dropdown-content p{color:#cccccc;font-size:0.8rem;margin:0 0 0.5rem;line-height:1.4}
+        .price-tag{display:inline-block;background:#F98A33;color:#ffffff;padding:0.2rem 0.6rem;border-radius:9999px;font-size:0.7rem;font-weight:600}
         .featured-tag{background:#25D366}
+        @media (max-width: 1100px){
+            .mega-dropdown-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+        }
+        @media (max-width: 768px){
+            .mega-dropdown-grid{grid-template-columns:1fr}
+        }
 
         /* Footer Styles */
-        .footer{background:#013759;color:#ffffff;padding:4rem 0 2rem;border-top:1px solid rgba(255,255,255,0.1)}
+        .footer{background:var(--navy);color:#ffffff;padding:4rem 0 2rem;border-top:1px solid rgba(255,255,255,0.1)}
         .footer-content{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
         .footer-section h3{color:#ffffff;font-size:1.25rem;font-weight:600;margin-bottom:1rem}
         .footer-section p{margin-bottom:0.75rem;color:#9ca3af}
         .footer-treatment-link{color:#60a5fa;text-decoration:none}
         .footer-treatment-link:hover{color:#93c5fd;text-decoration:underline}
+        .footer-socials{display:flex;gap:1rem;margin-top:1rem}
+        .footer-socials a{color:inherit}
+        .footer-legal{max-width:1200px;margin:2rem auto 0;padding:1.5rem 2rem 0;border-top:1px solid rgba(255,255,255,0.1);text-align:center;color:#9ca3af}
+        .footer-legal p{margin:0 0 0.5rem}
+        .footer-legal a{color:#9ca3af;text-decoration:none}
+        .footer-legal a:hover{color:#ffffff;text-decoration:underline}
 
-        .main-content{min-height:calc(100vh - 200px);background:#013759}
+        .main-content{min-height:100%;background:var(--navy, #013759);color:#ffffff}
+        .cta-band{text-align:center;padding:1rem 0 3rem;background:var(--navy, #013759)}
+        .content,.content .container{color:#ffffff;background:var(--navy, #013759)}
+        .content h2,.content h3,.content p,.content li{color:#ffffff}
 
         /* Hero section */
-        .hero{background:#013759;padding:4rem 0;margin:0}
+        .hero{background:var(--navy);padding:4rem 0;margin:0}
 
         /* All sections */
-        section{background:#013759;padding:3rem 0;margin:0}
+        section{background:var(--navy);padding:3rem 0;margin:0}
 
 
         * {
@@ -175,8 +280,10 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--background);
+            color: #ffffff;
+            color: var(--text-primary, #ffffff);
+            background: #013759;
+            background: var(--background, var(--navy, #013759));
         }
         
         .container {
@@ -229,7 +336,7 @@
         
         .services {
             padding: 60px 0;
-            background: #013759;
+            background: var(--navy);
         }
 
         .services h2 {
@@ -237,7 +344,6 @@
             font-size: 36px;
             margin-bottom: 40px;
             color: var(--accent-green);
-            text-shadow: 0 0 15px rgba(37,211,102,0.5);
         }
         
         .service-grid {
@@ -257,7 +363,7 @@
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(249,138,51,0.2);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.25);
             border-color: var(--accent-orange);
         }
 
@@ -265,7 +371,6 @@
             font-size: 22px;
             color: var(--accent-green);
             margin-bottom: 15px;
-            text-shadow: 0 0 10px rgba(37,211,102,0.5);
         }
 
         .service-card p {
@@ -296,7 +401,6 @@
             font-size: 32px;
             color: var(--light-blue);
             margin-bottom: 20px;
-            text-shadow: 0 0 12px rgba(135,206,235,0.5);
         }
 
         .content p {
@@ -307,7 +411,7 @@
 
         .telemedicine-approach {
             padding: 60px 0;
-            background: #013759;
+            background: var(--navy);
         }
 
         .telemedicine-approach h2 {
@@ -315,14 +419,12 @@
             color: var(--light-blue);
             margin-bottom: 40px;
             text-align: center;
-            text-shadow: 0 0 12px rgba(135,206,235,0.5);
         }
 
         .telemedicine-approach h3 {
             font-size: 24px;
             color: var(--accent-green);
             margin-bottom: 15px;
-            text-shadow: 0 0 10px rgba(37,211,102,0.5);
         }
 
         .telemedicine-approach p {
@@ -349,7 +451,7 @@
         
         .faq {
             padding: 60px 0;
-            background: #013759;
+            background: var(--navy);
         }
 
         .faq h2 {
@@ -357,7 +459,6 @@
             font-size: 36px;
             margin-bottom: 40px;
             color: var(--light-blue);
-            text-shadow: 0 0 15px rgba(135,206,235,0.5);
         }
 
         .faq-item {
@@ -374,7 +475,6 @@
             font-weight: 700;
             color: var(--accent-green);
             margin-bottom: 12px;
-            text-shadow: 0 0 8px rgba(37,211,102,0.6);
             cursor: pointer;
         }
 
@@ -389,7 +489,7 @@
         
         .related-links {
             padding: 60px 0;
-            background: #013759;
+            background: var(--navy);
         }
 
         .related-links h2 {
@@ -397,7 +497,6 @@
             color: var(--accent-green);
             margin-bottom: 30px;
             text-align: center;
-            text-shadow: 0 0 12px rgba(37,211,102,0.5);
         }
 
         .links-grid {
@@ -418,7 +517,7 @@
         }
 
         .link-card:hover {
-            background: rgba(249,138,51,0.1);
+            background: rgba(255,255,255,0.06);
             color: var(--accent-orange);
             border-color: var(--accent-orange);
         }
@@ -613,7 +712,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="/blog/">Blog</a>
+                    <a href="/blog">Blog</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" onclick="event.preventDefault(); return false;">About</a>
@@ -627,68 +726,145 @@
 
     <div class="main-content">
 
-    <script>
-        // Header dropdown functionality
-        function toggleDropdown(event) {
-            event.preventDefault();
-            const dropdown = event.target.closest('.dropdown');
-            dropdown.classList.toggle('active');
-        }
-
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown.active').forEach(dropdown => {
-                    dropdown.classList.remove('active');
-                });
-            }
-        });
-    </script>
-  </head>
-  <body>
-    
     <section class="hero">
         <div class="container">
             <h1>Ohio Telehealth Weight Loss Consultation Guide</h1>
             
             <p>Prepare for an Ohio telehealth weight loss consultation, including what to discuss about GLP-1 options, labs, and follow-up care.</p>
             
+            <p><a class="cta" href="/">Start Visit</a></p>
+        </div>
+    </section>
+
+    
+    <section class="content">
+        <div class="container">
+            <div class="highlight-box">
+                <h2>Local context</h2>
+                <p>
+                    
+                        Serving patients across Ohio including
+                        
+                            Columbus
+                        
+                            , Cleveland
+                        
+                             and Cincinnati
+                        .
+                    
+                    
+                        Known as The Buckeye State.
+                    
+                    
+                        For Ohioans.
+                    
+                </p>
+            </div>
         </div>
     </section>
     
+    
+    
+    <section class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                
+                <div class="service-card">
+                    <h3>Ohio Telehealth Weight Loss Consultation Guide evaluation</h3>
+                    <p>A licensed clinician reviews history, medications, and whether treatment is appropriate.</p>
+                    <a href="/#treatments">Start Visit</a>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Lab orders when needed</h3>
+                    <p>Required labs are sent to a local partner and reviewed before a prescribing decision.</p>
+                    <a href="/#treatments">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Follow-up and refills</h3>
+                    <p>If treatment starts, follow-up is scheduled to review response and safety.</p>
+                    <a href="/#refill-service">Learn More</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
     
     
     
     <section class="content">
         <div class="container">
-            Ohio patients can complete a telehealth weight loss consultation without traveling to a clinic. This guide covers what to expect, how to prepare, and how an Ohio-licensed clinician reviews GLP-1 eligibility, non-GLP-1 alternatives, labs, and follow-up.
-
-What to prepare
-Bring a current medication list, recent lab results if you have them, and your weight-loss goals. Note any prior GLP-1 use, side effects, and questions about compounding versus brand-name options.
-
-During the visit
-The clinician reviews medical history, contraindications, and whether a GLP-1 or another evidence-based plan is appropriate. You leave with a written plan, refill timing, and when to message the care team.
-
-After the visit
-Follow the lab schedule, report side effects early, and use the patient portal for refill requests. OhioDoc keeps follow-up remote so Ohio residents can stay on a supervised plan.
+            <p>Ohio patients can complete a telehealth weight loss consultation without traveling to a clinic. This guide covers what to expect, how to prepare, and how an Ohio-licensed clinician reviews GLP-1 eligibility, non-GLP-1 alternatives, labs, and follow-up.</p>
+<p>What to prepare<br />
+Bring a current medication list, recent lab results if you have them, and your weight-loss goals. Note any prior GLP-1 use, side effects, and questions about compounding versus brand-name options.</p>
+<p>During the visit<br />
+The clinician reviews medical history, contraindications, and whether a GLP-1 or another evidence-based plan is appropriate. You leave with a written plan, refill timing, and when to message the care team.</p>
+<p>After the visit<br />
+Follow the lab schedule, report side effects early, and use the patient portal for refill requests. OhioDoc keeps follow-up remote so Ohio residents can stay on a supervised plan.</p>
+            <p><a class="cta" href="/">Start Visit</a></p>
         </div>
     </section>
     
     
     
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is Ohio Telehealth Weight Loss Consultation Guide available by telehealth in Ohio?</div>
+                <div class="faq-answer">Adults who can complete a medical evaluation by telehealth may be treated when a Ohio-licensed physician (OH) decides it is appropriate. Controlled substances and some conditions follow stricter rules. OhioDoc does not guarantee a prescription.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Who reviews my consultation?</div>
+                <div class="faq-answer">A licensed clinician reviews your intake and any labs. OhioDoc uses clinicians licensed in Ohio. Unlicensed or offshore reviewers do not make the prescribing decision.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Will insurance cover this visit?</div>
+                <div class="faq-answer">Coverage varies by plan. Ask your carrier about telehealth benefits. Itemized receipts can be used for HSA, FSA, or out-of-network reimbursement when your plan allows.</div>
+            </div>
+            
+        </div>
+    </section>
     
+    
+    
+    <section class="related-links">
+        <div class="container">
+            <h2>Related Resources</h2>
+            <div class="links-grid">
+                
+                <a href="/weight-loss/best-glp1-options" class="link-card">Best GLP-1 Options for Weight Loss in Ohio</a>
+                
+                <a href="/weight-loss/best-non-glp1-alternatives" class="link-card">Best Non-GLP-1 Weight Loss Alternatives in Ohio</a>
+                
+                <a href="/weight-loss/best-peptide-therapy" class="link-card">Best Peptide Therapy for Weight Loss in Ohio</a>
+                
+            </div>
+        </div>
+    </section>
     
 
     </div>
 
-    <!-- Footer from main index page -->
+    
+    
+    
+    
+    
+    
+    
+    
+
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                
                 <h3>OhioDoc</h3>
-                <p>Ohio's premier telehealth platform providing discreet, professional healthcare for men and women across the state.</p>
-                
+                <p>Ohio&#39;s premier telehealth platform providing discreet, professional healthcare for men and women across the state.</p>
             </div>
             <div class="footer-section">
                 <h3>Popular Treatments</h3>
@@ -700,39 +876,36 @@ Follow the lab schedule, report side effects early, and use the patient portal f
             </div>
             <div class="footer-section">
                 <h3>Education</h3>
-                <p><a href="/blog/" target="_blank">Health Blog</a></p>
-                <p><a href="/weight-loss" target="_blank">Weight Loss Guide</a></p>
-                <p><a href="/services/telehealth-consultation" target="_blank">Telehealth Benefits</a></p>
-                <p><a href="/weight-loss/best-glp1-options.html" target="_blank">GLP-1 Medications</a></p>
+                <p><a href="/blog">Health Blog</a></p>
+                <p><a href="/weight-loss">Weight Loss Guide</a></p>
+                <p><a href="https://ohanadoc.com/contact">Telehealth Benefits</a></p>
+                <p><a href="/weight-loss/best-glp1-options.html">GLP-1 Medications</a></p>
             </div>
             <div class="footer-section">
                 <h3>Patient Resources</h3>
-                <p><a href="/privacy" class="footer-treatment-link">Privacy Policy</a></p>
-                <p><a href="/terms" class="footer-treatment-link">Terms of Service</a></p>
-                <p><a href="/contact" class="footer-treatment-link">Contact Us</a></p>
+                <p><a href="https://ohanadoc.com/legal-contracts/?docType=privacypolicy" class="footer-treatment-link">Privacy Policy</a></p>
+                <p><a href="https://ohanadoc.com/legal-contracts/?docType=termsofuse" class="footer-treatment-link">Terms of Service</a></p>
+                <p><a href="https://ohanadoc.com/contact" class="footer-treatment-link">Contact Us</a></p>
                 <p><a href="mailto:contact@ohanadoc.com" class="footer-treatment-link">contact@ohanadoc.com</a></p>
             </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                    <a href="https://x.com/ohanadoc1" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" style="color: inherit;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                    <a href="https://www.instagram.com/ohanadochawaii/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color: inherit;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                    <a href="https://www.linkedin.com/company/ohanadoc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color: inherit;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-                </div>
-            </div>
+            
+        </div>
+        <div class="footer-legal">
+            <p>© OhioDoc. All rights reserved.</p>
+            <p><a href="https://ohanadoc.com/legal-contracts/?docType=privacypolicy">Privacy Policy</a> | <a href="https://ohanadoc.com/legal-contracts/?docType=termsofuse">Terms of Service</a></p>
         </div>
     </footer>
 
-    <footer>
-        <div class="container">
-            
-            <p>&copy; Ohio Telemedicine. All rights reserved.</p>
-            
-            <p style="margin-top: 10px; font-size: 14px;">
-                <a href="/privacy" style="color: #9ca3af; text-decoration: none;">Privacy Policy</a> | 
-                <a href="/terms" style="color: #9ca3af; text-decoration: none;">Terms of Service</a>
-            </p>
-        </div>
-    </footer>
+    
+    <!-- ODECON Tracking Pixel - Server-Side Attribution -->
+    <script>
+    window.ODECON_CONFIG = {
+        apiEndpoint: 'https://api.ohanadoc.co/api',
+        franchiseId: 14
+    };
+    </script>
+    <script src="https://www.ohanadoc.co/odecon-pixel.js" async></script>
+    <!-- End ODECON Tracking Pixel -->
+    
 </body>
 </html>
