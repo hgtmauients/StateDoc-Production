@@ -197,6 +197,9 @@
         .powered-by{font-size:0.875rem;color:#9ca3af}
         .header,.nav{overflow:visible}
         .nav-links{display:flex;list-style:none;margin:0;padding:0;gap:2rem}
+        .od-header-actions{display:flex;align-items:center;gap:12px}
+        .od-header-link{color:#ffffff;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,0.28);border-radius:999px;padding:8px 16px}
+        .od-header-cta{background:var(--orange, #F98A33);color:var(--navy, #013759);text-decoration:none;font-weight:700;border-radius:999px;padding:8px 16px}
         .nav-item{position:relative}
         .nav-links > .nav-item > a{color:#ffffff;text-decoration:none;font-weight:500;padding:1rem 0;display:block}
         .dropdown-toggle{cursor:pointer}
@@ -589,6 +592,7 @@
                     
                 </div>
             </a>
+            
             <ul class="nav-links">
                 <li class="nav-item dropdown mega-dropdown">
                     <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">
@@ -729,6 +733,7 @@
                     <a href="#" onclick="event.preventDefault(); return false;">Contact</a>
                 </li>
             </ul>
+            
         </nav>
     </header>
 
