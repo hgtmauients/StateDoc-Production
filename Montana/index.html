@@ -6783,6 +6783,17 @@
             -webkit-text-fill-color: #9333EA !important;
         }
         /* END CUSTOM HIGHLIGHT COLORS */
+    
+        /* CUSTOM HIGHLIGHT COLORS FROM CONTENT MANAGER */
+        
+        .service-banner .banner-slide[data-service="weight-loss"] .highlight {
+            color: #9333EA !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            background-clip: unset !important;
+            -webkit-text-fill-color: #9333EA !important;
+        }
+        /* END CUSTOM HIGHLIGHT COLORS */
     </style>
     <script id="odecon-card-expand-js">
     (function () {
@@ -10184,6 +10195,99 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+</script>
+
+
+<script id="odecon-service-nav">
+(function () {
+  function closeMenu() {
+    var menu = document.querySelector('.mobile-menu');
+    if (menu) {
+      menu.classList.remove('active', 'open', 'is-open');
+      menu.setAttribute('aria-hidden', 'true');
+    }
+    document.body.classList.remove('menu-open', 'mobile-menu-open', 'no-scroll');
+  }
+
+  function headerOffset() {
+    var header = document.getElementById('header') || document.querySelector('header');
+    return header ? header.offsetHeight + 12 : 80;
+  }
+
+  function expandCategory(card) {
+    var grid = card.closest('.treatments-grid');
+    if (!grid) return;
+    grid.classList.remove('collapsed');
+    var prev = grid.previousElementSibling;
+    while (prev && !prev.classList.contains('category-header-wrapper')) {
+      prev = prev.previousElementSibling;
+    }
+    if (prev) {
+      prev.classList.remove('category-collapsed');
+      prev.classList.add('category-expanded');
+    }
+  }
+
+  function scrollToCard(card) {
+    var top = card.getBoundingClientRect().top + window.pageYOffset - headerOffset();
+    window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+  }
+
+  function openTreatmentCard(card) {
+    expandCategory(card);
+    card.classList.add('expanded');
+    window.setTimeout(function () { scrollToCard(card); }, 60);
+  }
+
+  function cardFromHash(hash) {
+    var id = String(hash || '').replace(/^#/, '');
+    if (!id) return null;
+    var el = document.getElementById(id);
+    if (el && el.classList.contains('treatment-card')) return el;
+    return null;
+  }
+
+  window.navigateToSection = function (sectionId) {
+    var card = cardFromHash(sectionId);
+    closeMenu();
+    if (card) {
+      openTreatmentCard(card);
+      return;
+    }
+    var id = String(sectionId || '');
+    var target = document.querySelector(id.charAt(0) === '#' ? id : '#' + id);
+    if (target) {
+      var top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset();
+      window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+    }
+  };
+
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest('a.mobile-menu-item, a.footer-treatment-link');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    if (href.charAt(0) !== '#') return;
+    var card = cardFromHash(href);
+    if (!card) return;
+    event.preventDefault();
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, '', href);
+    }
+    window.navigateToSection(href);
+  });
+
+  function openFromLocation() {
+    var card = cardFromHash(window.location.hash);
+    if (card) openTreatmentCard(card);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', openFromLocation);
+  } else {
+    openFromLocation();
+  }
+  window.addEventListener('hashchange', openFromLocation);
+})();
 </script>
 
 </body>
