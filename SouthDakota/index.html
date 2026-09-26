@@ -7481,11 +7481,11 @@
             </div>
             <div class="footer-section">
                 <h3>Popular Treatments</h3>
-                <p><a href="/weight-loss/best-glp1-options.html" class="footer-treatment-link">Semaglutide (Ozempic/Wegovy)</a></p>
-                <p><a href="/weight-loss/best-peptide-therapy.html" class="footer-treatment-link">Tirzepatide (Mounjaro)</a></p>
-                <p><a href="/mens-health/best-ed-treatments.html" class="footer-treatment-link">Erectile Dysfunction</a></p>
-                <p><a href="/womens-health/best-birth-control-online.html" class="footer-treatment-link">Birth Control</a></p>
-                <p><a href="/dermatology/best-hair-loss-treatment" class="footer-treatment-link">Hair Restoration</a></p>
+                <p><a href="#semaglutide" class="footer-treatment-link">Semaglutide (Ozempic/Wegovy)</a></p>
+                <p><a href="#tirzepatide" class="footer-treatment-link">Tirzepatide (Mounjaro)</a></p>
+                <p><a href="#ed-treatment" class="footer-treatment-link">Erectile Dysfunction</a></p>
+                <p><a href="#birth-control" class="footer-treatment-link">Birth Control</a></p>
+                <p><a href="#hair-restoration" class="footer-treatment-link">Hair Restoration</a></p>
             </div>
             <div class="footer-section">
                 <h3>Education</h3>
@@ -9867,7 +9867,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var grid = card.closest('.treatments-grid');
     if (!grid) return;
     grid.classList.remove('collapsed');
-    var prev = grid.previousElementSibling;
+    var wrapper = grid.closest('.carousel-wrapper');
+    if (wrapper) wrapper.classList.remove('collapsed-category');
+    var prev = (wrapper || grid).previousElementSibling;
     while (prev && !prev.classList.contains('category-header-wrapper')) {
       prev = prev.previousElementSibling;
     }
@@ -9877,15 +9879,115 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  function scrollToCard(card) {
-    var top = card.getBoundingClientRect().top + window.pageYOffset - headerOffset();
-    window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+  function setDetailsLabel(card, expanded) {
+    card.querySelectorAll('.btn-details').forEach(function (button) {
+      button.textContent = expanded ? 'Less Details' : 'More Details';
+    });
+  }
+
+  function syncExpandedLabels() {
+    document.querySelectorAll('.treatment-card').forEach(function (card) {
+      setDetailsLabel(card, card.classList.contains('expanded'));
+    });
+  }
+
+  function collapseOtherCards(card) {
+    document.querySelectorAll('.treatment-card.expanded').forEach(function (other) {
+      if (other !== card) other.classList.remove('expanded');
+    });
+    syncExpandedLabels();
+  }
+
+  function installToggleCard() {
+    if (!window.toggleCard || window.toggleCard.odeconWrapped) return;
+    var previous = window.toggleCard;
+    function wrapped(button) {
+      var card = button && button.closest ? button.closest('.treatment-card') : null;
+      var opening = card ? !card.classList.contains('expanded') : false;
+      previous(button);
+      if (card && opening) collapseOtherCards(card);
+      else syncExpandedLabels();
+    }
+    wrapped.odeconWrapped = true;
+    window.toggleCard = wrapped;
+  }
+
+  function centeredCardIndex(grid, cards) {
+    var mid = grid.getBoundingClientRect().left + grid.getBoundingClientRect().width / 2;
+    var best = 0;
+    var bestDist = Infinity;
+    for (var i = 0; i < cards.length; i++) {
+      var rect = cards[i].getBoundingClientRect();
+      var dist = Math.abs(rect.left + rect.width / 2 - mid);
+      if (dist < bestDist) {
+        bestDist = dist;
+        best = i;
+      }
+    }
+    return best;
+  }
+
+  function syncChevrons(scope) {
+    var root = scope && scope.querySelectorAll ? scope : document;
+    var wrappers = root.classList && root.classList.contains('carousel-wrapper')
+      ? [root]
+      : root.querySelectorAll('.carousel-wrapper');
+    Array.prototype.forEach.call(wrappers, function (wrapper) {
+      var grid = wrapper.querySelector('.treatments-grid');
+      if (!grid) return;
+      var cards = grid.querySelectorAll('.treatment-card');
+      var index = cards.length ? centeredCardIndex(grid, cards) : 0;
+      var hideLeft = cards.length < 2 || index === 0;
+      var hideRight = cards.length < 2 || index === cards.length - 1;
+      var left = wrapper.querySelector('.carousel-chevron-left');
+      var right = wrapper.querySelector('.carousel-chevron-right');
+      if (left) left.classList.toggle('odecon-chevron-hidden', hideLeft);
+      if (right) right.classList.toggle('odecon-chevron-hidden', hideRight);
+    });
+  }
+
+  function alignCardInRow(card) {
+    var grid = card.closest('.treatments-grid');
+    if (!grid || !window.matchMedia('(max-width: 768px)').matches) return;
+    var gridRect = grid.getBoundingClientRect();
+    var cardRect = card.getBoundingClientRect();
+    var delta = (cardRect.left + cardRect.width / 2) - (gridRect.left + gridRect.width / 2);
+    if (Math.abs(delta) >= 2) grid.scrollLeft += delta;
+    syncChevrons(grid.closest('.carousel-wrapper'));
+  }
+
+  function scrollPageToCard(card) {
+    var header = document.getElementById('header') || document.querySelector('header');
+    var headerHeight = header ? header.offsetHeight : 80;
+    var cardTop = card.getBoundingClientRect().top + window.pageYOffset;
+    var targetScroll = cardTop - (window.innerHeight * 0.25) - headerHeight;
+    window.scrollTo({ top: Math.max(targetScroll, 0), behavior: 'smooth' });
+  }
+
+  function revealCard(card) {
+    alignCardInRow(card);
+    scrollPageToCard(card);
+    syncChevrons(card.closest('.carousel-wrapper'));
+    syncExpandedLabels();
+  }
+
+  function bindChevrons() {
+    document.querySelectorAll('.treatments-grid').forEach(function (grid) {
+      if (grid.getAttribute('data-odecon-chevrons') === '1') return;
+      grid.setAttribute('data-odecon-chevrons', '1');
+      grid.addEventListener('scroll', function () {
+        syncChevrons(grid.closest('.carousel-wrapper'));
+      }, { passive: true });
+    });
+    syncChevrons(document);
   }
 
   function openTreatmentCard(card) {
     expandCategory(card);
     card.classList.add('expanded');
-    window.setTimeout(function () { scrollToCard(card); }, 60);
+    collapseOtherCards(card);
+    window.requestAnimationFrame(function () { alignCardInRow(card); });
+    window.setTimeout(function () { revealCard(card); }, 520);
   }
 
   function cardFromHash(hash) {
@@ -9930,12 +10032,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if (card) openTreatmentCard(card);
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', openFromLocation);
-  } else {
+  function onReady() {
+    installToggleCard();
     openFromLocation();
+    bindChevrons();
+    window.setTimeout(bindChevrons, 300);
+  }
+
+  if (document.readyState === 'complete') {
+    onReady();
+  } else {
+    document.addEventListener('DOMContentLoaded', onReady);
   }
   window.addEventListener('hashchange', openFromLocation);
+  window.addEventListener('resize', function () { syncChevrons(document); });
 })();
 </script>
 
@@ -9944,21 +10054,26 @@ document.addEventListener('DOMContentLoaded', function() {
   .treatments-grid {
     scroll-snap-type: x mandatory !important;
     scroll-behavior: auto !important;
-    scroll-padding-inline: 0.75rem !important;
+    scroll-padding-inline: 0 !important;
     touch-action: pan-x pan-y !important;
     overscroll-behavior-x: contain !important;
     overscroll-behavior-y: auto !important;
     gap: 0.75rem !important;
-    padding-left: 0.75rem !important;
-    padding-right: 12vw !important;
+    padding-left: 7% !important;
+    padding-right: 7% !important;
   }
   .treatment-card,
   .treatment-card.expanded {
-    flex: 0 0 85vw !important;
-    width: 85vw !important;
-    max-width: 85vw !important;
-    scroll-snap-align: start !important;
+    flex: 0 0 86% !important;
+    width: 86% !important;
+    max-width: 86% !important;
+    scroll-snap-align: center !important;
     scroll-snap-stop: always !important;
+  }
+  .carousel-wrapper:has(.treatment-card:only-child) .carousel-chevron,
+  .carousel-chevron.odecon-chevron-hidden,
+  .carousel-chevron.disabled {
+    display: none !important;
   }
 }
 </style>
