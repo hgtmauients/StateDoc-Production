@@ -6537,7 +6537,6 @@
                 <h3>Core Telehealth</h3>
                 <a href="#primary-care" class="mobile-menu-item" onclick="navigateToSection('#primary-care')">Primary Care</a>
                 <a href="#mental-health" class="mobile-menu-item" onclick="navigateToSection('#mental-health')">Mental Health</a>
-                <a href="#sexual-health" class="mobile-menu-item" onclick="navigateToSection('#sexual-health')">Sexual Health & Wellness</a>
                 <a href="#refill-service" class="mobile-menu-item" onclick="navigateToSection('#refill-service')">Refill Service</a>
             </div>
             
@@ -7318,39 +7317,6 @@
                             
                     </div>
                     <div class="treatment-price">Existing Patients Only</div>
-                    </div>
-                    <div class="treatment-actions">
-                        <button class="treatment-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
-                            Sign Up
-                        </button>
-                        <button class="btn-details" onclick="toggleCard(this)">
-                            More Details
-                    </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- CATEGORY 6: OTHER SERVICES -->
-            <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Other Services</h2>
-                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Premium telehealth services</p>
-            </div>
-            <div class="treatments-grid" aria-label="Other Services Services Carousel">
-                <div class="treatment-card animate-on-scroll " id="sexual-health">
-                    <h3>Sexual Health & Wellness</h3>
-                    <p class="treatment-summary">Full sexual health support including ED, PE, libido enhancement, and orgasm therapies for both men and women. All treatments are FDA-approved with 100% confidential consultations from Indiana physicians.</p>
-                    <div class="treatment-details">
-                        <p>Full sexual health support including ED, PE, libido enhancement, and orgasm therapies for both men and women. All treatments are FDA-approved with 100% confidential consultations from Indiana physicians.</p>
-                    <div class="treatment-features">
-                        <div class="feature-item"> ED Treatment (Sildenafil, Tadalafil, Vardenafil)</div>
-                            <div class="feature-item"> PE Treatment (Sertraline, Paroxetine, Topicals)</div>
-                            <div class="feature-item"> Women's Libido Enhancement</div>
-                            <div class="feature-item"> Orgasm Support Therapies</div>
-                            <div class="feature-item"> 100% Confidential & Discreet</div>
-                            
-                    </div>
-                    <div class="treatment-price">Starting at $30/month</div>
                     </div>
                     <div class="treatment-actions">
                         <button class="treatment-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
@@ -9851,12 +9817,23 @@ document.addEventListener('DOMContentLoaded', function() {
 <script id="odecon-service-nav">
 (function () {
   function closeMenu() {
-    var menu = document.querySelector('.mobile-menu');
+    if (typeof window.closeMobileMenu === 'function') {
+      window.closeMobileMenu();
+    }
+    var menu = document.getElementById('mobileMenu') || document.querySelector('.mobile-menu');
     if (menu) {
       menu.classList.remove('active', 'open', 'is-open');
       menu.setAttribute('aria-hidden', 'true');
     }
+    var overlay = document.getElementById('mobileOverlay') || document.querySelector('.mobile-menu-overlay');
+    if (overlay) overlay.classList.remove('active', 'open', 'is-open');
+    var toggle = document.getElementById('mobileToggle') || document.querySelector('.mobile-menu-toggle');
+    if (toggle) {
+      toggle.classList.remove('active', 'open', 'is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
     document.body.classList.remove('menu-open', 'mobile-menu-open', 'no-scroll');
+    document.body.style.overflow = '';
   }
 
   function headerOffset() {
@@ -9940,5 +9917,28 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
+<style id="odecon-mobile-card-snap">
+@media (max-width: 768px) {
+  .treatments-grid {
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: auto !important;
+    scroll-padding-inline: 0.75rem !important;
+    touch-action: pan-x pan-y !important;
+    overscroll-behavior-x: contain !important;
+    overscroll-behavior-y: auto !important;
+    gap: 0.75rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 12vw !important;
+  }
+  .treatment-card,
+  .treatment-card.expanded {
+    flex: 0 0 85vw !important;
+    width: 85vw !important;
+    max-width: 85vw !important;
+    scroll-snap-align: start !important;
+    scroll-snap-stop: always !important;
+  }
+}
+</style>
 </body>
 </html>

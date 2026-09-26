@@ -9809,12 +9809,23 @@ document.addEventListener('DOMContentLoaded', function() {
 <script id="odecon-service-nav">
 (function () {
   function closeMenu() {
-    var menu = document.querySelector('.mobile-menu');
+    if (typeof window.closeMobileMenu === 'function') {
+      window.closeMobileMenu();
+    }
+    var menu = document.getElementById('mobileMenu') || document.querySelector('.mobile-menu');
     if (menu) {
       menu.classList.remove('active', 'open', 'is-open');
       menu.setAttribute('aria-hidden', 'true');
     }
+    var overlay = document.getElementById('mobileOverlay') || document.querySelector('.mobile-menu-overlay');
+    if (overlay) overlay.classList.remove('active', 'open', 'is-open');
+    var toggle = document.getElementById('mobileToggle') || document.querySelector('.mobile-menu-toggle');
+    if (toggle) {
+      toggle.classList.remove('active', 'open', 'is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
     document.body.classList.remove('menu-open', 'mobile-menu-open', 'no-scroll');
+    document.body.style.overflow = '';
   }
 
   function headerOffset() {
@@ -9898,5 +9909,28 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
+<style id="odecon-mobile-card-snap">
+@media (max-width: 768px) {
+  .treatments-grid {
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: auto !important;
+    scroll-padding-inline: 0.75rem !important;
+    touch-action: pan-x pan-y !important;
+    overscroll-behavior-x: contain !important;
+    overscroll-behavior-y: auto !important;
+    gap: 0.75rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 12vw !important;
+  }
+  .treatment-card,
+  .treatment-card.expanded {
+    flex: 0 0 85vw !important;
+    width: 85vw !important;
+    max-width: 85vw !important;
+    scroll-snap-align: start !important;
+    scroll-snap-stop: always !important;
+  }
+}
+</style>
 </body>
 </html>
