@@ -6805,6 +6805,17 @@
             -webkit-text-fill-color: #34ea8c !important;
         }
         /* END CUSTOM HIGHLIGHT COLORS */
+    
+        /* CUSTOM HIGHLIGHT COLORS FROM CONTENT MANAGER */
+        
+        .service-banner .banner-slide[data-service="weight-loss"] .highlight {
+            color: #34ea8c !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            background-clip: unset !important;
+            -webkit-text-fill-color: #34ea8c !important;
+        }
+        /* END CUSTOM HIGHLIGHT COLORS */
     </style>
     <script id="odecon-card-expand-js">
     (function () {
@@ -7018,7 +7029,7 @@
                                 <h3>Integrative & Wellness</h3>
                                 <a href="#peptide-therapy" class="mega-dropdown-item">
                                     <span class="mega-item-title">Peptide Therapy</span>
-                                    <span class="mega-item-desc">Cutting-edge peptide therapy including BPC-157 for...</span>
+                                    <span class="mega-item-desc">Cutting-edge peptide therapy for healing and recov...</span>
                                     <span class="mega-item-price"></span>
                                 </a>
                                 <a href="#longevity-stacks" class="mega-dropdown-item">
@@ -7101,7 +7112,6 @@
             <div class="mobile-menu-section">
                 <h3>Men's Health</h3>
                 <a href="#ed-treatment" class="mobile-menu-item" onclick="navigateToSection('#ed-treatment')">ED Treatment (Erectile Dysfunction)</a>
-                <a href="#testosterone-therapy" class="mobile-menu-item" onclick="navigateToSection('#testosterone-therapy')">Testosterone Therapy (TRT)</a>
             </div>
             
             <div class="mobile-menu-section">
@@ -7405,7 +7415,67 @@
     <!-- Treatments Section -->
     <section class="treatments" id="treatments">
         <div class="container">
-            <!-- CATEGORY 1: WEIGHT LOSS -->
+            <!-- CATEGORY 1: PRIMARY CARE -->
+            <div style="margin: 4rem 0 2rem 0;">
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Primary Care</h2>
+                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Premium telehealth services</p>
+            </div>
+            <div class="treatments-grid" aria-label="Primary Care Services Carousel">
+                <div class="treatment-card animate-on-scroll " id="primary-care">
+                    <h3>Primary Care</h3>
+                    <p class="treatment-summary">Comprehensive primary care services with Ohio-licensed physicians. General health consultations, preventive screenings, chronic disease management, wellness checkups, and prescription refills - all from the comfort of home.</p>
+                    <div class="treatment-details">
+                        <p>Comprehensive primary care services with Ohio-licensed physicians. General health consultations, preventive screenings, chronic disease management, wellness checkups, and prescription refills - all from the comfort of home.</p>
+                    <div class="treatment-features">
+                        <div class="feature-item">General Health Consultations</div>
+                            <div class="feature-item">Preventive Care & Screenings</div>
+                            
+                    </div>
+                    <div class="treatment-price"></div>
+                    </div>
+                    <div class="treatment-actions">
+                        <button class="treatment-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
+                            Sign Up
+                        </button>
+                        <button class="btn-details" onclick="toggleCard(this)">
+                            More Details
+                    </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CATEGORY 2: MENTAL HEALTH -->
+            <div style="margin: 4rem 0 2rem 0;">
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Mental Health</h2>
+                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Premium telehealth services</p>
+            </div>
+            <div class="treatments-grid" aria-label="Mental Health Services Carousel">
+                <div class="treatment-card animate-on-scroll " id="mental-health">
+                    <h3>Mental Health</h3>
+                    <p class="treatment-summary">Comprehensive mental health support with licensed therapists and psychiatrists. Treatment for anxiety, depression, PTSD, and overall mental wellness. Medication management and therapy services available with flexible online sessions.</p>
+                    <div class="treatment-details">
+                        <p>Comprehensive mental health support with licensed therapists and psychiatrists. Treatment for anxiety, depression, PTSD, and overall mental wellness. Medication management and therapy services available with flexible online sessions.</p>
+                    <div class="treatment-features">
+                        <div class="feature-item">Licensed Therapists & Psychiatrists</div>
+                            <div class="feature-item">Anxiety & Depression Treatment</div>
+                            
+                    </div>
+                    <div class="treatment-price"></div>
+                    </div>
+                    <div class="treatment-actions">
+                        <button class="treatment-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
+                            Sign Up
+                        </button>
+                        <button class="btn-details" onclick="toggleCard(this)">
+                            More Details
+                    </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CATEGORY 3: WEIGHT LOSS -->
             <div style="margin: 4rem 0 2rem 0;">
                 <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Weight Loss</h2>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Premium telehealth services</p>
@@ -7502,66 +7572,6 @@
 
             </div>
 
-            <!-- CATEGORY 2: PRIMARY CARE -->
-            <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Primary Care</h2>
-                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Premium telehealth services</p>
-            </div>
-            <div class="treatments-grid" aria-label="Primary Care Services Carousel">
-                <div class="treatment-card animate-on-scroll " id="primary-care">
-                    <h3>Primary Care</h3>
-                    <p class="treatment-summary">Comprehensive primary care services with Ohio-licensed physicians. General health consultations, preventive screenings, chronic disease management, wellness checkups, and prescription refills - all from the comfort of home.</p>
-                    <div class="treatment-details">
-                        <p>Comprehensive primary care services with Ohio-licensed physicians. General health consultations, preventive screenings, chronic disease management, wellness checkups, and prescription refills - all from the comfort of home.</p>
-                    <div class="treatment-features">
-                        <div class="feature-item">General Health Consultations</div>
-                            <div class="feature-item">Preventive Care & Screenings</div>
-                            
-                    </div>
-                    <div class="treatment-price"></div>
-                    </div>
-                    <div class="treatment-actions">
-                        <button class="treatment-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
-                            Sign Up
-                        </button>
-                        <button class="btn-details" onclick="toggleCard(this)">
-                            More Details
-                    </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- CATEGORY 3: MENTAL HEALTH -->
-            <div style="margin: 4rem 0 2rem 0;">
-                <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Mental Health</h2>
-                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.05rem;">Premium telehealth services</p>
-            </div>
-            <div class="treatments-grid" aria-label="Mental Health Services Carousel">
-                <div class="treatment-card animate-on-scroll " id="mental-health">
-                    <h3>Mental Health</h3>
-                    <p class="treatment-summary">Comprehensive mental health support with licensed therapists and psychiatrists. Treatment for anxiety, depression, PTSD, and overall mental wellness. Medication management and therapy services available with flexible online sessions.</p>
-                    <div class="treatment-details">
-                        <p>Comprehensive mental health support with licensed therapists and psychiatrists. Treatment for anxiety, depression, PTSD, and overall mental wellness. Medication management and therapy services available with flexible online sessions.</p>
-                    <div class="treatment-features">
-                        <div class="feature-item">Licensed Therapists & Psychiatrists</div>
-                            <div class="feature-item">Anxiety & Depression Treatment</div>
-                            
-                    </div>
-                    <div class="treatment-price"></div>
-                    </div>
-                    <div class="treatment-actions">
-                        <button class="treatment-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
-                            Sign Up
-                        </button>
-                        <button class="btn-details" onclick="toggleCard(this)">
-                            More Details
-                    </button>
-                    </div>
-                </div>
-
-            </div>
-
             <!-- CATEGORY 4: MEN'S HEALTH -->
             <div style="margin: 4rem 0 2rem 0;">
                 <h2 style="font-size: 2rem; font-weight: 800; color: var(--state-secondary); margin-bottom: 0.5rem; background: linear-gradient(135deg, #013759 0%, #009DDD 50%, #25D366 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Men's Health</h2>
@@ -7591,39 +7601,13 @@
                     </div>
                 </div>
 
-                <div class="treatment-card animate-on-scroll " id="testosterone-therapy">
-                    <h3>Testosterone Therapy (TRT)</h3>
-                    <p class="treatment-summary">Comprehensive testosterone replacement therapy (TRT) for men with low testosterone. At-home testing, personalized treatment protocols, and ongoing monitoring from Ohio physicians. Restore energy, muscle mass, libido, and overall vitality.</p>
-                    <div class="treatment-details">
-                        <p>Comprehensive testosterone replacement therapy (TRT) for men with low testosterone. At-home testing, personalized treatment protocols, and ongoing monitoring from Ohio physicians. Restore energy, muscle mass, libido, and overall vitality.</p>
-                    <div class="treatment-features">
-                        <div class="feature-item">At-Home Testosterone Testing</div>
-                            <div class="feature-item">Personalized Treatment Protocols</div>
-                            <div class="feature-item">Injectable & Topical Options</div>
-                            
-                    </div>
-                    <div class="treatment-price"></div>
-                    </div>
-                    <div class="treatment-actions">
-                        <button class="treatment-cta btn-premium hover-premium" onclick="openPopup('coming-soon-popup')">
-                            Sign Up
-                        </button>
-                        <button class="btn-details" onclick="toggleCard(this)">
-                            More Details
-                    </button>
-                    </div>
-                </div>
-
                 <div class="treatment-card animate-on-scroll " id="peptide-therapy">
                     <h3>Peptide Therapy</h3>
-                    <p class="treatment-summary">Cutting-edge peptide therapy including BPC-157 for healing and recovery, TB-500 for tissue repair, CJC-1295 for growth hormone optimization, and other specialized peptides. Physician-guided protocols from Ohio specialists for optimal results.</p>
+                    <p class="treatment-summary">Cutting-edge peptide therapy for healing and recovery, tissue repair, growth hormone optimization, and other specialized peptides needs. Physician-guided protocols from Ohio specialists for optimal results.</p>
                     <div class="treatment-details">
-                        <p>Cutting-edge peptide therapy including BPC-157 for healing and recovery, TB-500 for tissue repair, CJC-1295 for growth hormone optimization, and other specialized peptides. Physician-guided protocols from Ohio specialists for optimal results.</p>
+                        <p>Cutting-edge peptide therapy for healing and recovery, tissue repair, growth hormone optimization, and other specialized peptides needs. Physician-guided protocols from Ohio specialists for optimal results.</p>
                     <div class="treatment-features">
-                        <div class="feature-item">BPC-157 (Healing & Recovery)</div>
-                            <div class="feature-item">TB-500 (Tissue Repair)</div>
-                            <div class="feature-item">CJC-1295 & Ipamorelin (Growth Hormone)</div>
-                            
+                        
                     </div>
                     <div class="treatment-price"></div>
                     </div>
